@@ -72,6 +72,24 @@
   "misbruikt": false
  },
  {
+  "id": "2026-11-08-lnbits",
+  "datum": "2026-11-08",
+  "categorie": "Crypto",
+  "titel": "LNbits: alle servers uit na actieve aanvallen",
+  "doelwit": "LNbits (Lightning-wallet/payments)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Ongeautoriseerde accounts en opnames op meerdere instances (o.a. BitTipBot: 2,29 mln sats); LNbits vraagt alle operators hun server uit te zetten, patch verwacht binnen 24–48 uur.",
+  "bron": "The Hacker News",
+  "bron_url": "https://thehackernews.com/2026/11/lnbits-urges-all-operators-to-shut-down.html",
+  "misbruikt": null
+ },
+ {
   "id": "2026-11-08-acryptos",
   "datum": "2026-11-08",
   "categorie": "Crypto",

@@ -3,7 +3,6 @@ name: Hack Monitor verversen
 on:
   schedule:
     - cron: "12 6 * * *"   # elke ochtend 07:12 (wintertijd) / 08:12 (zomertijd) Amsterdam
-  workflow_dispatch:        # de knop op de site
   push:
     branches: [main]
     paths-ignore: ["data/**"]

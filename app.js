@@ -1,13 +1,4 @@
 (() => {
-  // ---------- Config ----------
-  const fromHost = location.hostname.endsWith('.github.io');
-  const OWNER = fromHost ? location.hostname.split('.')[0] : 'L3and3r';
-  const REPO = fromHost ? (location.pathname.split('/')[1] || 'hack-monitor') : 'hack-monitor';
-  const WORKFLOW = 'update.yml';
-  const API = `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${WORKFLOW}`;
-  const RUN_PAGE = `https://github.com/${OWNER}/${REPO}/actions/workflows/${WORKFLOW}`;
-  const TOKEN_KEY = 'hm-gh-token';
-
   const SEV = ['Kritiek', 'Hoog', 'Middel', 'Laag'];
   const SEVCOL = { Kritiek: 'var(--bad)', Hoog: 'var(--warn)', Middel: 'var(--mid)', Laag: 'var(--low)' };
   const nl = d3.timeFormatLocale({ dateTime: '%a %e %B %Y %X', date: '%d-%m-%Y', time: '%H:%M', periods: ['', ''],
@@ -174,73 +165,6 @@
   $('f-zoek').addEventListener('input', (e) => { filter.q = e.target.value; drawTabel(); });
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(renderAll, 150); });
 
-  // ---------- Verversen ----------
-  const btn = $('btn-ververs'), status = $('status');
-  const getToken = () => { try { return localStorage.getItem(TOKEN_KEY) || ''; } catch { return ''; } };
-  function setStatus(msg, err) {
-    status.className = 'hm-status' + (err ? ' err' : '');
-    status.replaceChildren(msg);
-  }
-  function busy(on) { btn.disabled = on; btn.classList.toggle('spin', on); btn.querySelector('span').textContent = on ? 'Bezig met verversen…' : 'Nu verversen'; }
-
-  async function latestRun() {
-    const h = { Accept: 'application/vnd.github+json' };
-    const tok = getToken(); if (tok) h.Authorization = 'Bearer ' + tok;
-    const r = await fetch(`${API}/runs?per_page=1`, { headers: h, cache: 'no-store' });
-    if (!r.ok) return null;
-    return (await r.json()).workflow_runs?.[0] || null;
-  }
-
-  let polling = null;
-  function poll(sinceMs) {
-    if (polling) return;
-    busy(true);
-    const t0 = Date.now();
-    const tick = async () => {
-      let run = null;
-      try { run = await latestRun(); } catch {}
-      const mins = Math.round((Date.now() - t0) / 60000);
-      if (run && Date.parse(run.created_at) >= sinceMs - 60000) {
-        if (run.status !== 'completed') { setStatus(`Claude zoekt naar nieuwe incidenten… (${mins} min, duurt meestal 5–15 min)`); }
-        else {
-          clearInterval(polling); polling = null; busy(false);
-          if (run.conclusion === 'success') { setStatus('Klaar, nieuwe data laden…'); setTimeout(() => load().catch(() => {}), 20000); }
-          else setStatus(`Verversen mislukt (${run.conclusion}). Bekijk de log op GitHub.`, true);
-          return;
-        }
-      } else setStatus('Wachten tot de run start…');
-      if (Date.now() - t0 > 45 * 60000) { clearInterval(polling); polling = null; busy(false); setStatus('Duurt lang; kijk op GitHub Actions.', true); }
-    };
-    tick(); polling = setInterval(tick, 20000);
-  }
-
-  btn.addEventListener('click', async () => {
-    const tok = getToken(), since = Date.now();
-    if (!tok) { window.open(RUN_PAGE, '_blank', 'noopener'); setStatus('Klik op GitHub op "Run workflow". Deze pagina volgt de voortgang.'); poll(since); return; }
-    busy(true); setStatus('Verversing starten…');
-    try {
-      const r = await fetch(`${API}/dispatches`, { method: 'POST', headers: { Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + tok, 'Content-Type': 'application/json' }, body: JSON.stringify({ ref: 'main' }) });
-      if (r.status !== 204) throw new Error('HTTP ' + r.status);
-      poll(since);
-    } catch (e) {
-      busy(false);
-      setStatus(`Starten mislukt (${e.message}). Controleer je token of gebruik de knop zonder token.`, true);
-    }
-  });
-
-  // Token-dialoog
-  const dlg = $('dlg');
-  $('btn-instellingen').addEventListener('click', () => { $('tok').value = getToken(); dlg.showModal(); });
-  dlg.addEventListener('close', () => {
-    try {
-      if (dlg.returnValue === 'wis') localStorage.removeItem(TOKEN_KEY);
-      else if (dlg.returnValue === 'ok' && $('tok').value.trim()) localStorage.setItem(TOKEN_KEY, $('tok').value.trim());
-    } catch {}
-    $('btn-instellingen').textContent = getToken() ? 'Direct verversen: aan (wijzigen)' : 'Direct verversen instellen';
-  });
-  if (getToken()) $('btn-instellingen').textContent = 'Direct verversen: aan (wijzigen)';
-
   // Start
-  load().catch(() => setStatus('Data laden mislukt.', true));
-  latestRun().then((run) => { if (run && run.status !== 'completed') poll(Date.parse(run.created_at)); }).catch(() => {});
+  load().catch(() => setText('bijgewerkt', 'data laden mislukt'));
 })();

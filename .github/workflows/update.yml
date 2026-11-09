@@ -1,0 +1,72 @@
+name: Hack Monitor verversen
+
+on:
+  schedule:
+    - cron: "12 6 * * *"   # elke ochtend 07:12 (wintertijd) / 08:12 (zomertijd) Amsterdam
+  workflow_dispatch:        # de knop op de site
+  push:
+    branches: [main]
+    paths-ignore: ["data/**"]
+
+concurrency:
+  group: hack-monitor
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Huidige data bewaren
+        run: |
+          cp data/hacks.json /tmp/vorige.json
+          echo "VANDAAG=$(TZ=Europe/Amsterdam date +%Y-%m-%d)" >> "$GITHUB_ENV"
+
+      - name: Claude zoekt nieuwe incidenten
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            Voer een update-run uit volgens CLAUDE.md. Vandaag is het ${{ env.VANDAAG }} (Europe/Amsterdam). Werk alleen data/hacks.json bij.
+          claude_args: |
+            --max-turns 120
+            --allowedTools "WebSearch,WebFetch,Read,Write,Edit,Glob,Grep,Bash(python3 scripts/finalize.py:*)"
+
+      - name: Valideren en meta.json schrijven
+        run: python3 scripts/finalize.py --vorige /tmp/vorige.json
+
+      - name: Committen
+        run: |
+          git config user.name "hack-monitor-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then echo "Geen wijzigingen"; else
+            git commit -m "Data bijgewerkt $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
+
+  deploy:
+    needs: [update]
+    if: always() && (needs.update.result == 'success' || needs.update.result == 'skipped')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

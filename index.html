@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hack Monitor</title>
+<meta name="description" content="Dagelijks overzicht van hacks, datalekken, crypto-hacks en misbruikte kwetsbaarheden.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23c2410c'/><path d='M16 6l9 4v6c0 5.5-3.8 9.5-9 11-5.2-1.5-9-5.5-9-11v-6z' fill='none' stroke='white' stroke-width='2.4' stroke-linejoin='round'/></svg>">
+<script src="vendor/d3.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="hm">
+  <header class="hm-top">
+    <div>
+      <h1>Hack Monitor</h1>
+      <p class="hm-lede">Op <b id="ld-datum">—</b> werden <b id="ld-aantal">—</b> incidenten gemeld, waarvan <b id="ld-kritiek">—</b> kritiek. Grootste schade in de laatste 7 dagen: <b id="top-titel">—</b> (<b id="top-usd">—</b>).</p>
+    </div>
+    <div class="hm-refresh">
+      <button id="btn-ververs" type="button" class="hm-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Nu verversen</span>
+      </button>
+      <div class="hm-status" id="status">Bijgewerkt: <span id="bijgewerkt">—</span></div>
+      <button id="btn-instellingen" type="button" class="hm-link">Direct verversen instellen</button>
+    </div>
+  </header>
+
+  <dialog id="dlg">
+    <form method="dialog" class="hm-dlg">
+      <h2>Direct verversen vanaf deze pagina</h2>
+      <p>Zonder token opent de knop de GitHub-pagina waar je op <b>Run workflow</b> klikt. Met een token start de knop de verversing meteen.</p>
+      <p>Maak op GitHub een <i>fine-grained personal access token</i> aan met alleen toegang tot deze repo en de permissie <b>Actions: Read and write</b>. Het token wordt alleen in déze browser bewaard (localStorage), nooit op de site of in de repo.</p>
+      <label>Token<input id="tok" type="password" autocomplete="off" placeholder="github_pat_…"></label>
+      <div class="hm-dlg-btns">
+        <button value="wis" class="hm-link" id="tok-wis">Token wissen</button>
+        <button value="ok" class="hm-btn" id="tok-ok">Opslaan</button>
+      </div>
+    </form>
+  </dialog>
+
+  <section class="hm-kpis" aria-label="Kerncijfers laatste 7 dagen">
+    <div class="hm-card hm-kpi"><div class="lab">Incidenten · laatste 7 dagen</div><div class="val" id="k-inc">—</div><div class="sub">vorige 7 dagen: <span id="k-inc-v">—</span> <span id="k-inc-d"></span></div></div>
+    <div class="hm-card hm-kpi"><div class="lab">Kritiek · laatste 7 dagen</div><div class="val" id="k-krit">—</div><div class="sub">vorige 7 dagen: <span id="k-krit-v">—</span></div></div>
+    <div class="hm-card hm-kpi"><div class="lab">Gemelde schade · laatste 7 dagen</div><div class="val" id="k-usd">—</div><div class="sub">gestolen geld, crypto + bank</div></div>
+    <div class="hm-card hm-kpi"><div class="lab">Gelekte records · laatste 7 dagen</div><div class="val" id="k-rec">—</div><div class="sub">alleen waar een aantal bekend is</div></div>
+    <div class="hm-card hm-kpi"><div class="lab">Actief misbruikte CVE's · laatste 7 dagen</div><div class="val" id="k-kev">—</div><div class="sub">KEV-lijst of bevestigd misbruik</div></div>
+  </section>
+
+  <section class="hm-grid2">
+    <div class="hm-card">
+      <h2>Incidenten per dag, naar ernst</h2>
+      <div class="hm-legend"><span style="--sw: var(--bad)">Kritiek</span><span style="--sw: var(--warn)">Hoog</span><span style="--sw: var(--mid)">Middel</span><span style="--sw: var(--low)">Laag</span></div>
+      <div class="hm-chart" id="dag-chart"></div>
+    </div>
+    <div class="hm-card">
+      <h2>Grootste gemelde schade (USD, logschaal)</h2>
+      <div class="hm-chart" id="schade-chart"></div>
+    </div>
+  </section>
+
+  <section class="hm-card">
+    <h2>Dagoverzicht</h2>
+    <div class="hm-filters">
+      <select id="f-cat" aria-label="Categorie">
+        <option value="">Alle categorieën</option>
+        <option value="Aanval/datalek">Aanvallen &amp; datalekken</option>
+        <option value="Crypto">Crypto/DeFi</option>
+        <option value="Kwetsbaarheid">Kwetsbaarheden</option>
+      </select>
+      <select id="f-ernst" aria-label="Minimale ernst">
+        <option value="1">Alle ernstniveaus</option>
+        <option value="2">Middel en hoger</option>
+        <option value="3">Hoog en hoger</option>
+        <option value="4">Alleen kritiek</option>
+      </select>
+      <input id="f-zoek" type="search" placeholder="Zoek (bv. Redis, React, Ivanti)…" aria-label="Zoeken">
+    </div>
+    <div class="hm-tablewrap">
+      <table class="hm-table">
+        <thead><tr><th>Ernst</th><th>Incident</th><th>Categorie</th><th>Land</th><th>Schade</th><th>Records</th><th>Bron</th></tr></thead>
+        <tbody id="tabel"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <details>
+    <summary>Hoe de ernst bepaald wordt en waar de data vandaan komt</summary>
+    <p><b>Kritiek</b>: schade boven $100 mln, meer dan 500.000 gelekte records, uitval van vitale (overheids)diensten of zorg, of een misbruikte kwetsbaarheid in breed gebruikte software met een CISA-deadline van enkele dagen of root/RCE zonder login. <b>Hoog</b>: schade van $1–100 mln, 20.000–500.000 records, gelekte identiteits- of betaalgegevens, een misbruikte kwetsbaarheid in netwerk-/VPN-apparatuur, of een kritieke (nog) niet misbruikte kwetsbaarheid in breed gebruikte software. <b>Middel</b>: kleinere diefstal of lek, of ransomware zonder bekend lek. <b>Laag</b>: verlies onder $250K bij een niche-protocol.</p>
+    <p>Elke ochtend en bij elke druk op de knop zoekt Claude Code (via een GitHub Action) in zo'n 15 securitynieuwsbronnen, SlowMist/Rekt en de CISA KEV-lijst naar nieuwe incidenten en deelt ze in volgens de schaal hierboven. De ernst is een eigen inschatting, geen officieel label. Bedragen zijn zoals gemeld en vaak voorlopig. Elke regel linkt naar zijn bron. Ruwe data: <a href="data/hacks.json">data/hacks.json</a>.</p>
+  </details>
+</main>
+<div class="hm-tip" id="tip" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

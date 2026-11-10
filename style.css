@@ -73,3 +73,5 @@ dialog { border: 1px solid var(--line); border-radius: var(--radius); background
   .hm-refresh { align-items: flex-start; }
   .hm-status { text-align: left; }
 }
+.badge.claim { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 60%, transparent); }
+.badge.deels { border-style: dashed; }

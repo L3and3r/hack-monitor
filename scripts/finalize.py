@@ -15,6 +15,7 @@ DATA = ROOT / "data" / "hacks.json"
 META = ROOT / "data" / "meta.json"
 
 CAT = {"Aanval/datalek", "Crypto", "Kwetsbaarheid"}
+STATUS = {"Bevestigd", "Deels bevestigd", "Claim"}
 SEV = {"Kritiek": 4, "Hoog": 3, "Middel": 2, "Laag": 1}
 REQ = ["id", "datum", "categorie", "titel", "doelwit", "land", "ernst", "ernst_score",
        "samenvatting", "bron", "bron_url"]
@@ -52,6 +53,9 @@ def main():
             fail(f"{waar}: datum moet YYYY-MM-DD zijn")
         if r["categorie"] not in CAT:
             fail(f"{waar}: onbekende categorie '{r['categorie']}'")
+        r.setdefault("status", "Bevestigd")
+        if r["status"] not in STATUS:
+            fail(f"{waar}: onbekende status '{r['status']}'")
         if r["ernst"] not in SEV:
             fail(f"{waar}: onbekende ernst '{r['ernst']}'")
         if r["ernst_score"] != SEV[r["ernst"]]:

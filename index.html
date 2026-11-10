@@ -24,8 +24,8 @@
   <section class="hm-kpis" aria-label="Kerncijfers laatste 7 dagen">
     <div class="hm-card hm-kpi"><div class="lab">Incidenten · laatste 7 dagen</div><div class="val" id="k-inc">—</div><div class="sub">vorige 7 dagen: <span id="k-inc-v">—</span> <span id="k-inc-d"></span></div></div>
     <div class="hm-card hm-kpi"><div class="lab">Kritiek · laatste 7 dagen</div><div class="val" id="k-krit">—</div><div class="sub">vorige 7 dagen: <span id="k-krit-v">—</span></div></div>
-    <div class="hm-card hm-kpi"><div class="lab">Gemelde schade · laatste 7 dagen</div><div class="val" id="k-usd">—</div><div class="sub">gestolen geld, crypto + bank</div></div>
-    <div class="hm-card hm-kpi"><div class="lab">Gelekte records · laatste 7 dagen</div><div class="val" id="k-rec">—</div><div class="sub">alleen waar een aantal bekend is</div></div>
+    <div class="hm-card hm-kpi"><div class="lab">Gemelde schade · laatste 7 dagen</div><div class="val" id="k-usd">—</div><div class="sub">diefstal, omzetverlies en boetes</div></div>
+    <div class="hm-card hm-kpi"><div class="lab">Gelekte records · laatste 7 dagen</div><div class="val" id="k-rec">—</div><div class="sub">alleen bevestigde aantallen</div></div>
     <div class="hm-card hm-kpi"><div class="lab">Actief misbruikte CVE's · laatste 7 dagen</div><div class="val" id="k-kev">—</div><div class="sub">KEV-lijst of bevestigd misbruik</div></div>
   </section>
 
@@ -56,6 +56,11 @@
         <option value="3">Hoog en hoger</option>
         <option value="4">Alleen kritiek</option>
       </select>
+      <select id="f-status" aria-label="Bevestiging">
+        <option value="">Bevestigd én claims</option>
+        <option value="bevestigd">Alleen bevestigd</option>
+        <option value="claim">Alleen claims</option>
+      </select>
       <input id="f-zoek" type="search" placeholder="Zoek (bv. Redis, React, Ivanti)…" aria-label="Zoeken">
     </div>
     <div class="hm-tablewrap">
@@ -69,6 +74,7 @@
   <details>
     <summary>Hoe de ernst bepaald wordt en waar de data vandaan komt</summary>
     <p><b>Kritiek</b>: schade boven $100 mln, meer dan 500.000 gelekte records, uitval van vitale (overheids)diensten of zorg, of een misbruikte kwetsbaarheid in breed gebruikte software met een CISA-deadline van enkele dagen of root/RCE zonder login. <b>Hoog</b>: schade van $1–100 mln, 20.000–500.000 records, gelekte identiteits- of betaalgegevens, een misbruikte kwetsbaarheid in netwerk-/VPN-apparatuur, of een kritieke (nog) niet misbruikte kwetsbaarheid in breed gebruikte software. <b>Middel</b>: kleinere diefstal of lek, of ransomware zonder bekend lek. <b>Laag</b>: verlies onder $250K bij een niche-protocol.</p>
+    <p><b>Bevestigd of claim?</b> Regels zonder label zijn bevestigd door het getroffen bedrijf, een toezichthouder of de leverancier. <span class="badge claim">claim van aanvallers, onbevestigd</span> betekent dat alleen de hackers (of een verkoper op een forum) het lek melden. <span class="badge deels">aanval bevestigd, omvang geclaimd</span> betekent dat de aanval zelf bevestigd is maar de genoemde omvang van de aanvallers komt. De kaart "Gelekte records" telt alleen bevestigde aantallen.</p>
     <p>Elke ochtend zoekt Claude Code (via een GitHub Action) in zo'n 15 securitynieuwsbronnen, SlowMist/Rekt en de CISA KEV-lijst naar nieuwe incidenten en deelt ze in volgens de schaal hierboven. De ernst is een eigen inschatting, geen officieel label. Bedragen zijn zoals gemeld en vaak voorlopig. Elke regel linkt naar zijn bron. Ruwe data: <a href="data/hacks.json">data/hacks.json</a>.</p>
   </details>
 </main>

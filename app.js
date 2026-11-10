@@ -51,7 +51,7 @@
       laatste, dagAantal: dag.length, dagKritiek: dag.filter((r) => r.ernst === 'Kritiek').length,
       inc: nu.length, incV: vorig.length,
       krit: nu.filter((r) => r.ernst === 'Kritiek').length, kritV: vorig.filter((r) => r.ernst === 'Kritiek').length,
-      usd: som(nu, 'schade_usd'), rec: som(nu, 'records'),
+      usd: som(nu, 'schade_usd'), rec: som(nu.filter((r) => (r.status || 'Bevestigd') === 'Bevestigd'), 'records'),
       kev: nu.filter((r) => r.categorie === 'Kwetsbaarheid' && r.misbruikt !== false).length,
       top, perDag,
     };
@@ -128,11 +128,13 @@
       .on('pointerleave', hideTip);
   }
 
-  const filter = { cat: '', min: 1, q: '' };
+  const filter = { cat: '', min: 1, q: '', st: '' };
   function drawTabel() {
     const tb = $('tabel'); tb.replaceChildren();
     const q = filter.q.trim().toLowerCase();
+    const st = (r) => r.status || 'Bevestigd';
     const rows = DATA.filter((r) => (!filter.cat || r.categorie === filter.cat) && Number(r.ernst_score) >= filter.min
+      && (!filter.st || (filter.st === 'bevestigd' ? st(r) !== 'Claim' : st(r) === 'Claim'))
       && (!q || [r.titel, r.doelwit, r.samenvatting, r.cve, r.land].join(' ').toLowerCase().includes(q)))
       .sort((a, b) => b.datum.localeCompare(a.datum) || b.ernst_score - a.ernst_score);
     if (!rows.length) { const td = tb.insertRow().insertCell(); td.colSpan = 7; td.className = 'empty'; td.textContent = 'Geen incidenten voor dit filter.'; return; }
@@ -148,6 +150,7 @@
         const t = document.createElement('div');
         t.textContent = r.titel + (r.cve && /^(CVE|GHSA)/.test(r.cve) ? ` (${r.cve}${r.cvss ? ', CVSS ' + r.cvss : ''})` : '');
         const s = document.createElement('div'); s.className = 'sum';
+        if (st(r) !== 'Bevestigd') { const b = document.createElement('span'); b.className = 'badge ' + (st(r) === 'Claim' ? 'claim' : 'deels'); b.textContent = st(r) === 'Claim' ? 'claim van aanvallers, onbevestigd' : 'aanval bevestigd, omvang geclaimd'; s.append(b); }
         if (r.categorie === 'Kwetsbaarheid' && r.misbruikt === false) { const b = document.createElement('span'); b.className = 'badge'; b.textContent = 'nog geen misbruik gemeld'; s.append(b); }
         s.append(r.samenvatting || '');
         inc.append(t, s);
@@ -162,6 +165,7 @@
   }
   $('f-cat').addEventListener('change', (e) => { filter.cat = e.target.value; drawTabel(); });
   $('f-ernst').addEventListener('change', (e) => { filter.min = Number(e.target.value); drawTabel(); });
+  $('f-status').addEventListener('change', (e) => { filter.st = e.target.value; drawTabel(); });
   $('f-zoek').addEventListener('input', (e) => { filter.q = e.target.value; drawTabel(); });
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(renderAll, 150); });
 

@@ -108,6 +108,9 @@ def stuur(tekst, token, chat):
         out = json.loads(resp.read())
     if not out.get("ok"):
         raise SystemExit(f"Telegram gaf een fout: {out}")
+    c = out["result"]["chat"]
+    naam = c.get("title") or c.get("username") or c.get("first_name") or "?"
+    print(f"Afgeleverd in {c.get('type')} '{naam}' (chat-id {c.get('id')}), bericht-id {out['result']['message_id']}")
 
 
 def main():

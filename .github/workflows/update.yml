@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: "12 6 * * *"   # elke ochtend 07:12 (wintertijd) / 08:12 (zomertijd) Amsterdam
     - cron: "47 8 * * *"   # reserve: draait alleen als de eerste run vandaag niets heeft bijgewerkt
+  workflow_dispatch:        # handmatig starten als de scheduler het laat afweten
   push:
     branches: [main]
     paths-ignore: ["data/**"]
@@ -19,7 +20,7 @@ permissions:
 
 jobs:
   update:
-    if: github.event_name != 'push'
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 75
     steps:
@@ -51,7 +52,7 @@ jobs:
 
       - name: Valideren en meta.json schrijven
         if: steps.check.outputs.skip != 'true'
-        run: python3 scripts/finalize.py --vorige /tmp/vorige.json
+        run: python3 scripts/finalize.py --vorige /tmp/vorige.json --datum "$(date -u +%Y-%m-%d)"
 
       - name: Committen
         if: steps.check.outputs.skip != 'true'

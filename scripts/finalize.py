@@ -26,12 +26,21 @@ def fail(msg):
     sys.exit(1)
 
 
+TRACK_FIELDS = {"toegevoegd", "bijgewerkt"}
+
+
 def main():
-    vorige = None
+    datum = None
+    if "--datum" in sys.argv:
+        datum = sys.argv[sys.argv.index("--datum") + 1]
+
+    vorige_rows: dict = {}
     if "--vorige" in sys.argv:
         p = Path(sys.argv[sys.argv.index("--vorige") + 1])
         if p.exists():
-            vorige = {r["id"] for r in json.loads(p.read_text(encoding="utf-8"))}
+            for r in json.loads(p.read_text(encoding="utf-8")):
+                vorige_rows[r["id"]] = r
+    vorige = set(vorige_rows) if vorige_rows else None
 
     try:
         rows = json.loads(DATA.read_text(encoding="utf-8"))
@@ -74,6 +83,22 @@ def main():
                 r["misbruikt"] = True
         else:
             r["misbruikt"] = None
+
+    if datum and vorige_rows:
+        for r in rows:
+            rid = r["id"]
+            if rid not in vorige_rows:
+                r["toegevoegd"] = datum
+                r["bijgewerkt"] = None
+            else:
+                old = vorige_rows[rid]
+                changed = any(r.get(k) != old.get(k) for k in set(r) | set(old) if k not in TRACK_FIELDS)
+                if changed:
+                    r["toegevoegd"] = old.get("toegevoegd", datum)
+                    r["bijgewerkt"] = datum
+                else:
+                    r["toegevoegd"] = old.get("toegevoegd")
+                    r["bijgewerkt"] = old.get("bijgewerkt")
 
     rows.sort(key=lambda r: (r["datum"], r["ernst_score"]), reverse=True)
     DATA.write_text(json.dumps(rows, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

@@ -21,6 +21,8 @@
     </div>
   </header>
 
+  <div id="update-banner" class="hm-update-banner" hidden></div>
+
   <section class="hm-kpis" aria-label="Kerncijfers laatste 7 dagen">
     <div class="hm-card hm-kpi"><div class="lab">Incidenten · laatste 7 dagen</div><div class="val" id="k-inc">—</div><div class="sub">vorige 7 dagen: <span id="k-inc-v">—</span> <span id="k-inc-d"></span></div></div>
     <div class="hm-card hm-kpi"><div class="lab">Kritiek · laatste 7 dagen</div><div class="val" id="k-krit">—</div><div class="sub">vorige 7 dagen: <span id="k-krit-v">—</span></div></div>
@@ -62,6 +64,10 @@
         <option value="claim">Alleen claims</option>
       </select>
       <input id="f-zoek" type="search" placeholder="Zoek (bv. Redis, React, Ivanti)…" aria-label="Zoeken">
+      <select id="f-nieuw" aria-label="Periode">
+        <option value="">Alle perioden</option>
+        <option value="nieuw">Alleen nieuw bij laatste update</option>
+      </select>
     </div>
     <div class="hm-tablewrap">
       <table class="hm-table">

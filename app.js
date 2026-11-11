@@ -47,6 +47,10 @@
       SEV.forEach((s) => (o[s] = rows.filter((r) => r.ernst === s).length));
       perDag.push(o);
     }
+    const allUD = DATA.flatMap((r) => [r.toegevoegd, r.bijgewerkt]).filter(Boolean);
+    const updateDatum = allUD.length ? allUD.sort().at(-1) : null;
+    const nieuwRijen = updateDatum ? DATA.filter((r) => r.toegevoegd === updateDatum) : [];
+    const bijgewerktRijen = updateDatum ? DATA.filter((r) => r.bijgewerkt === updateDatum) : [];
     return {
       laatste, dagAantal: dag.length, dagKritiek: dag.filter((r) => r.ernst === 'Kritiek').length,
       inc: nu.length, incV: vorig.length,
@@ -54,6 +58,8 @@
       usd: som(nu, 'schade_usd'), rec: som(nu.filter((r) => (r.status || 'Bevestigd') === 'Bevestigd'), 'records'),
       kev: nu.filter((r) => r.categorie === 'Kwetsbaarheid' && r.misbruikt !== false).length,
       top, perDag,
+      updateDatum, nieuwAantal: nieuwRijen.length, nieuwKritiek: nieuwRijen.filter((r) => r.ernst === 'Kritiek').length,
+      bijgewerktAantal: bijgewerktRijen.length,
     };
   }
 
@@ -66,6 +72,17 @@
     setText('ld-kritiek', s.dagKritiek);
     setText('top-titel', s.top ? s.top.doelwit : 'geen bedrag gemeld');
     setText('top-usd', s.top ? fmt.usd(s.top.schade_usd) : '—');
+    const banner = $('update-banner');
+    if (s.updateDatum && (s.nieuwAantal > 0 || s.bijgewerktAantal > 0)) {
+      const d = fmt.dagLang(fmt.parse(s.updateDatum));
+      let t = `Bij de laatste update (${d}) kwamen er ${s.nieuwAantal} incident${s.nieuwAantal === 1 ? '' : 'en'} bij`;
+      if (s.nieuwKritiek) t += `, waarvan ${s.nieuwKritiek} kritiek`;
+      t += `; ${s.bijgewerktAantal} bestaande melding${s.bijgewerktAantal === 1 ? '' : 'en'} bijgewerkt.`;
+      banner.textContent = t;
+      banner.hidden = false;
+    } else {
+      banner.hidden = true;
+    }
     setText('k-inc', s.inc); setText('k-inc-v', s.incV);
     const d = s.inc - s.incV, el = $('k-inc-d');
     el.textContent = d === 0 ? '(gelijk)' : `(${d > 0 ? '+' : '−'}${Math.abs(d)})`;
@@ -128,14 +145,17 @@
       .on('pointerleave', hideTip);
   }
 
-  const filter = { cat: '', min: 1, q: '', st: '' };
+  const filter = { cat: '', min: 1, q: '', st: '', nieuw: false };
   function drawTabel() {
     const tb = $('tabel'); tb.replaceChildren();
     const q = filter.q.trim().toLowerCase();
     const st = (r) => r.status || 'Bevestigd';
+    const allUD = DATA.flatMap((r) => [r.toegevoegd, r.bijgewerkt]).filter(Boolean);
+    const updateDatum = allUD.length ? allUD.sort().at(-1) : null;
     const rows = DATA.filter((r) => (!filter.cat || r.categorie === filter.cat) && Number(r.ernst_score) >= filter.min
       && (!filter.st || (filter.st === 'bevestigd' ? st(r) !== 'Claim' : st(r) === 'Claim'))
-      && (!q || [r.titel, r.doelwit, r.samenvatting, r.cve, r.land].join(' ').toLowerCase().includes(q)))
+      && (!q || [r.titel, r.doelwit, r.samenvatting, r.cve, r.land].join(' ').toLowerCase().includes(q))
+      && (!filter.nieuw || (updateDatum && (r.toegevoegd === updateDatum || r.bijgewerkt === updateDatum))))
       .sort((a, b) => b.datum.localeCompare(a.datum) || b.ernst_score - a.ernst_score);
     if (!rows.length) { const td = tb.insertRow().insertCell(); td.colSpan = 7; td.className = 'empty'; td.textContent = 'Geen incidenten voor dit filter.'; return; }
     d3.groups(rows, (r) => r.datum).forEach(([datum, dag]) => {
@@ -150,6 +170,8 @@
         const t = document.createElement('div');
         t.textContent = r.titel + (r.cve && /^(CVE|GHSA)/.test(r.cve) ? ` (${r.cve}${r.cvss ? ', CVSS ' + r.cvss : ''})` : '');
         const s = document.createElement('div'); s.className = 'sum';
+        if (updateDatum && r.toegevoegd === updateDatum) { const b = document.createElement('span'); b.className = 'badge nieuw'; b.textContent = 'nieuw'; s.append(b); }
+        if (updateDatum && r.bijgewerkt === updateDatum) { const b = document.createElement('span'); b.className = 'badge upd'; b.textContent = 'bijgewerkt'; s.append(b); }
         if (st(r) !== 'Bevestigd') { const b = document.createElement('span'); b.className = 'badge ' + (st(r) === 'Claim' ? 'claim' : 'deels'); b.textContent = st(r) === 'Claim' ? 'claim van aanvallers, onbevestigd' : 'aanval bevestigd, omvang geclaimd'; s.append(b); }
         if (r.categorie === 'Kwetsbaarheid' && r.misbruikt === false) { const b = document.createElement('span'); b.className = 'badge'; b.textContent = 'nog geen misbruik gemeld'; s.append(b); }
         s.append(r.samenvatting || '');
@@ -167,6 +189,7 @@
   $('f-ernst').addEventListener('change', (e) => { filter.min = Number(e.target.value); drawTabel(); });
   $('f-status').addEventListener('change', (e) => { filter.st = e.target.value; drawTabel(); });
   $('f-zoek').addEventListener('input', (e) => { filter.q = e.target.value; drawTabel(); });
+  $('f-nieuw').addEventListener('change', (e) => { filter.nieuw = e.target.value === 'nieuw'; drawTabel(); });
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(renderAll, 150); });
 
   // Start

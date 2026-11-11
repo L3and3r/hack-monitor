@@ -1596,6 +1596,27 @@
   "bijgewerkt": null
  },
  {
+  "id": "2026-11-09-marechaussee-crypto",
+  "datum": "2026-11-09",
+  "categorie": "Crypto",
+  "status": "Bevestigd",
+  "titel": "Ex-marechaussee verdacht van diefstal crypto van reiziger op Schiphol",
+  "doelwit": "Reiziger (Schiphol) / Koninklijke Marechaussee",
+  "land": "Nederland",
+  "ernst": "Laag",
+  "ernst_score": 1,
+  "schade_usd": 7000,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Het OM eist zes maanden cel tegen een ontslagen opsporingsambtenaar die eind 2025 ruim 6.000 euro aan cryptovaluta van een gecontroleerde reiziger naar zichzelf overmaakte.",
+  "bron": "Security.nl",
+  "bron_url": "https://www.security.nl/posting/960902",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
   "id": "2026-11-08-sgs-keuringscentra",
   "datum": "2026-11-08",
   "categorie": "Aanval/datalek",

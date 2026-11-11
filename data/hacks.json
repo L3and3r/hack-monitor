@@ -1,5 +1,131 @@
 [
  {
+  "id": "2026-11-11-filipijnen-23-instellingen",
+  "datum": "2026-11-11",
+  "categorie": "Aanval/datalek",
+  "status": "Claim",
+  "titel": "Hackers claimen datalekken bij 23 Filipijnse instellingen",
+  "doelwit": "o.a. Office of the Vice President, DOLE, BIR, LTO, Coast Guard, Philippine Air Force, NAPOCOR, LBC Express",
+  "land": "Filipijnen",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 19200000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Claim: groepen als DeathNote Hackers en CrimsonSec boden volgens monitoringgroep Deep Web Konek data van 23 overheids- en bedrijfsinstellingen aan, waaronder 19,2 miljoen DOLE-records en tot 19 miljoen inwonersprofielen; de instellingen onderzoeken dit nog.",
+  "bron": "Philstar",
+  "bron_url": "https://www.philstar.com/headlines/2026/11/11/2569338/massive-cyber-attacks-hit-23-government-private-sites",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-11-axis-camera-station",
+  "datum": "2026-11-11",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Kritiek lek (CVSS 9.9) in AXIS Camera Station Pro",
+  "doelwit": "AXIS Camera Station Pro en Camera Station",
+  "land": "Zweden",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-13312",
+  "cvss": 9.9,
+  "samenvatting": "Onvoldoende invoervalidatie kan leiden tot volledige systeemovername; Axis kent geen misbruik of publieke exploits.",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/axis-camera-station-cve-2026-13312/",
+  "misbruikt": false,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-11-phishing-aethweth",
+  "datum": "2026-11-11",
+  "categorie": "Crypto",
+  "status": "Bevestigd",
+  "titel": "Gebruiker verliest $303K aan phishing-handtekening",
+  "doelwit": "Ethereum-gebruiker (aEthWETH)",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": 303000,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Scam Sniffer zag hoe een gebruiker na het tekenen van een kwaadaardige signature voor ~$303.000 aan aEthWETH kwijtraakte.",
+  "bron": "Phemex News (via Scam Sniffer)",
+  "bron_url": "https://phemex.com/news/article/user-loses-303k-in-aethweth-after-signing-phishing-signature-on-ethereum-103119",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-nitori",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Nitori: tot 37,6 mln klantrecords mogelijk gestolen",
+  "doelwit": "Nitori Holdings",
+  "land": "Japan",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 37620000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Meubelketen Nitori ontdekte op 6 nov een inbraak (mogelijk sinds half oktober) waarbij namen, adressen, telefoonnummers en geboortedata van tot 37,62 miljoen leden en kopers kunnen zijn gelekt; ransomware wordt onderzocht.",
+  "bron": "BleepingComputer",
+  "bron_url": "https://www.bleepingcomputer.com/news/security/japanese-furniture-giant-nitori-says-hackers-stole-376m-customer-records/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-barracuda-esg",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Barracuda ESG-lekketen geeft root zonder login, actief misbruikt",
+  "doelwit": "Barracuda Email Security Gateway < 9.4.0.030 (en WAF, Load Balancer ADC, Message Archiver)",
+  "land": "Wereldwijd",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-116606",
+  "cvss": 9.3,
+  "samenvatting": "Authenticatie-bypass via vervalste back-up-restore plus command injection (CVE-2026-111560) levert root op; Barracuda bevestigde op 9 nov misbruik bij enkele organisaties na een PoC van watchTowr, CISA gaf in KEV een deadline van 13 nov.",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/barracuda-esg-vulnerability-exploited-poc/",
+  "misbruikt": true,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-xen-orchestra",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Kritiek Xen Orchestra-lek misbruikt om VM-servers over te nemen",
+  "doelwit": "Vates Xen Orchestra / xo-server (XCP-ng)",
+  "land": "Wereldwijd",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een gemanipuleerde authenticationToken-cookie omzeilt de login (VSA-2026-062, nog geen CVE) en geeft beheerrechten tot root op XCP-ng-nodes; Vates meldt actief misbruik, fix in 6.9.1/6.10.0.",
+  "bron": "The Hacker News",
+  "bron_url": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html",
+  "misbruikt": true,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
   "id": "2026-11-10-sap-patchday-november",
   "datum": "2026-11-10",
   "categorie": "Kwetsbaarheid",
@@ -16,7 +142,9 @@
   "samenvatting": "SAP dichtte o.a. een ontbrekende authenticatie in de SAML2-service van NetWeaver AS ABAP en geheugencorruptie in Web Dispatcher (beide CVSS 10); nog geen misbruik bekend, installeer de Security Notes van november 2026.",
   "bron": "SecurityOnline.info",
   "bron_url": "https://securityonline.info/sap-security-patch-day-november-2026/",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-10-n-able-able2shell",
@@ -35,7 +163,639 @@
   "samenvatting": "Na publicatie van ruim 30 lekken met PoC-exploits (o.a. RCE als root) haalde N-able zijn hosted N-central offline en adviseert on-premises klanten hun servers uit te zetten tot een hotfix verschijnt; misbruik is nog niet waargenomen.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-sec-filipijnen",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Filipijnse beurstoezichthouder SEC bevestigt datalek",
+  "doelwit": "Securities and Exchange Commission (Filipijnen)",
+  "land": "Filipijnen",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "De Filipijnse SEC bevestigt dat gebruikersaccounts van haar digitale platforms zijn blootgesteld, inclusief namen, adressen, geboortedata en fiscale nummers (TIN).",
+  "bron": "Philstar",
+  "bron_url": "https://www.philstar.com/headlines/2026/11/10/2569098/sec-confirms-data-breach-its-digital-platforms",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-chili-cancilleria-visa",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Deels bevestigd",
+  "titel": "Cyberaanval op Chileens consulair visumsysteem",
+  "doelwit": "Ministerie van Buitenlandse Zaken Chili (Sistema de Atención Consular)",
+  "land": "Chili",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Via phishing bij een diplomaat zou al twee weken malware in het consulaire systeem en visumregister zitten; het ministerie en ANCI onderzoeken het incident, datadiefstal is niet bevestigd.",
+  "bron": "El Mostrador",
+  "bron_url": "https://www.elmostrador.cl/unidad-de-investigacion/2026/11/10/ciberataque-al-sistema-de-visas-de-cancilleria-abre-ventana-a-crimen-organizado-transnacional/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-allunited",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Datalek bij ledensysteem sportclubs AllUnited",
+  "doelwit": "AllUnited (o.a. KNCB, KNDB, VV Katwijk)",
+  "land": "Nederland",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Via een softwarelek kopieerde een onbekende aanvaller op 9 november ledendata (NAW, geboortedatum, IBAN, inloggegevens) van alle sportclubs en bonden die AllUnited gebruiken; AP ingelicht, omvang nog onbekend.",
+  "bron": "NOS",
+  "bron_url": "https://nos.nl/artikel/2638945-datalek-bij-beheersysteem-sportclubs-gegevens-van-leden-gestolen",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-edugroupe-claim",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Claim",
+  "titel": "Claim: gegevens 41.000 cursisten EduGroupe",
+  "doelwit": "EduGroupe",
+  "land": "Frankrijk",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": 41868,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een actor op een cybercrimeforum claimt een database met 93.415 rijen en circa 41.000 unieke e-mailadressen, opleidingshistorie en gehashte wachtwoorden van het opleidingsinstituut; onbevestigd.",
+  "bron": "Fuites Infos",
+  "bron_url": "https://fuitesinfos.fr/article/2026-11-10-edugroupe",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-outlook-zeroday",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Outlook-zeroday misbruikt om NTLM-hashes te stelen",
+  "doelwit": "Microsoft Outlook (Microsoft 365 Apps, Office LTSC 2021/2024)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-124194",
+  "cvss": 6.5,
+  "samenvatting": "Microsoft dichtte op Patch Tuesday een actief misbruikt spoofinglek waarbij een kwaadaardig berichtbestand Outlook zonder waarschuwing laat verbinden met een aanvallersserver en de NTLMv2-hash lekt; CISA zette het op 10 nov in KEV (deadline 24 nov).",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/outlook-zero-day-cve-2026-124194/",
+  "misbruikt": true,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-ms-patchtuesday-november",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Patch Tuesday november: recordaantal van ~1.100 lekken, wormbare Windows-RCE's",
+  "doelwit": "Microsoft Windows (Windows Search/Exchange, LDAP, DNS, DHCP, Message Queuing)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-116928",
+  "cvss": 9.8,
+  "samenvatting": "Microsoft patchte circa 1.090 CVE's, waaronder een zero-click RCE in Windows Search via automatische indexering van bijlagen door Exchange (CVSS 9.8) en tientallen volgens ZDI mogelijk wormbare lekken; buiten de Outlook-zeroday geen misbruik bekend.",
+  "bron": "Zero Day Initiative",
+  "bron_url": "https://www.zerodayinitiative.com/blog/2026/11/10/the-november-2026-security-update-review",
+  "misbruikt": false,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-windows-ldap-kerberos-dns",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Kritieke Windows-lekken in LDAP, Kerberos, DNS, DHCP en iSCSI (CVSS 9.8)",
+  "doelwit": "Windows Server (o.a. domeincontrollers)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-119958",
+  "cvss": 9.8,
+  "samenvatting": "Onder meer een niet-geauthenticeerde out-of-bounds write in Windows LDAP (gevaarlijk voor domeincontrollers) en RCE's in DNS, DHCP Server, Kerberos en iSCSI, alle CVSS 9.8; nog niet misbruikt.",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/critical-windows-vulnerabilities-november-2026/",
+  "misbruikt": false,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-sql-server-sharepoint",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "SQL Server-RCE zonder login en kritieke SharePoint/Azure DevOps-lekken",
+  "doelwit": "Microsoft SQL Server, SharePoint Server, Azure DevOps Server",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-116945",
+  "cvss": 9.8,
+  "samenvatting": "Heap-overflow in SQL Server is zonder authenticatie uit te buiten (CVSS 9.8, door CISA als 'automatable' aangemerkt); SharePoint (CVE-2026-120002) en Azure DevOps Server (CVE-2026-109467) kregen fixes voor CVSS 9.9-lekken; geen misbruik bekend.",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/sharepoint-sql-server-azure-devops-november-2026/",
+  "misbruikt": false,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-entra-device-registration",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "CVSS 10-lek in Microsoft Entra Device Registration",
+  "doelwit": "Microsoft Entra ID (Device Registration-service)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-109469",
+  "cvss": 10.0,
+  "samenvatting": "Autorisatie-bypass (CWE-639) in de cloudservice voor apparaatregistratie van Entra, door Microsoft server-side verholpen; geen misbruik bekend.",
+  "bron": "SOCRadar",
+  "bron_url": "https://socradar.io/blog/cve-2026-109469-cvss-10-entra-device-registration-flaw/",
+  "misbruikt": false,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-cisco-broadworks-kev",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Cisco BroadWorks XXE-lek misbruikt (CISA KEV)",
+  "doelwit": "Cisco BroadWorks < RI.2026.07",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-20320",
+  "cvss": 7.5,
+  "samenvatting": "Blinde XXE in de OCI-P-service laat een aanvaller zonder login bestanden lezen; in augustus gepatcht, nu door CISA als misbruikt aangemerkt (deadline 24 nov).",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/cisa-kev-six-vulnerabilities-november-2026/",
+  "misbruikt": true,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-fortinet-fortimanager",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Fortinet dicht acht kritieke lekken in FortiOS, FortiManager en FortiAnalyzer",
+  "doelwit": "Fortinet FortiManager, FortiAnalyzer, FortiOS",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-126170",
+  "cvss": 9.8,
+  "samenvatting": "Waaronder een RCE zonder login in FortiManager/FortiAnalyzer (CVSS 9.8) en FortiOS-lekken tot CVSS 9.6; geen misbruik bekend, maar voor sommige bestaat PoC-code en enkele fixes zijn nog niet uit.",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/fortinet-critical-vulnerabilities-november-2026/",
+  "misbruikt": false,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-ivanti-epm",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Ivanti EPM: SQL-injectie leidt tot RCE zonder login",
+  "doelwit": "Ivanti Endpoint Manager (EPM), Cloud Services Application 5.0.8",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-121653",
+  "cvss": 9.8,
+  "samenvatting": "Ivanti publiceerde vijf advisories met 13 CVE's, waaronder een kritieke SQL-injectie in EPM Core (CVSS 9.8) en ontbrekende authenticatie in CSA (CVE-2026-121683, 9.4); geen misbruik bekend.",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/ivanti-security-advisories-november-2026/",
+  "misbruikt": false,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-adobe-connect",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Adobe Patch Tuesday: zes CVSS 10-lekken in Adobe Connect",
+  "doelwit": "Adobe Connect 12.8 t/m 12.12 (ook Experience Manager)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-121356",
+  "cvss": 10.0,
+  "samenvatting": "Adobe dichtte 110 CVE's in negen bulletins, waaronder 18 kritieke lekken in Adobe Connect (o.a. SSRF, XXE, SQL-injectie, zonder login uit te buiten) en vier CVSS 9.9-lekken in Experience Manager; geen misbruik bekend.",
+  "bron": "DEV Community",
+  "bron_url": "https://dev.to/threataft_dev/adobe-connect-apsb26-191-six-cvss-100s-five-branches-one-suffix-that-breaks-your-scanner-4k5d",
+  "misbruikt": false,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-ahsaycbs",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "AhsayCBS-zerodays misbruikt voor backdoor en cryptominers",
+  "doelwit": "AhsayCBS (Ahsay Backup)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-105133",
+  "cvss": null,
+  "samenvatting": "Huntress zag twee als zeroday misbruikte lekken (met CVE-2026-105134) gekoppeld voor auth-bypass en commando-uitvoering, waarna webshells, XMRig en een sandbox-ontwijkende Python-backdoor werden geplaatst en Veeam-wachtwoorden werden buitgemaakt; gepatcht medio oktober.",
+  "bron": "The Hacker News",
+  "bron_url": "https://thehackernews.com/2026/11/attackers-exploit-ahsaycbs-flaws-to.html",
+  "misbruikt": true,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-synology-dsm",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Synology DSM: kritieke pre-auth SQL-injectie",
+  "doelwit": "Synology DiskStation Manager 7.2.1 t/m 7.4",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-76954",
+  "cvss": 9.8,
+  "samenvatting": "Synology dichtte 27 lekken, waaronder een SQL-injectie zonder login in de Auth API waarmee bestanden te lezen/schrijven zijn (Viettel spreekt van zero-click RCE); geen misbruik bekend.",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/synology-diskstation-manager-cve-2026-76954-patched/",
+  "misbruikt": false,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-ios-worse-query",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Publieke iOS-sandboxescape 'worse_query' zonder bevestigde fix",
+  "doelwit": "Apple iOS 26 en 27 (o.a. 27.2.1)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een onderzoeker publiceerde PoC-code waarmee apps bestanden van andere apps kunnen lezen; Binance waarschuwt dat seedphrases en privésleutels gevaar lopen, misbruik is niet bevestigd en Apple heeft nog geen fix.",
+  "bron": "The Hacker News",
+  "bron_url": "https://thehackernews.com/2026/11/binance-warns-of-ios-sandbox-escape.html",
+  "misbruikt": false,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-turla-cereal-exchange",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Turla steelt NAVO- en EU-mail via gehackte overheidsmailservers",
+  "doelwit": "Roemeense overheidsorganisatie en Kazachse overheidsmailserver (Microsoft Exchange)",
+  "land": "Roemenië",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "ESET ontdekte dat de FSB-gelieerde groep Turla met de nieuwe toolkit Cereal Exchange-servers van overheden in Roemenië en Kazachstan binnendrong en gericht e-mailverkeer met NAVO- en EU-instellingen buitmaakte.",
+  "bron": "The Record",
+  "bron_url": "https://therecord.media/russia-hackers-espionage-romania-kazakhstan",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-copperdragon-sparrow",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Drie Chinese spionagecampagnes tegen telecom en overheden gekoppeld",
+  "doelwit": "Telecomproviders, overheden, defensie en onderzoeksinstellingen (Azië, Latijns-Amerika, Europa)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Check Point koppelt de campagnes SilentDelivery (watering holes met nep-certificaatwaarschuwing), OceanGate en DarkWire tegen telecom- en overheidsdoelwitten via het Sparrow-malware-ecosysteem aan toolleverancier CopperDragon (FamousSparrow, Earth Estries).",
+  "bron": "The Hacker News",
+  "bron_url": "https://thehackernews.com/2026/11/three-china-nexus-espionage-campaigns.html",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-lazarus-dronesector",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Lazarus bespioneert Europese dronemakers met nepvacatures",
+  "doelwit": "Centraal-Europees defensiebedrijf en drone-leveranciers (UAS-sector)",
+  "land": "Europa",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "ESET meldt dat Lazarus (Operation DreamJob) defensie- en dronebedrijven in Europa aanviel met getrojaniseerde SumatraPDF- en Notepad++-plug-ins, met gehackte Roundcube-servers in Zuid-Amerika als C2.",
+  "bron": "Cyber Security News",
+  "bron_url": "https://cybersecuritynews.com/north-korean-hackers-3/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-deceptivedevelopment-repos",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Noord-Koreaanse DeceptiveDevelopment vergiftigt npm-, PyPI- en Go-packages",
+  "doelwit": "Softwareontwikkelaars en hun repositories (npm, PyPI, Go, Packagist, browserextensies)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Na nep-sollicitatieopdrachten stalen de aanvallers Git-tokens en SSH-sleutels van ontwikkelaars en injecteerden ze code in publieke en private repo's (o.a. bianira-ui, fluid-type-ui), met C2-adressen verborgen in Ethereum-transacties.",
+  "bron": "Cyber Security News",
+  "bron_url": "https://cybersecuritynews.com/north-korean-hackers-3/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-toyota-byod-claim",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Claim",
+  "titel": "Claim: BYOD-ransomwaregroep zegt Toyota te hebben gehackt",
+  "doelwit": "Toyota",
+  "land": "Japan",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Claim: ransomwaregroep BYOD zet Toyota op zijn leksite met persoonsgegevens en toegang tot kioskapparaten; onbevestigd, Toyota reageerde niet.",
+  "bron": "Cybersecurity News",
+  "bron_url": "https://cybersecuritynews.com/toyota-data-breach-claim",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-fsi-korea",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Ook Koreaans Financial Security Institute gehackt",
+  "doelwit": "Financial Security Institute (FSI)",
+  "land": "Zuid-Korea",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": 850,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een aanvaller met wisselende IP-adressen drong het beoordelingssysteem van de Koreaanse financiële cybersecuritywaakhond FSI binnen en stal ~200 formulieren en ~650 persoonsrecords van medewerkers van financiële instellingen.",
+  "bron": "Asia Today",
+  "bron_url": "https://www.asiatoday.co.kr/kn/view.php?key=20261111010004019",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-sph-media",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "SPH Media: vijf systemen gehackt, mogelijk AI-gestuurd",
+  "doelwit": "SPH Media",
+  "land": "Singapore",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Singaporese mediagroep SPH meldt dat één actor op 4–8 nov vijf interne systemen binnendrong; e-mailadressen en deels namen, adressen en telefoonnummers (≈9% van een database) werden ingezien.",
+  "bron": "DataBreaches.net",
+  "bron_url": "https://databreaches.net/2026/11/10/sg-sph-media-hit-by-cyberattacks-says-no-customer-financial-data-or-access-exposed/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-hoag",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Patiëntgegevens gestolen bij Hoag-ziekenhuizen",
+  "doelwit": "Hoag Memorial Hospital Presbyterian",
+  "land": "Verenigde Staten",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Het Californische ziekenhuisnetwerk Hoag bevestigt dat bij een inbraak (ontdekt 8 okt) persoons- en gezondheidsgegevens van patiënten zijn buitgemaakt; aantal onbekend.",
+  "bron": "HIPAA Journal",
+  "bron_url": "https://www.hipaajournal.com/sutherland-healthcare-hoag-memorial-hospital-data-breaches/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-santa-barbara-endodontics",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "The Gentlemen-ransomware treft tandartspraktijk Santa Barbara",
+  "doelwit": "Santa Barbara Endodontics",
+  "land": "Verenigde Staten",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Ransomwaregroep The Gentlemen versleutelde patiëntendossiers (incl. SSN's en medische historie) en dreigt de waarschijnlijk gestolen data te publiceren.",
+  "bron": "HIPAA Journal",
+  "bron_url": "https://www.hipaajournal.com/cybercriminals-hit-two-california-dental-practices/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-sos-oxygene-claim",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Claim",
+  "titel": "Claim: 15.171 patiëntregels SOS Oxygène gelekt",
+  "doelwit": "SOS Oxygène",
+  "land": "Frankrijk",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": 15171,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een onbekende actor claimt via een toegangslek 15.171 regels met identiteits- en contactgegevens van thuiszorgpatiënten (zuurstoftherapie) te hebben buitgemaakt; het bedrijf heeft niets bevestigd.",
+  "bron": "Fuites Infos",
+  "bron_url": "https://fuitesinfos.fr/article/2026-11-10-sos-oxygene",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-across-protocol",
+  "datum": "2026-11-10",
+  "categorie": "Crypto",
+  "status": "Bevestigd",
+  "titel": "Domein Across Protocol gekaapt voor phishing",
+  "doelwit": "Across Protocol (cross-chain bridge)",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": 350000,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Via social engineering bij registrar Namecheap kaapten aanvallers across.to en lieten bezoekers kwaadaardige approvals tekenen; GoPlus schat ~$350K buit op zes chains, Across belooft volledige vergoeding.",
+  "bron": "crypto.news",
+  "bron_url": "https://crypto.news/across-protocol-domain-hijack-phishing-350k-losses/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-openwave-webtop-kev",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Openwave Webtop Media Transcoder-lek in CISA KEV",
+  "doelwit": "Openwave Webtop Media Transcoder < 1.1.22.0",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-111793",
+  "cvss": 4.3,
+  "samenvatting": "Ingelogde gebruikers kunnen bestandstypebeperkingen omzeilen; CISA meldt actief misbruik (deadline 24 nov).",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/cisa-kev-six-vulnerabilities-november-2026/",
+  "misbruikt": true,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-mailcow",
+  "datum": "2026-11-10",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "mailcow: cross-tenant RCE met gepubliceerde PoC-stappen",
+  "doelwit": "mailcow-dockerized vóór 2026-11",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-125757",
+  "cvss": 9.1,
+  "samenvatting": "Vijf lekken inclusief een cross-tenant RCE via de footer-template zijn met PoC-stappen gepubliceerd; nog geen misbruik, update naar 2026-11.",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/mailcow-vulnerabilities-poc/",
+  "misbruikt": false,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-10-easthampton-scholen",
+  "datum": "2026-11-10",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Easthampton-scholen: geen datadiefstal na cyberincident",
+  "doelwit": "Easthampton Public Schools (Massachusetts)",
+  "land": "Verenigde Staten",
+  "ernst": "Laag",
+  "ernst_score": 1,
+  "schade_usd": 10000,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Forensisch onderzoek naar het incident van 5 okt, waarbij alle servers offline gingen, vond geen bewijs van datadiefstal; kosten $10.000.",
+  "bron": "Daily Hampshire Gazette",
+  "bron_url": "https://gazettenet.com/2026/11/10/no-data-stolen-in-easthampton-schools-cybersecurity-incident-superintendent-says/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-irisplaza",
@@ -54,7 +814,9 @@
   "samenvatting": "Externe clouddienst van het winkelplatform gecompromitteerd.",
   "bron": "SecurityWeek",
   "bron_url": "https://www.securityweek.com/iris-plaza-breach-may-have-exposed-data-of-7-7-million-customers/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-snowball",
@@ -73,7 +835,9 @@
   "samenvatting": "'Operation Snowball': gejailbreakte DeepSeek-agent bereikte miljoenen medische dossiers.",
   "bron": "Cybersecurity News",
   "bron_url": "https://cybersecuritynews.com/jailbroken-deepseek-ai-agent-breach",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-vanderbilt",
@@ -92,7 +856,9 @@
   "samenvatting": "BYOD-ransomwaregroep claimt data van >1 mln studenten/medewerkers (o.a. SSN's); apparaten moesten uit.",
   "bron": "Gizmodo",
   "bron_url": "https://gizmodo.com/attackers-claim-to-have-stolen-data-on-over-1-million-vanderbilt-students-and-staff-2000837388",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-pja",
@@ -111,7 +877,9 @@
   "samenvatting": "Inbraak via gestolen RDP-login zonder MFA trof 13,3 mln patiënten; schikking met VS-staten.",
   "bron": "Security.nl",
   "bron_url": "https://www.security.nl/posting/960859/Datalek+13%2C3+miljoen+Amerikaanse+pati%C3%ABnten+door+gestolen+inloggegevens",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-gpustack",
@@ -130,7 +898,9 @@
   "samenvatting": "Gespoofte header geeft admin zonder login op AI-GPU-servers; reverse shells gezien. CISA-deadline 12 nov.",
   "bron": "SecurityOnline",
   "bron_url": "https://securityonline.info/gpustack-authentication-bypass-cve-2026-102895-exploited/",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-freeswitch",
@@ -149,7 +919,9 @@
   "samenvatting": "SIP MESSAGE voert API-commando's uit zonder login; in KEV met deadline 12 nov. Fix: 1.11.3.",
   "bron": "SecurityOnline",
   "bron_url": "https://securityonline.info/freeswitch-vulnerability-cve-2026-116779-exploited/",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-faspex",
@@ -168,7 +940,9 @@
   "samenvatting": "Autorisatiefout in bestandsdeelplatform actief misbruikt; CISA-deadline 12 nov. Fix: 5.0.19 PL1.",
   "bron": "Tech Insider",
   "bron_url": "https://tech-insider.org/cisa-kev-gpustack-freeswitch-openssh-aspera-faspex-nov-12-deadline-2026",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-chrome",
@@ -183,11 +957,13 @@
   "schade_usd": null,
   "records": null,
   "cve": "CVE-2026-125350",
-  "cvss": null,
-  "samenvatting": "Use-after-free actief uitgebuit; Google bracht noodupdate uit samen met twee V8-fixes.",
+  "cvss": 8.8,
+  "samenvatting": "Update: use-after-free (CVSS 8.8), achtste misbruikte Chrome-zeroday van 2026, is op 10 nov aan CISA KEV toegevoegd met deadline 24 nov.",
   "bron": "SecurityOnline",
-  "bron_url": "https://securityonline.info/chrome-zero-day-cve-2026-125350/",
-  "misbruikt": true
+  "bron_url": "https://securityonline.info/cisa-kev-six-vulnerabilities-november-2026/",
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
  },
  {
   "id": "2026-11-09-franse-sportfederaties",
@@ -206,7 +982,51 @@
   "samenvatting": "Hacker 'Cruel' publiceerde een archief met ruim 20 miljoen regels van 34 sportfederaties; het sportministerie bevestigde diefstal uit een eigen systeem en informeert 3,5 miljoen huishoudens.",
   "bron": "Sud Radio",
   "bron_url": "https://www.sudradio.fr/sud-radio/cybersecurite-20-millions-de-donnees-de-federations-sportives-francaises-en-ligne",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-amplifon-datalek",
+  "datum": "2026-11-09",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Datalek Amplifon VS raakt 1,3 miljoen mensen",
+  "doelwit": "Amplifon (Amerikaanse tak)",
+  "land": "Verenigde Staten",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 1300000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Gestolen bestanden bevatten persoons-, gezondheids- en verzekeringsgegevens en SSN's van circa 1,3 miljoen mensen.",
+  "bron": "SecurityWeek",
+  "bron_url": "https://www.securityweek.com/amplifon-americas-data-breach-impacts-1-3-million/",
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
+ },
+ {
+  "id": "2026-11-09-sharefull",
+  "datum": "2026-11-09",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Sharefull: bankgegevens van tot 7,5 mln gebruikers gelekt",
+  "doelwit": "Sharefull (klussen-app)",
+  "land": "Japan",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 7500000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Inbraak op het beheersysteem van uitzendapp Sharefull op 4 nov legde mogelijk namen, adressen, geboortedata en bankrekeninggegevens van tot 7,5 miljoen gebruikers en gegevens van 7.500 bedrijven bloot.",
+  "bron": "Seorico (incidentdatabase)",
+  "bron_url": "https://incidents.seory.co.jp/incidents/20261109-b17881/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-vanguard",
@@ -225,7 +1045,9 @@
   "samenvatting": "Melding bij Vermont AG; criminelen claimen ~14 mln Vanguard-records te koop (onbevestigd).",
   "bron": "PR Newswire",
   "bron_url": "https://www.prnewswire.com/news-releases/edelson-lechtzin-llp-investigates-the-vanguard-group-inc-data-breach-reportedly-exposing-investors-social-security-numbers-302934193.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-york",
@@ -244,7 +1066,9 @@
   "samenvatting": "Aanvaller kaapte afdelingsformulieren van 14 sites, incl. ID-, financiële en gezondheidsgegevens.",
   "bron": "BleepingComputer",
   "bron_url": "https://www.bleepingcomputer.com/news/security/york-university-breach-exposed-personal-information-dating-to-2007/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-qubole",
@@ -263,7 +1087,9 @@
   "samenvatting": "Misbruik van vertrouwde cross-account AWS-rol; secrets (o.a. Okta/Entra) en S3-data gestolen.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/hackers-exploit-quboles-trusted-aws.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-bossai",
@@ -282,7 +1108,9 @@
   "samenvatting": "Eén aanvaller met AI-agent drong binnen bij hulpdiensten, banken en universiteiten in 11 landen.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/taiwan-based-hacker-used-bossai-ai.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-plex2shell",
@@ -301,26 +1129,9 @@
   "samenvatting": "QNAP waarschuwt: aanvallers plaatsen cryptominers en proxies; update naar 1.43.3.10861.",
   "bron": "Security Affairs",
   "bron_url": "https://securityaffairs.com/202708/cyber-crime/qnap-warns-users-as-plex2shell-flaws-are-used-to-hack-nas-devices.html",
-  "misbruikt": true
- },
- {
-  "id": "2026-11-09-amplifon-datalek",
-  "datum": "2026-11-09",
-  "categorie": "Aanval/datalek",
-  "status": "Bevestigd",
-  "titel": "Datalek bij hoortoestelketen Amplifon VS",
-  "doelwit": "Amplifon (Amerikaanse tak)",
-  "land": "Verenigde Staten",
-  "ernst": "Hoog",
-  "ernst_score": 3,
-  "schade_usd": null,
-  "records": 86831,
-  "cve": null,
-  "cvss": null,
-  "samenvatting": "Hackers hadden in januari-februari toegang tot bestanden van Amplifon met rijbewijzen, medische, verzekerings- en financiële gegevens; advocaten noemen 1,33 miljoen getroffenen, bevestigd zijn er ruim 86.000.",
-  "bron": "The Record",
-  "bron_url": "https://therecord.media/amplifon-hearing-aid-company-data-breach",
-  "misbruikt": null
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-epichealth-warrnambool",
@@ -339,7 +1150,9 @@
   "samenvatting": "Bij een aan ransomwaregroep The Gentlemen gelinkte aanval zijn mogelijk medische dossiers en Medicare-, Centrelink- en DVA-kaartnummers van patiënten buitgemaakt.",
   "bron": "The Standard",
   "bron_url": "https://standard.net.au/story/9387905/patient-information-stolen-in-warrnambool-clinic-hacking-attack",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-expedia-n0n-claim",
@@ -358,7 +1171,9 @@
   "samenvatting": "De groep N0n zette Expedia op haar lekensite en claimt honderden miljoenen rijen loyaliteits-, reizigers- en accountdata te hebben gestolen; de claim is onbevestigd.",
   "bron": "HookPhish",
   "bron_url": "https://www.hookphish.com/blog/ransomware-group-n0n-hits-expedia-group-inc/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-adems",
@@ -377,7 +1192,9 @@
   "samenvatting": "Gegevens van 32.041 sociale huurders in Normandië zouden zijn gelekt na een aanval op ADEMS.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-09-adems",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-gibraltar-overheid",
@@ -396,7 +1213,156 @@
   "samenvatting": "Aanvallers drongen weken lang de Microsoft-cloudomgeving (Outlook, Teams, SharePoint) van de overheid binnen; mogelijke datadiefstal wordt onderzocht.",
   "bron": "CampoGibraltar24h",
   "bron_url": "https://www.campogibraltar24h.es/gibraltar/gibraltar-contiene-ciberataque-investiga-posible-filtracion-datos/20261109170500019958.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-fireworks",
+  "datum": "2026-11-09",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Fireworks AI-lek groter: ook Notion AI-chats gestolen",
+  "doelwit": "Fireworks AI (en Notion-klanten)",
+  "land": "Verenigde Staten",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Fireworks bevestigt dat ook secrets, datasets en modelgewichten van klanten zijn buitgemaakt; via Fireworks werden chatgesprekken uit Notion AI gestolen (<1% van de werkruimtes).",
+  "bron": "The Hacker News",
+  "bron_url": "https://thehackernews.com/2026/11/fireworks-ai-breach-widens-to-expose.html",
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
+ },
+ {
+  "id": "2026-11-09-wyndham",
+  "datum": "2026-11-09",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Wyndham-app lekte wachtwoord tot klantdatabase",
+  "doelwit": "Wyndham Hotels & Resorts",
+  "land": "Verenigde Staten",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een in de Android-app hardgecodeerd wachtwoord gaf toegang tot een Salesforce-database met 'miljoenen' records (namen, e-mail, lidnummers, logintokens); Wyndham erkent het incident maar zegt geen misbruik te zien.",
+  "bron": "TechCrunch",
+  "bron_url": "https://techcrunch.com/2026/11/09/hotel-giant-wyndham-exposed-customer-data-after-app-security-lapse/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-binance-shinyhunters-claim",
+  "datum": "2026-11-09",
+  "categorie": "Aanval/datalek",
+  "status": "Claim",
+  "titel": "Claim: 335 mln Binance-gebruikersrecords te koop",
+  "doelwit": "Binance",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": 335000000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Claim: een actor die zich ShinyHunters noemt biedt voor $900.000 data van 335 miljoen Binance-gebruikers aan (KYC, wachtwoorden); Binance ziet geen inbraak en spreekt van waarschijnlijke oplichting.",
+  "bron": "BleepingComputer",
+  "bron_url": "https://www.bleepingcomputer.com/news/security/binance-denies-data-breach-after-alleged-shinyhunters-claims/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-afflelou-claim",
+  "datum": "2026-11-09",
+  "categorie": "Aanval/datalek",
+  "status": "Claim",
+  "titel": "Claim: klant- en betaaldata Alain Afflelou gelekt",
+  "doelwit": "Alain Afflelou",
+  "land": "Frankrijk",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": 921,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Groep Emperador claimt een bestand met klantgegevens, 5.291 bestellingen en gemaskeerde betaalkaartreferenties van de opticienketen na mislukte afpersing; door ZATAZ geanalyseerd, niet door het bedrijf bevestigd.",
+  "bron": "ZATAZ",
+  "bron_url": "https://www.zataz.com/alain-afflelou-des-donnees-clients-et-bancaires-exposees/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-initia-gcp-sleutel",
+  "datum": "2026-11-09",
+  "categorie": "Crypto",
+  "status": "Bevestigd",
+  "titel": "Initia opnieuw gehackt via gelekte GCP-sleutel",
+  "doelwit": "Initia (L1 en rollups)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": 3270000,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Met een gelekte GCP-sleutel en command injection kreeg een aanvaller toegang tot GitHub, GCP en rollup-platform Anvil, vervalste IBC-opnames van vijf rollups en haalde ~$3,27 mln weg (nog $2,16 mln vast op de stilgelegde L1).",
+  "bron": "PANews",
+  "bron_url": "https://panews.io/articles/01a1c708-dbb5-7433-acd3-32a44f3b899a",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-arcus",
+  "datum": "2026-11-09",
+  "categorie": "Crypto",
+  "status": "Bevestigd",
+  "titel": "Perp-exchange Arcus verliest $2,2 mln door subaccount-bug",
+  "doelwit": "Arcus (perpetuals-exchange)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": 2234391,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een nieuw account misbruikte een boekhoudfout bij transfers tussen subaccounts en nam 2.234.391 USDG op; nog eens $3 mln werd door de bridge-ratelimit tegengehouden en de treasury dekt het tekort.",
+  "bron": "DeFi Prime",
+  "bron_url": "https://defiprime.com/arcus-subaccount-bug-withdrawals",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-wp-cryptopayment-gateway",
+  "datum": "2026-11-09",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Ongepatcht WordPress-plugin CryptoPayment Gateway misbruikt",
+  "doelwit": "WordPress-plugin CryptoPayment Gateway",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-81648",
+  "cvss": 10.0,
+  "samenvatting": "Niet-geauthenticeerde aanvallers kunnen bestanden verwijderen en opgeslagen walletgegevens lezen; Defused Cyber zag aanvalspogingen, er is geen fix en de plugin is uit de directory gehaald.",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/weekly-cve-report-nov-2-8-2026/",
+  "misbruikt": true,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-ankr",
@@ -415,26 +1381,9 @@
   "samenvatting": "Hergebruikte Optimism-deposit leverde vijf ongeautoriseerde opnames op.",
   "bron": "CryptoTimes",
   "bron_url": "https://www.cryptotimes.io/2026/11/09/ankr-bridge-hack-304k-drained-using-forged-cross-chain-receipts/",
-  "misbruikt": null
- },
- {
-  "id": "2026-11-09-fireworks",
-  "datum": "2026-11-09",
-  "categorie": "Aanval/datalek",
-  "status": "Bevestigd",
-  "titel": "Datalek bij AI-platform Fireworks AI",
-  "doelwit": "Fireworks AI",
-  "land": "Verenigde Staten",
-  "ernst": "Middel",
-  "ernst_score": 2,
-  "schade_usd": null,
-  "records": null,
-  "cve": null,
-  "cvss": null,
-  "samenvatting": "Via gehackte cloudprovider: factuurdata, betaalhistorie en deels modelgewichten van klanten buitgemaakt.",
-  "bron": "Cyber Security News",
-  "bron_url": "https://cybersecuritynews.com/fireworks-ai-data-breach",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-topgeschenken",
@@ -453,7 +1402,9 @@
   "samenvatting": "Namen, adressen, geboortedata en contactgegevens buitgemaakt; omvang onbekend, AP ingelicht.",
   "bron": "Security.nl",
   "bron_url": "https://www.security.nl/posting/960898/Topgeschenken+meldt+diefstal+klantgegevens%2C+omvang+datalek+nog+onbekend",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-beejs",
@@ -472,7 +1423,9 @@
   "samenvatting": "Via gestolen CI-sleutels malafide releases met wallet-stealer en backdoor; versies ingetrokken.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/hackers-compromise-etherspheres-bee-js.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-next-one",
@@ -491,7 +1444,9 @@
   "samenvatting": "Ransomware versleutelde ook back-ups en verstoorde de activiteiten van de Franse marktleider in indoor-reclameschermen.",
   "bron": "Cyberattaque.org",
   "bron_url": "https://www.cyberattaque.org/next-one-cyberattaque-affichage-publicitaire/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-colorbox",
@@ -510,7 +1465,9 @@
   "samenvatting": "Een hacker claimt gegevens van 16.669 klanten (vooral garages en carrosseriebedrijven) van ColorBox.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-09-colorbox",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-09-garanka",
@@ -529,7 +1486,114 @@
   "samenvatting": "Garanka informeerde klanten dat persoonsgegevens bij een cyberaanval zijn gestolen.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-09-garanka",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-giken-ransomware",
+  "datum": "2026-11-09",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Ransomware bij machinebouwer Giken",
+  "doelwit": "GIKEN Ltd.",
+  "land": "Japan",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": 3200,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Japanse machinebouwer Giken meldt een ransomware-aanval op een bedrijfsserver (ontdekt 5 nov) waarbij gegevens van tot 3.200 gebruikers, fabriekscontacten en medewerkers kunnen zijn ingezien.",
+  "bron": "Seorico (incidentdatabase)",
+  "bron_url": "https://incidents.seory.co.jp/incidents/20261109-9c1cc0/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-dia-claim",
+  "datum": "2026-11-09",
+  "categorie": "Aanval/datalek",
+  "status": "Claim",
+  "titel": "Claim: gegevens Italiaanse antimaffiadienst DIA te koop",
+  "doelwit": "Direzione investigativa antimafia (DIA)",
+  "land": "Italië",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Verkoper 'weykofa' biedt 220 MB aan vermeende onderzoeksdossiers en correspondentie met Europol op het darkweb aan; Italiaanse autoriteiten ontkenden op 10 november dat er data is gestolen.",
+  "bron": "Il Fatto Quotidiano",
+  "bron_url": "https://www.ilfattoquotidiano.it/2026/11/09/attacco-hacker-dia-esfiltrazione-notizie/8565375/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-kensium-claim",
+  "datum": "2026-11-09",
+  "categorie": "Aanval/datalek",
+  "status": "Claim",
+  "titel": "Claim: 18 TB gestolen bij IT-dienstverlener Kensium",
+  "doelwit": "Kensium",
+  "land": "Verenigde Staten",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een onbekende hacker claimt 18 TB uit netwerk en cloud van de Amerikaanse e-commerce-integrator te hebben gestolen en publiceerde al circa 170 GB; onbevestigd.",
+  "bron": "ZATAZ",
+  "bron_url": "https://www.zataz.com/un-geant-de-linformatique-vise-par-une-revendication-de-vol-de-donnees/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-uk-school-3am",
+  "datum": "2026-11-09",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "3AM-ransomware treft Britse school, vermoedelijk met AI",
+  "doelwit": "Britse school (niet genoemd)",
+  "land": "Verenigd Koninkrijk",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een 3AM-affiliate kwam binnen via een onbeheerde server en versleutelde circa 37 van bijna 50 machines van een Britse school; de aanval was vermoedelijk AI-ondersteund.",
+  "bron": "BleepingComputer",
+  "bron_url": "https://www.bleepingcomputer.com/news/security/uk-school-estate-hit-by-3am-ransomware-in-suspected-ai-assisted-attack/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-09-waves-rollback",
+  "datum": "2026-11-09",
+  "categorie": "Crypto",
+  "status": "Bevestigd",
+  "titel": "Waves-netwerk teruggedraaid na foutieve WAVES-creditering",
+  "doelwit": "Waves (blockchain)",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een derde partij produceerde blokken met abnormaal hoge fees waardoor niet-bestaande WAVES werden bijgeschreven; Waves rolde terug naar blok 5.481.020 (v1.6.5) en Upbit/Bithumb schortten stortingen en opnames op.",
+  "bron": "PANews",
+  "bron_url": "https://panews.io/articles/01a1c541-4fc9-72a9-939f-18d30c21bd8a",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-08-sgs-keuringscentra",
@@ -548,7 +1612,9 @@
   "samenvatting": "Een hacker claimt de gegevens van 22,7 miljoen klanten van Franse autokeuringscentra van SGS, met in samples ook wachtwoorden en IBAN's.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-08-sgs",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-08-react-rsc",
@@ -567,7 +1633,9 @@
   "samenvatting": "Kritieke RCE zonder login in RSC 19.0–19.3.0 (Next.js 16.0–16.4.0); fix 19.x.9/19.3.1. Nog geen misbruik gemeld, scanners missen het (geen CVE).",
   "bron": "GBHackers",
   "bron_url": "https://gbhackers.com/critical-react-server-components-vulnerability/",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-08-sm-entertainment-hack",
@@ -586,7 +1654,9 @@
   "samenvatting": "Een externe aanvaller kopieerde interne documenten met namen, burgerservicenummers (resident registration numbers) en bankrekeningnummers van medewerkers van het K-poplabel.",
   "bron": "Sports Kyunghyang",
   "bron_url": "https://sports.khan.co.kr/en/article/202611081725007/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-08-omnicasa",
@@ -605,26 +1675,30 @@
   "samenvatting": "Actor 'ChimeraZ' biedt 3,9 GB aan data van de Belgische makelaarssoftware Omnicasa te koop, met 465.225 e-mailadressen en 251.873 telefoonnummers (onbevestigd).",
   "bron": "FrenchBreaches",
   "bron_url": "https://frenchbreaches.com/alertes/fuite-donnees-omnicasa-465000-emails-logiciel-immobilier-belgique-mw803aa86ora2wgn4r9",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-08-acryptos",
   "datum": "2026-11-08",
   "categorie": "Crypto",
   "status": "Bevestigd",
-  "titel": "ACryptoS vault exploit",
+  "titel": "ACryptoS vault exploit ($665K)",
   "doelwit": "ACryptoS",
   "land": "Wereldwijd",
   "ernst": "Middel",
   "ernst_score": 2,
-  "schade_usd": null,
+  "schade_usd": 665429,
   "records": null,
   "cve": null,
   "cvss": null,
-  "samenvatting": "Ontbrekende inputvalidatie in depositMulti misbruikt.",
-  "bron": "SlowMist",
-  "bron_url": "https://hacked.slowmist.io/",
-  "misbruikt": null
+  "samenvatting": "Kleine deposits via ontbrekende inputvalidatie in depositMulti dreven 77 vaults leeg voor ~$665K; protocol staakte operaties.",
+  "bron": "crypto.news",
+  "bron_url": "https://crypto.news/how-small-deposits-drained-77-acryptos-vaults-and-what-users-can-still-withdraw/",
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
  },
  {
   "id": "2026-11-08-estt",
@@ -643,7 +1717,9 @@
   "samenvatting": "Versleutelende malware trof cloudinfrastructuur; 90% van VPS'en na een dag hersteld.",
   "bron": "The Moscow Times",
   "bron_url": "https://themoscowtimes.com/2026/11/09/cyberattack-disrupts-russian-web-hosting-provider-estt-a94212",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-08-brenner",
@@ -662,7 +1738,9 @@
   "samenvatting": "Bouwer van Brennertunnel bevestigt ongeautoriseerde toegang; operaties niet geraakt.",
   "bron": "Security Affairs",
   "bron_url": "https://securityaffairs.com/202691/cyber-crime/dont-hand-propaganda-a-gift-reading-the-brenner-base-tunnel-se-breach-calmly.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-08-who-gives-a-crap",
@@ -681,15 +1759,38 @@
   "samenvatting": "Via een Amerikaanse marketingsoftwareleverancier kreeg een onbevoegde toegang tot namen, adressen en telefoonnummers van klanten in Australië, het VK en de VS.",
   "bron": "ABC News",
   "bron_url": "https://www.abc.net.au/news/2026-11-08/who-gives-a-crap-hack/107359858",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-08-near-ai",
+  "datum": "2026-11-08",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "NEAR AI gehackt via SGLang-RCE",
+  "doelwit": "NEAR AI Cloud / Private Chat",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": 100,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een RCE in inferentie-engine SGLang gaf toegang tot een interne server; accountgegevens van ~100 gebruikers, 18 legacy-agents en twee API-keys werden buitgemaakt.",
+  "bron": "crypto.news",
+  "bron_url": "https://crypto.news/near-ai-cloud-restored-security-breach-user-data/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-08-lnbits",
   "datum": "2026-11-08",
   "categorie": "Crypto",
   "status": "Bevestigd",
-  "titel": "LNbits-instanties leeggehaald",
-  "doelwit": "LNbits (Lightning-wallet)",
+  "titel": "LNbits-instanties leeggehaald, fix in 1.7.0",
+  "doelwit": "LNbits (Lightning-wallet) < 1.7.0",
   "land": "Wereldwijd",
   "ernst": "Laag",
   "ernst_score": 1,
@@ -697,10 +1798,12 @@
   "records": null,
   "cve": null,
   "cvss": null,
-  "samenvatting": "Aanvallers maakten accounts aan en namen sats op; operators moeten servers uitzetten.",
-  "bron": "The Hacker News",
-  "bron_url": "https://thehackernews.com/2026/11/lnbits-urges-all-operators-to-shut-down.html",
-  "misbruikt": null
+  "samenvatting": "Aanvallers maakten accounts aan en namen sats op (o.a. 2,29 mln sats bij BitTipBot); LNbits bracht op 10 nov noodversie 1.7.0 uit, oudere versies blijven kwetsbaar.",
+  "bron": "Bitcoin Magazine",
+  "bron_url": "https://bitcoinmagazine.com/news/lnbits-releases-1-7-0-urgent-security-update-after-november-8-attacks-drain-funds",
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
  },
  {
   "id": "2026-11-07-caverne-des-jouets",
@@ -719,7 +1822,30 @@
   "samenvatting": "Een database met 969.386 e-mailadressen van klanten van de online speelgoedwinkel wordt op het dark web aangeboden.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-07-caverne-des-jouets",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-07-signal-talk-maru-jan",
+  "datum": "2026-11-07",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Online mahjong Maru-Jan: 1,86 mln wachtwoorden gelekt",
+  "doelwit": "Signal Talk (Maru-Jan)",
+  "land": "Japan",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 1855578,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Aanvallers misbruikten een functie van het beheersysteem van mahjongspel Maru-Jan en buitten e-mailadressen en wachtwoorden van 1.855.578 leden.",
+  "bron": "Seorico (incidentdatabase)",
+  "bron_url": "https://incidents.seory.co.jp/incidents/20261107-715e4a/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-07-sussex-county-aanklager",
@@ -738,7 +1864,9 @@
   "samenvatting": "Een indringer had in juli een week toegang tot het netwerk van het OM van Sussex County en kan bestanden met SSN's en rijbewijsnummers hebben buitgemaakt.",
   "bron": "WRNJ Radio",
   "bron_url": "https://wrnjradio.com/sussex-county-prosecutors-office-reports-data-breach-involving-social-security-numbers-personal-information/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-07-casinos-austria",
@@ -757,7 +1885,9 @@
   "samenvatting": "Via een externe dienstverlener drongen aanvallers de webshop binnen en stalen circa 150.000 klantrecords met namen, e-mailadressen, bestelhistorie en vouchercodes.",
   "bron": "Head Topics (ORF/Vorarlberg)",
   "bron_url": "https://at.headtopics.com/news/cyberangriff-auf-casinos-austria-150-000-kundendaten-89645896",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-07-maersk-whitearmor",
@@ -776,7 +1906,9 @@
   "samenvatting": "Whitearmor claimt circa 100 GB uit het logistiekplatform van Maersk met o.a. 29.297 chauffeursrecords en eist 5 miljoen dollar; Maersk bevestigde niets.",
   "bron": "DeXpose",
   "bron_url": "https://www.dexpose.io/whitearmor-ransomware-attack-on-maersk/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-07-areas-assurances",
@@ -795,7 +1927,9 @@
   "samenvatting": "Op een forum worden gegevens inclusief socialezekerheidsnummers van 21.732 verzekerden van Aréas aangeboden.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-07-areas-assurances",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-07-titres-services-safepay",
@@ -814,7 +1948,9 @@
   "samenvatting": "De ransomwaregroep SafePay claimt 71 GB aan bestanden met contracten, loonstroken en facturen van het Brusselse/Waalse dienstenchequebedrijf.",
   "bron": "FrenchBreaches",
   "bron_url": "https://frenchbreaches.com/alertes/cyberattaque-belgique-titres-services-ransomware-safepay-copier-mw49chlrygke8bvq1b",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-07-smartbox",
@@ -833,7 +1969,9 @@
   "samenvatting": "Smartbox (Bongo) detecteerde op 3 november ongeautoriseerde toegang waarbij namen en e-mailadressen van klanten mogelijk zijn ingezien.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-07-smartbox",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-07-claude-code-geheimen-github",
@@ -852,7 +1990,9 @@
   "samenvatting": "Apiiro vond 1.379 geheimen, waaronder 379 databasewachtwoorden en 23 AWS-sleutels, in 1.122 publiek op GitHub gezette Claude Code-instellingenbestanden.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-07-mittwald-mcp-inbraak",
@@ -871,7 +2011,9 @@
   "samenvatting": "Via een lek in de MCP-server van hostingplatform mStudio drong een aanvaller acht dagen onopgemerkt binnen bij Mittwald en compromitteerde 56 klantprojecten.",
   "bron": "The Record",
   "bron_url": "https://therecord.media/cyberattack-germany-ai-mittwald",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-07-noname-doxing-tajani",
@@ -890,7 +2032,30 @@
   "samenvatting": "NoName057(16) publiceerde persoonsgegevens van 18 Europese politici, opsporingsfunctionarissen en journalisten, onder wie de Italiaanse minister Tajani, op een dark-webportaal.",
   "bron": "Sky TG24",
   "bron_url": "https://tg24.sky.it/cronaca/2026/11/07/antonio-tajani-dati-dark-web-russia",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-07-burda-style",
+  "datum": "2026-11-07",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Cyberaanval op webshop Burda Style",
+  "doelwit": "Burda Style",
+  "land": "Duitsland",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Burda Style meldt klanten dat bij een half oktober ontdekte inbraak persoons-, bestel- en deels betaalgegevens (laatste vier kaartcijfers) mogelijk zijn ingezien; bewijs van diefstal is er nog niet.",
+  "bron": "Cyberattaque.org",
+  "bron_url": "https://www.cyberattaque.org/burda-style-les-donnees-personnelles-de-ses-clients-exposees-apres-une-cyberattaque/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-sshole",
@@ -906,10 +2071,12 @@
   "records": null,
   "cve": "CVE-2026-123158",
   "cvss": 8.1,
-  "samenvatting": "Wachtwoord >256 tekens logt in op accounts zonder wachtwoord; binnen 9 uur root op honeypot, 13 aanvals-IP's. Fix: OpenSSH 10.6p2.",
+  "samenvatting": "Update: CISA zette SSHole op 9 nov in KEV (deadline 12 nov); GreyNoise zag post-exploitatie vanaf zes IP's in 18 aanvalsketens (o.a. stelen van SSH-sleutels, authorized_keys-persistentie), actor GT10 plaatste TAC Agent en watchTowr ziet botnets en cryptominers.",
   "bron": "The Hacker News",
-  "bron_url": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
-  "misbruikt": true
+  "bron_url": "https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html",
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
  },
  {
   "id": "2026-11-06-ahold",
@@ -928,7 +2095,9 @@
   "samenvatting": "Oktober-aanval verstoorde online-verkoop en Benelux-logistiek; Q4-omzet €200–250 mln lager.",
   "bron": "SecurityWeek",
   "bron_url": "https://www.securityweek.com/grocery-giant-ahold-delhaize-estimates-financial-toll-of-october-cyberattack/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-sonicwall",
@@ -947,26 +2116,30 @@
   "samenvatting": "Geldige gebruikers kunnen SAML en MFA omzeilen; KEV-deadline 20 nov.",
   "bron": "Cybersecurity News",
   "bron_url": "https://cybersecuritynews.com/sonicwall-sonicos-sslvpn-vulnerability-exploited/",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-keplr",
   "datum": "2026-11-06",
   "categorie": "Crypto",
   "status": "Bevestigd",
-  "titel": "Keplr social-login wallets leeggehaald",
+  "titel": "Keplr social-login wallets voor $6 mln leeggehaald",
   "doelwit": "Keplr / Web3Auth",
   "land": "Wereldwijd",
   "ernst": "Hoog",
   "ernst_score": 3,
-  "schade_usd": null,
+  "schade_usd": 6010000,
   "records": null,
   "cve": null,
   "cvss": null,
-  "samenvatting": "Lek in Web3Auth-infra lekte private keys van Google/Apple-login wallets; schade nog onbekend.",
-  "bron": "CryptoTicker",
-  "bron_url": "https://cryptoticker.io/en/keplr-wallet-web3auth-social-login-exploit/",
-  "misbruikt": null
+  "samenvatting": "Supply-chain-lek in Web3Auth-infra lekte private keys van Google/Apple-login wallets; ~$6 mln gestolen op Cosmos, Keplr zette social logins uit.",
+  "bron": "crypto.news",
+  "bron_url": "https://crypto.news/keplr-wallet-hack-web3auth-google-apple-login/",
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
  },
  {
   "id": "2026-11-06-artex",
@@ -985,7 +2158,9 @@
   "samenvatting": "Storm-3358 automatiseert scan, exploit en laterale beweging met ARTEX; honderden servers met de tool open op internet.",
   "bron": "Microsoft Security",
   "bron_url": "https://www.microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-android",
@@ -1004,7 +2179,9 @@
   "samenvatting": "Kritieke heap-overflow in Framework zonder interactie; nog geen misbruik. Novemberbulletin: 216 fixes.",
   "bron": "byteiota",
   "bron_url": "https://byteiota.com/android-november-2026-patch-rce/",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-busan-ziekenhuis-ransomware",
@@ -1023,7 +2200,9 @@
   "samenvatting": "Een ransomware-aanval op 2 november maakte ongeveer een jaar aan medische dossiers en test- en receptgegevens ontoegankelijk; de hacker eiste bitcoin.",
   "bron": "NoCut News",
   "bron_url": "https://en.nocutnews.co.kr/news/6603346",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-tum-portal",
@@ -1042,7 +2221,30 @@
   "samenvatting": "Aanvallers stalen via het myTUM-portaal de centrale wachtwoorden en persoonsgegevens van geregistreerde studenten en medewerkers en vielen daarna TUMonline aan.",
   "bron": "TUM",
   "bron_url": "https://www.tum.de/en/news-and-events/all-news/press-releases/details/it-security-incident-at-tum",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-06-havenbedrijf-santos",
+  "datum": "2026-11-06",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Cyberaanval legt systemen havenautoriteit Santos plat",
+  "doelwit": "Autoridade Portuária de Santos",
+  "land": "Brazilië",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een cyberaanval op 6 nov veroorzaakte uitval bij de havenautoriteit van Santos, de grootste haven van Latijns-Amerika; operaties liepen door, website en interne platforms bleven offline.",
+  "bron": "PortalPortuario",
+  "bron_url": "https://portalportuario.cl/brasil-descartan-interrupcion-de-operaciones-en-puerto-de-santos-tras-ciberataque-contra-sistemas",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-dompe",
@@ -1061,7 +2263,9 @@
   "samenvatting": "Groep publiceert claimsdata van Amerikaanse oogheelkunde-tak (patiënt-, diagnose- en receptdata).",
   "bron": "HookPhish",
   "bron_url": "https://www.hookphish.com/blog/ransomware-group-n0n-hits-dompe-farmaceutici-s-p-a/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-air-creebec-aanval",
@@ -1080,7 +2284,9 @@
   "samenvatting": "Aanvallers drongen eind oktober administratieve systemen van Air Creebec binnen en namen bestanden mee met persoonsgegevens van personeel, passagiers en partners.",
   "bron": "BNN Bloomberg",
   "bron_url": "https://www.bnnbloomberg.ca/business/company-news/2026/11/08/regional-airline-suffers-cyberattack/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-delcampe",
@@ -1099,7 +2305,9 @@
   "samenvatting": "Bij het Belgische verzamelaarsplatform zijn namen, adressen en aankoopgegevens van leden gestolen.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-06-delcampe",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-mindfactory",
@@ -1118,7 +2326,9 @@
   "samenvatting": "Mindfactory kan niet uitsluiten dat adressen, e-mailadressen, telefoonnummers en versleutelde wachtwoorden zijn buitgemaakt en reset alle klantwachtwoorden.",
   "bron": "security-incidents.de",
   "bron_url": "https://www.security-incidents.de/sicherheitsvorfaelle/sicherheitsvorfall-mindfactory-DE-13364.php",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-isae-supmeca",
@@ -1137,7 +2347,9 @@
   "samenvatting": "Een ransomware-aanval op 31 oktober verlamde het IT-systeem van de Franse ingenieursschool.",
   "bron": "Cyberattaque.org",
   "bron_url": "https://www.cyberattaque.org/isae-supmeca-des-hackers-paralysent-le-systeme-informatique-de-cette-grande-ecole-dingenieurs/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-ligne-roset",
@@ -1156,7 +2368,9 @@
   "samenvatting": "Een ransomwaregroep dreigt 150 GB aan vertrouwelijke documenten van de meubelfabrikant openbaar te maken.",
   "bron": "Cyberattaque.org",
   "bron_url": "https://www.cyberattaque.org/ligne-roset-150-go-de-documents-confidentiels-menaces-de-publication-par-un-ransomware/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-secours-islamique",
@@ -1175,7 +2389,9 @@
   "samenvatting": "Bij een cyberaanval op de hulporganisatie zijn persoonsgegevens van donateurs blootgesteld.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-06-secours-islamique-france",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-transcontinents",
@@ -1194,7 +2410,9 @@
   "samenvatting": "Hackers misbruikten boekingsgegevens van klanten van het Réunionse reisbureau voor oplichting.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-30-transcontinents",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-nep-securitytools-github",
@@ -1213,7 +2431,30 @@
   "samenvatting": "Doctor Web ontdekte getrojaniseerde GitHub-projecten voor beveiligingstests die AsyncRAT, een clipper en een infostealer installeerden op meer dan 2.000 Windows-systemen.",
   "bron": "BleepingComputer",
   "bron_url": "https://www.bleepingcomputer.com/news/security/fake-security-tools-on-github-push-backdoors-and-infostealers/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-06-strutil-core-ruby-worm",
+  "datum": "2026-11-06",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Wormende Ruby-gem strutil-core steelt credentials en vergiftigt AI-tools",
+  "doelwit": "Ruby-ontwikkelaars (RubyGems-package strutil-core)",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Socket ontdekte een Shai-Hulud-achtige gem die bij installatie cloud-, CI- en walletgegevens steelt, AI-codeertools backdoort en bij intrekking van een gestolen GitHub-token de homedirectory wist; RubyGems verwijderde hem binnen enkele uren.",
+  "bron": "Socket",
+  "bron_url": "https://socket.dev/blog/shai-hulud-descendant-malicious-ruby-gem",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-06-degen",
@@ -1225,14 +2466,16 @@
   "land": "Wereldwijd",
   "ernst": "Laag",
   "ernst_score": 1,
-  "schade_usd": null,
+  "schade_usd": 10000,
   "records": null,
   "cve": null,
   "cvss": null,
-  "samenvatting": "Spel aangevallen door 30.000+ wallets.",
+  "samenvatting": "Spel aangevallen door 30.000+ wallets; ~$10K verlies.",
   "bron": "SlowMist",
   "bron_url": "https://hacked.slowmist.io/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
  },
  {
   "id": "2026-11-06-gopax",
@@ -1251,7 +2494,9 @@
   "samenvatting": "De Koreaanse beurs Gopax schortte opnames en handel op na een e-mail van een groep die claimde de beurs te hebben gehackt; er is geen verlies gemeld.",
   "bron": "Korea JoongAng Daily",
   "bron_url": "https://www.koreajoongangdaily.com/business/crypto-exchange-gopax-suspends-withdrawals-trading-following-hacking-threats/12960615",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-digicert",
@@ -1270,7 +2515,9 @@
   "samenvatting": "Intern systeem sinds feb 2025 extern bereikbaar; paspoorten/rijbewijzen ingezien. Aantal onbekend.",
   "bron": "BleepingComputer",
   "bron_url": "https://bleepingcomputer.com/news/security/digicert-data-breach-exposes-customer-information-identity-documents",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-zyxel",
@@ -1289,7 +2536,9 @@
   "samenvatting": "Eerdere patch blokkeerde misbruik niet; groep 'Kapibala' compromitteerde ~1.000 apparaten.",
   "bron": "SecurityWeek",
   "bron_url": "https://www.securityweek.com/zyxel-switch-hacks-blamed-on-patched-flaw-actually-exploited-a-zero-day/",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-forum-pompier",
@@ -1308,7 +2557,9 @@
   "samenvatting": "Een aanvaller claimt 65.694 accounts van een Frans brandweer-communityforum.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-05-forum-pompier",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-norad",
@@ -1327,7 +2578,9 @@
   "samenvatting": "Via 27 gecompromitteerde accounts kregen aanvallers mogelijk toegang tot namen en e-mailadressen van alle 20.614 gebruikers en stalen ze aanvraagdocumenten.",
   "bron": "Help Net Security",
   "bron_url": "https://www.helpnetsecurity.com/2026/11/05/norad-grants-portal-breach/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-apt29-plerdy-mobiel",
@@ -1346,7 +2599,9 @@
   "samenvatting": "Sekoia schrijft een watering-hole-campagne toe aan APT29 die via het gecompromitteerde trackingscript van Plerdy en nepsites iPhones en Android-toestellen besmette om berichten, wachtwoorden en locatiegegevens te stelen.",
   "bron": "The Record",
   "bron_url": "https://therecord.media/russia-hackers-smartphone-cyberattacks",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-floki",
@@ -1365,7 +2620,9 @@
   "samenvatting": "Bot offline gehaald; schade niet gemeld.",
   "bron": "SlowMist",
   "bron_url": "https://hacked.slowmist.io/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-whitehouse-proxy",
@@ -1384,7 +2641,9 @@
   "samenvatting": "Apparaten in het netwerk dienen als proxy-exit voor botnetverkeer.",
   "bron": "Security Affairs",
   "bron_url": "https://securityaffairs.com/202563/security/white-house-network-appears-in-global-residential-proxy-traffic.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-tendril",
@@ -1403,7 +2662,9 @@
   "samenvatting": "Sell-hook liet aanvaller reserves syncen en USDT uit de pool halen (~$555K).",
   "bron": "CertiK Alert",
   "bron_url": "https://x.com/CertiKAlert/status/2118242639212658985",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-maileva-inovie",
@@ -1422,7 +2683,9 @@
   "samenvatting": "Een datalek bij de postverzendingsdienst Maileva trof patiënten van meerdere Inovie-laboratoria en klanten van woningcorporatie Flandre Opale Habitat.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-02-inovie",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-novabio",
@@ -1441,7 +2704,9 @@
   "samenvatting": "Identiteits- en gezondheidsgegevens van patiënten van Novabio-laboratoria zijn mogelijk gelekt.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-30-novabio",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-fftt",
@@ -1460,7 +2725,9 @@
   "samenvatting": "De tafeltennisfederatie bevestigde een nieuwe inbraak waarbij gegevens van licentiehouders zijn blootgesteld.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-05-federation-francaise-de-tennis-de-table",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-grand-paris-grand-est",
@@ -1479,7 +2746,9 @@
   "samenvatting": "Gegevens van gebruikers van de reserveringsdienst voor grofvuilophaling zijn gelekt.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-05-grand-paris-grand-est",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-apache-ofbiz-preauth-rce",
@@ -1498,7 +2767,9 @@
   "samenvatting": "De ERP-software Apache OFBiz kreeg fixes voor 46 fouten, waaronder een pre-authenticatie remote code execution en een account-overname (CVE-2026-109928); update naar 24.09.08.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/threatsday-apache-ofbiz-rce-dreamhost.html",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-05-artex-docker-backdoor",
@@ -1517,7 +2788,51 @@
   "samenvatting": "Een Docker Hub-image van het AI-aanvalsframework ARTEX met circa 9.000 downloads bevatte een backdoor die rootshells gaf; 62 publiek bereikbare consoles draaiden de besmette versie.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/backdoored-docker-image-for-artex-ai.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-05-trust-wallet-claim",
+  "datum": "2026-11-05",
+  "categorie": "Crypto",
+  "status": "Claim",
+  "titel": "Onbevestigde $1,1 mln-diefstal bij Trust Wallet-gebruikers",
+  "doelwit": "Trust Wallet (iOS-gebruikers)",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": 1100000,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Alleen claims op X spreken van een iOS 18.5-exploit die seeds steelt (~$1,1 mln); daarnaast circuleert een nepsite trastwallet[.]cam waarvoor CZ waarschuwde.",
+  "bron": "crypto.news",
+  "bron_url": "https://crypto.news/cz-warns-trust-wallet-users-of-fake-website-as-1-1m-exploit-emerges/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-05-loopscale",
+  "datum": "2026-11-05",
+  "categorie": "Crypto",
+  "status": "Bevestigd",
+  "titel": "Loopscale pauzeert na aanvalscampagne op vaults",
+  "doelwit": "Loopscale (Solana-lending)",
+  "land": "Verenigde Staten",
+  "ernst": "Laag",
+  "ernst_score": 1,
+  "schade_usd": 0,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Na 30.000+ kwaadaardige API-verzoeken per dag op de SOL- en USDC-Genesis-vaults legde Loopscale activiteiten stil; gebruikersgeld is volgens het protocol veilig.",
+  "bron": "crypto.news",
+  "bron_url": "https://crypto.news/loopscale-halts-operations-after-30000-daily-malicious-api-requests/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-arkea",
@@ -1536,7 +2851,93 @@
   "samenvatting": "Supply-chain-aanval via externe dienstverlener; frauduleuze overboekingen, klanttegoeden veilig.",
   "bron": "CSO Online",
   "bron_url": "https://www.csoonline.com/article/4245357/french-banking-group-hit-by-supply-chain-cyberattack.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-04-muji-kaart",
+  "datum": "2026-11-04",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "MUJI: 1,09 mln volledige creditcardnummers gelekt",
+  "doelwit": "Ryohin Keikaku (MUJI) / Credit Saison",
+  "land": "Japan",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 1090000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Na een eerdere inbraak in de MUJI-app (tot 27,26 mln gebruikers) bleken ook volledige kaartnummers van 1,09 miljoen MUJI Card-houders buitgemaakt, die onnodig in de systemen van Ryohin Keikaku bewaard waren.",
+  "bron": "teiss",
+  "bron_url": "https://www.teiss.co.uk/news/credit-card-numbers-of-109-million-muji-card-members-leaked-breach-follows-earlier-app-leak-18417",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-04-plenus-hotto-motto",
+  "datum": "2026-11-04",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Hotto Motto-uitbater Plenus: tot 7 mln ledenrecords gelekt",
+  "doelwit": "Plenus (Hotto Motto)",
+  "land": "Japan",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 7000000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Via een ingehuurde mailmagazinedienst kregen aanvallers op 28–31 okt toegang tot e-mailadressen, namen, geboortedata en telefoonnummers van tot 7 miljoen leden van fastfoodketen Hotto Motto.",
+  "bron": "Seorico (incidentdatabase)",
+  "bron_url": "https://incidents.seory.co.jp/incidents/20261104-950a0d/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-04-harvard",
+  "datum": "2026-11-04",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Harvard: datalek raakt 851.000 accounts",
+  "doelwit": "Harvard University (alumni en donateurs)",
+  "land": "Verenigde Staten",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 851000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Bij een datalek bij Harvard lekten namen, adressen en donatiegegevens gekoppeld aan circa 851.000 accounts van alumni en donateurs.",
+  "bron": "BleepingComputer",
+  "bron_url": "https://www.bleepingcomputer.com/news/security/harvard-university-data-breach-exposed-info-of-851-000-accounts/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-04-unilever-whitearmor-claim",
+  "datum": "2026-11-04",
+  "categorie": "Aanval/datalek",
+  "status": "Claim",
+  "titel": "Claim: Whitearmor eist $15 mln van Unilever",
+  "doelwit": "Unilever",
+  "land": "Verenigd Koninkrijk",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 665000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Ransomwaregroep Whitearmor claimt 79 GB logistieke data met o.a. 665.000 contacten en 838.000 distributeursprofielen en eist 15 miljoen dollar in bitcoin; onbevestigd.",
+  "bron": "HookPhish",
+  "bron_url": "https://www.hookphish.com/blog/ransomware-group-whitearmor-hits-unilever/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-docomo",
@@ -1555,7 +2956,9 @@
   "samenvatting": "Tot 294.839 accounts (204K particulier, 91K zakelijk) mogelijk gelekt.",
   "bron": "ASCII.jp",
   "bron_url": "https://ascii.jp/en/elem/000/004/449/4449470/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-apple",
@@ -1574,7 +2977,9 @@
   "samenvatting": "Oud lek nu in keten van APT29 tegen oudere iPhones; KEV-deadline 18 nov.",
   "bron": "CISA",
   "bron_url": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/431ad4e",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-amadeus-sia",
@@ -1593,7 +2998,9 @@
   "samenvatting": "46.000 boekingen bij SIA; ook Korean Air, Cathay, JAL, Malaysia Airlines geraakt.",
   "bron": "The Star",
   "bron_url": "https://www.thestar.com.my/tech/tech-news/2026/11/04/singapore-airlines-says-46000-booking-records-affected-by-amadeus-breach",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-bristol-scholen-lek",
@@ -1612,7 +3019,9 @@
   "samenvatting": "Criminelen publiceerden circa 320.000 bestanden, waaronder kindgegevens, die in september waren gestolen bij een aanval op het IT-platform van 88 scholen in Bristol.",
   "bron": "ITV News",
   "bron_url": "https://www.itv.com/news/westcountry/2026-11-04/childrens-data-leaked-by-criminals-in-bristol-schools-cyber-attack",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-dreamhost-inbraak",
@@ -1631,7 +3040,9 @@
   "samenvatting": "Via een lek in de bestandsbeheerder stalen aanvallers maandenlang sessietokens, klantbestanden en e-mails bij webhoster DreamHost; minder dan 10% van de klanten is getroffen.",
   "bron": "TechCrunch",
   "bron_url": "https://techcrunch.com/2026/11/04/hackers-stole-dreamhost-customer-files-and-inboxes-during-months-long-attack/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-hca-healthcare-datalek",
@@ -1650,7 +3061,9 @@
   "samenvatting": "Een aanvaller kopieerde HR-bestanden met SSN's en immigratiegegevens van artsen in opleiding plus medische en verzekeringsdata van patiënten; alleen al in Texas zijn 15.096 mensen getroffen.",
   "bron": "HIPAA Journal",
   "bron_url": "https://www.hipaajournal.com/data-breaches-hca-healthcare-blossom-health/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-polen-ministerie-cultuur",
@@ -1669,7 +3082,9 @@
   "samenvatting": "Via een lek in het subsidiesysteem SOP liepen gegevens van circa 24.000 gebruikers risico, waaronder PESEL-nummers, ID-gegevens en bankrekeningnummers.",
   "bron": "CyberDefence24",
   "bron_url": "https://cyberdefence24.pl/cyberbezpieczenstwo/cyberataki/atak-hakerski-na-rzadowy-system-mozliwy-wyciek-danych-tysiecy-osob",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-rails-activestorage",
@@ -1688,7 +3103,9 @@
   "samenvatting": "Apps die Active Storage met ImageMagick gebruiken en uploads van onbetrouwbare gebruikers accepteren kunnen willekeurige bestanden op de server laten schrijven; opgelost in Rails 8.1.4.1 en 8.0.5.2.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/critical-rails-flaw-lets-attackers.html",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-apt-mitm",
@@ -1707,7 +3124,9 @@
   "samenvatting": "Door een door APT-ontwikkelaars als kritiek aangemerkte fout kan een man-in-the-middle geverifieerde pakketten vervangen en code als root uitvoeren; Ubuntu bracht o.a. APT 2.8.4ubuntu0.1 (24.04) en 3.2.1ubuntu0.1 (26.04) uit.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/debian-and-ubuntu-apt-flaw-lets-mitm.html",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-slippynunchucks-sogou",
@@ -1726,7 +3145,30 @@
   "samenvatting": "ESET ontdekte dat de China-gelieerde groep SlippyNunchucks via DNS-kaping het promotiemechanisme van Sogou Input Method misbruikte om de DarkVigil-backdoor bij slachtoffers in Azië en het Midden-Oosten te installeren.",
   "bron": "ESET WeLiveSecurity",
   "bron_url": "https://www.welivesecurity.com/en/eset-research/slippynunchucks-hijacks-sogou-input-methods-brand-promotion-mechanism-to-distribute-malware/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-04-puppet-openvox",
+  "datum": "2026-11-04",
+  "categorie": "Kwetsbaarheid",
+  "status": "Bevestigd",
+  "titel": "Puppet/OpenVox-lekken: certificaat-bypass misbruikt, RCE-PoC publiek",
+  "doelwit": "OpenVox Server/Agent, Puppet Enterprise, Open Source Puppet",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "CVE-2026-115732",
+  "cvss": 9.0,
+  "samenvatting": "Autorisatie-bypass via certificaatnamen (CVSS 9.0) wordt volgens SecurityOnline in het wild misbruikt; voor de deserialisatie-RCE CVE-2026-115731 (CVSS 9.4) is een publieke exploit beschikbaar, Open Source Puppet krijgt geen fix.",
+  "bron": "SecurityOnline",
+  "bron_url": "https://securityonline.info/puppet-server-rce-cve-2026-115731-poc/",
+  "misbruikt": true,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-mirae",
@@ -1745,7 +3187,9 @@
   "samenvatting": "Klant- en medewerkersgegevens blootgesteld.",
   "bron": "KonBriefing",
   "bron_url": "https://konbriefing.com/en-topics/cyber-attacks.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-queens",
@@ -1764,7 +3208,9 @@
   "samenvatting": "Website, app en publieke pc's sinds woensdag plat.",
   "bron": "ABC7 New York",
   "bron_url": "https://abc7ny.com/post/queens-public-library-restores-services-ransomware-attack/20024588",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-nsw-health-incident",
@@ -1783,7 +3229,9 @@
   "samenvatting": "Een geïsoleerde server van NSW Health werd gecompromitteerd en tot 'major incident' verklaard; volgens de autoriteiten is geen patiëntdata geraakt.",
   "bron": "SBS News",
   "bron_url": "https://www.sbs.com.au/news/article/cybercrime-squad-investigating-major-nsw-health-data-breach/jhbcaq0q4",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-pluxee-belgie",
@@ -1802,7 +3250,9 @@
   "samenvatting": "Na schadelijke activiteit op een server zijn mogelijk namen, e-mailadressen en telefoonnummers van kaarthouders van Pluxee ingezien.",
   "bron": "VRT NWS",
   "bron_url": "https://www.vrt.be/vrtnws/nl/2026/11/04/mogelijk-datalek-bij-pluxee-namen-en-contactgegevens-van-kaarth/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-le-code-dekra",
@@ -1821,7 +3271,9 @@
   "samenvatting": "Gegevens van kandidaten voor rij- en vaarbewijs-theorie-examens zijn gelekt.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-04-le-code-by-dekra",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-inrae",
@@ -1840,7 +3292,9 @@
   "samenvatting": "De website van het Franse landbouwonderzoeksinstituut werd beklad en hackers claimen circa 1,2 GB aan data.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-03-inrae",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-ffpb",
@@ -1859,7 +3313,9 @@
   "samenvatting": "Een aanvaller claimt gegevens van 6.271 licentiehouders.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-04-federation-francaise-de-pelote-basque-ffpb",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-kyiv-independent-hack",
@@ -1878,7 +3334,72 @@
   "samenvatting": "Vermoedelijk Russische hackers braken in op het CMS en de nieuwsbriefdienst van The Kyiv Independent en verstuurden valse berichten, onder meer over een kernaanval op Kyiv.",
   "bron": "The Record",
   "bron_url": "https://therecord.media/ukraine-kyiv-independent-cyberattack",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-04-ihg-byod-claim",
+  "datum": "2026-11-04",
+  "categorie": "Aanval/datalek",
+  "status": "Claim",
+  "titel": "Claim: BYOD zegt IHG Hotels & Resorts te hebben gehackt",
+  "doelwit": "IHG Hotels & Resorts",
+  "land": "Verenigd Koninkrijk",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Claim: ransomwaregroep BYOD zegt klant- en boekingsdata, AWS-sleutels en CyberArk-toegang van IHG te hebben, wat ook tientallen Australische hotels kan raken; geen bewijs gepubliceerd.",
+  "bron": "Cyber Daily",
+  "bron_url": "https://www.cyberdaily.au/security/14399-exclusive-dozens-of-australian-hotels-potentially-impacted-by-alleged-ihg-hotels-resorts-breach",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-04-garden-valley-schools",
+  "datum": "2026-11-04",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Cyberinbraak legt Manitobaans schooldistrict offline",
+  "doelwit": "Garden Valley School Division",
+  "land": "Canada",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een inbraak in centrale IT-systemen dwong de Manitobaanse schooldivisie netwerken los te koppelen; onderzocht wordt of leerlingdata is ingezien.",
+  "bron": "Campus Security Today",
+  "bron_url": "https://campussecuritytoday.com/articles/2026/11/04/cybersecurity-incident-knocks-manitoba-school-division-offline.aspx",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-04-signalplus",
+  "datum": "2026-11-04",
+  "categorie": "Crypto",
+  "status": "Bevestigd",
+  "titel": "SignalPlus gehackt via nep-Teams-uitnodiging",
+  "doelwit": "SignalPlus (tradingplatform)",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": 82000,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Via een gekaapt Telegram-account van een leverancier werd een engineer met een valse Teams-invite geïnfecteerd; minder dan $82K verloren via exchange-API-keys, Binance en Deribit trokken de keys in.",
+  "bron": "crypto.news",
+  "bron_url": "https://crypto.news/signalplus-hack-82k-binance-deribit-api-keys/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-04-gemeente-deurne",
@@ -1897,7 +3418,9 @@
   "samenvatting": "De gemeente verstrekte bij een Woo-verzoek circa 36.000 pagina's met persoonsgegevens aan Omroep Brabant en een lokale partij en meldde dit bij de AP.",
   "bron": "Omroep Brabant",
   "bron_url": "https://www.omroepbrabant.nl/nieuws/6033566/datalek-bij-gemeente-deurne-na-delen-van-36000-paginas-over-paardenrijhal",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-wordpress",
@@ -1916,7 +3439,9 @@
   "samenvatting": "Misbruikt tijdens core-upgrades; KEV-deadline 3 dagen. Fix in 7.1.4.",
   "bron": "CISA",
   "bron_url": "https://www.cisa.gov/news-events/alerts/2026/11/03/cisa-adds-one-known-exploited-vulnerability-catalog",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-nodered",
@@ -1935,7 +3460,9 @@
   "samenvatting": "Ontbrekende authenticatie geeft commando-uitvoering met één HTTP-request; bots en webshells geplaatst.",
   "bron": "SecurityWeek",
   "bron_url": "https://www.securityweek.com/critical-node-red-flaw-exploited-in-attacks/",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-frontline-education",
@@ -1954,7 +3481,9 @@
   "samenvatting": "Aanvallers misbruikten een lek in software van derden om SSN's, rijbewijs- en gezondheidsgegevens van leerlingen en schoolpersoneel te stelen; filings noemen 1,3 miljoen, een latere melding ruim 3 miljoen getroffenen.",
   "bron": "SecurityWeek",
   "bron_url": "https://www.securityweek.com/frontline-education-data-breach-impacts-over-1-3-million/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-gnosispay",
@@ -1973,7 +3502,9 @@
   "samenvatting": "Namen, adressen, kaartnummers en gekoppelde walletadressen gelekt; geen fondsen weg.",
   "bron": "CoinCentral",
   "bron_url": "https://coincentral.com/gnosis-pay-card-hack-exposes-wallet-addresses-raising-risk-of-targeted-crypto-scams",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-chainstack",
@@ -1992,7 +3523,9 @@
   "samenvatting": "Via third-party component: klantdatabase met wachtwoordhashes buit; node-credentials moeten geroteerd.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/chainstack-reports-production-systems.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-cpguard",
@@ -2011,7 +3544,9 @@
   "samenvatting": "Nep-update backdoorde ~2.950 Linux-servers; SSH-keys, DB-credentials en hashes gezocht.",
   "bron": "RuntimeWire",
   "bron_url": "https://runtimewire.com/article/opsshield-cpguard-update-hijack-backdoor-2950-servers",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-linux-tcp",
@@ -2030,7 +3565,9 @@
   "samenvatting": "Use-after-free in IPv4-TCP, op afstand zonder login; nog geen misbruik, Red Hat en Ubuntu patchen.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/red-hat-patches-98-rated-linux-tcp-rce.html",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-xen-xsa523",
@@ -2049,7 +3586,9 @@
   "samenvatting": "Twee grant-copy-fouten (XSA-523) maken een escape van gast naar dom0 mogelijk; patches zijn er voor Xen 4.17–4.19, XCP-ng 8.3 (xen-4.17.7-4.2) en Qubes 4.3, misbruik in het wild is niet bekend.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/xen-hypervisor-flaws-let-one-malicious.html",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-cwp2shell",
@@ -2068,7 +3607,9 @@
   "samenvatting": "VulnCheck publiceerde een keten van tien CVE's waarmee een ongeauthenticeerde aanvaller root-code kan uitvoeren op hostingpanel Control Web Panel; alles is opgelost in versie 1.29 (31 oktober).",
   "bron": "VulnCheck",
   "bron_url": "https://www.vulncheck.com/blog/control-web-panel-pre-auth-module-dispatch-rce",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-entra-id-27-organisaties",
@@ -2087,7 +3628,9 @@
   "samenvatting": "Een actor gebruikte gestolen Entra ID-appreferenties en Azure DevOps-identiteiten om binnen te dringen bij ten minste 27 organisaties, waaronder MSP's en klanten in overheid, energie en onderwijs.",
   "bron": "Cyber Press",
   "bron_url": "https://cyberpress.org/hackers-microsoft-entra-id-breach-27-organizations/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-gorbag-spionage-oekraine",
@@ -2106,7 +3649,9 @@
   "samenvatting": "ESET onthulde dat de Russisch gelieerde groep Gorbag met WinRAR-exploits gegevens stal bij Oekraïense justitie, lokale overheden nabij het front, defensiebedrijven en een hub voor buitenlandse militaire hulp.",
   "bron": "ESET WeLiveSecurity",
   "bron_url": "https://www.welivesecurity.com/en/eset-research/gorbag-orcs-border-harvesting-intelligence-ukraine/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-darkblinders-koerdistan",
@@ -2125,7 +3670,9 @@
   "samenvatting": "De spionagegroep DarkBlinders gebruikte GitHub als C2 en haalde minstens 1 GB aan data weg uit een overheidscloudomgeving in Iraaks Koerdistan.",
   "bron": "Cyber Press",
   "bron_url": "https://cyberpress.org/darkblinders-exploits-github-repositories/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-msecure-wachtwoordmanager",
@@ -2144,7 +3691,51 @@
   "samenvatting": "mSeven Software vroeg mSecure-gebruikers na niet nader toegelichte verdachte activiteit hun wachtwoorden, 2FA en passkeys te resetten.",
   "bron": "The Register",
   "bron_url": "https://www.theregister.com/security/2026/11/03/password-manager-msecure-tells-users-to-change-passwords-wont-say-why/5307296",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-03-li-auto-rusland",
+  "datum": "2026-11-03",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Li Auto-auto's in Rusland op afstand geblokkeerd",
+  "doelwit": "Eigenaren Li Auto-auto's in Rusland",
+  "land": "Rusland",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Criminelen kaapten gebruikersaccounts en schakelden daarmee Li Auto-crossovers op afstand uit om losgeld te vragen.",
+  "bron": "Red Hot Cyber",
+  "bron_url": "https://www.redhotcyber.com/en/post/your-car-could-be-held-hostage-ransomware-now-targets-vehicles/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-03-gitbook",
+  "datum": "2026-11-03",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "GitBook gehackt met AI-agents, tokens mogelijk gelekt",
+  "doelwit": "GitBook (documentatieplatform, o.a. PancakeSwap)",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Aanvallers bemachtigden infrastructuur-credentials; API-tokens, Git Sync-secrets en AI-vragen kunnen zijn blootgesteld, klanten moeten sleutels roteren.",
+  "bron": "Decrypt",
+  "bron_url": "https://decrypt.co/382465/crypto-docs-gitbook-ai-agent-security-breach",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-03-insurancepool",
@@ -2163,15 +3754,17 @@
   "samenvatting": "~160 BNB verloren.",
   "bron": "SlowMist",
   "bron_url": "https://hacked.slowmist.io/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-koeling",
   "datum": "2026-11-02",
   "categorie": "Aanval/datalek",
   "status": "Bevestigd",
-  "titel": "Koelsystemen supermarkten én Franse bloedbanken gehackt",
-  "doelwit": "Supermarkten (10 landen) + Franse bloedbanken",
+  "titel": "Frankrijk wijst Iran aan voor hack koelsystemen supermarkten",
+  "doelwit": "Supermarkten (o.a. Delhaize, Carrefour België, 17 NL-bedrijven) + Franse bloedbanken",
   "land": "Europa",
   "ernst": "Kritiek",
   "ernst_score": 4,
@@ -2179,10 +3772,12 @@
   "records": null,
   "cve": null,
   "cvss": null,
-  "samenvatting": "Tweede golf: koel-/vriesinstallaties op afstand opgewarmd in o.a. België, Luxemburg, Zweden, Estland; ook Franse bloedbanken geraakt. ENISA waarschuwt.",
-  "bron": "Security Affairs",
-  "bron_url": "https://securityaffairs.com/202431/hacking/cyberattack-hits-french-blood-banks-as-hackers-target-refrigeration-systems-across-europe.html",
-  "misbruikt": null
+  "samenvatting": "Frankrijk schrijft de sabotage van Danfoss-koelcontrollers op ~700 locaties (minstens 15 branden) toe aan IRGC-eenheid Shahid Kaveh en vaardigde drie arrestatiebevelen uit; België ziet nog geen bewijs voor die link.",
+  "bron": "The Hacker News",
+  "bron_url": "https://thehackernews.com/2026/11/france-blames-iran-for-sabotage-attack.html",
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
  },
  {
   "id": "2026-11-02-marathon",
@@ -2201,7 +3796,9 @@
   "samenvatting": "Aanvaller deed zich voor als IT'er; namen, geboortedata en BSN-equivalenten (SSN) geëxporteerd.",
   "bron": "GovInfoSecurity",
   "bron_url": "https://www.govinfosecurity.com/marathon-health-hack-could-affect-nearly-57-million-a-33273",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-alarmapps",
@@ -2220,7 +3817,9 @@
   "samenvatting": "Miljoenen burgers kregen valse chemische/nucleaire waarschuwingen.",
   "bron": "Security Affairs",
   "bron_url": "https://securityaffairs.com/202248/security/hackers-send-fake-nuclear-threat-alerts-to-ukrainian-and-russian-citizens.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-msu-byod-ransomware",
@@ -2239,7 +3838,9 @@
   "samenvatting": "Ransomwaregroep BYOD zegt gegevens van 1,3 miljoen huidige en oud-studenten van MSU te hebben gestolen; de universiteit spreekt van mogelijke credentialcompromittering en liet alle wachtwoorden resetten.",
   "bron": "The Record",
   "bron_url": "https://therecord.media/michigan-state-university-byod-gang-cyber-incident",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-arara-77-miljoen-emails",
@@ -2255,10 +3856,12 @@
   "records": 77000000,
   "cve": null,
   "cvss": null,
-  "samenvatting": "Bij een aanval op de Japanse e-maildienst Arara lekten circa 77 miljoen e-mailadressen van zo'n 380 klantbedrijven (o.a. 2,2 miljoen van SEGA) en werden 7,13 miljoen phishingmails verstuurd.",
-  "bron": "Nippon.com",
-  "bron_url": "https://www.nippon.com/en/articles/-/56805",
-  "misbruikt": null
+  "samenvatting": "Klantmeldingen tonen de omvang van het Arara-lek: o.a. Asoview (15,8 mln), GMO MakeShop (12,6 mln), MOS Burger (7,5 mln), Kakaku.com (5,7 mln), Shochiku Multiplex (3,3 mln), TKC (2,3 mln), SEGA (2,2 mln), Shogakukan (2 mln) en Matsui Securities (830.000).",
+  "bron": "Seorico (incidentdatabase)",
+  "bron_url": "https://incidents.seory.co.jp/incidents/20261103-1c0267/",
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
  },
  {
   "id": "2026-11-02-nojima-ledendatabase",
@@ -2277,7 +3880,9 @@
   "samenvatting": "Onbevoegde toegang tot het ledenbeheersysteem van de webwinkel van elektronicaketen Nojima legde loginnamen en versleutelde wachtwoorden van circa 7 miljoen leden bloot.",
   "bron": "BigGo Finance",
   "bron_url": "https://finance.biggo.com/news/aaa62230-654a-4b13-917e-1b32f08b83ae",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-btcpay",
@@ -2296,7 +3901,9 @@
   "samenvatting": "682 sweeps van hot wallets (30 okt–2 nov) via lek gepatcht in 2.4.2.",
   "bron": "MSSP Alert",
   "bron_url": "https://msspalert.com/brief/hackers-exploit-outdated-btcpay-server-instances-to-steal-cryptocurrency",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-suntory-clouddienst",
@@ -2315,7 +3922,9 @@
   "samenvatting": "Via onbevoegde toegang tot een externe clouddienst lekten namen en contactgegevens van circa 100.000 medewerkers, partners en sollicitanten van Suntory.",
   "bron": "DataBreaches.net",
   "bron_url": "https://databreaches.net/2026/11/02/jpn-suntory-holdings-says-personal-data-of-around-100000-people-leaked/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-brico-depot",
@@ -2334,7 +3943,9 @@
   "samenvatting": "Een aanvaller claimt gegevens van 41.721 klanten van de verhuurdienst van Brico Dépôt.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-02-brico-depot",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-vaud-scholen",
@@ -2353,7 +3964,9 @@
   "samenvatting": "Via het IT-supportplatform van Waadtlandse scholen zijn namen, schoolmailadressen en supportverzoeken van 38.000 leerlingen en 3.500 docenten buitgemaakt.",
   "bron": "Inside IT",
   "bron_url": "https://www.inside-it.ch/cyberangriff-auf-waadtlaender-schulen-20261102",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-pyur-tele-columbus",
@@ -2372,7 +3985,9 @@
   "samenvatting": "Aanvallers haalden tussen september en oktober contract- en bankgegevens inclusief SEPA-machtigingen van (oud-)klanten van Pÿur weg.",
   "bron": "heise online",
   "bron_url": "https://www.heise.de/news/Cyberangriffe-auf-notebooksbilliger-de-und-Pyur-11508664.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-la-laguna",
@@ -2391,7 +4006,9 @@
   "samenvatting": "Een ransomware-aanval verstoorde website, digitaal loket, zaaksysteem en belastinginning van de Canarische gemeente; de aanvallers eisen 5 miljoen dollar.",
   "bron": "Bit Life Media",
   "bron_url": "https://bitlifemedia.com/2026/11/ciberataque-ayuntamiento-la-laguna-rescate-cinco-millones-dolares/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-google-xcpe-botnet-takedown",
@@ -2410,26 +4027,51 @@
   "samenvatting": "Google ontmantelde het x.cpe-botnet van ruim 1,3 miljoen besmette Android-tv-boxen die via een firmwarebackdoor van fabrikant Videostrong werden misbruikt voor advertentiefraude en residentiële proxy's.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/11/google-disrupts-13-million-device.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-mercado",
   "datum": "2026-11-02",
   "categorie": "Crypto",
   "status": "Bevestigd",
-  "titel": "Security-incident Mercado Bitcoin",
+  "titel": "Mercado Bitcoin verliest ~$49 mln uit hot wallets",
   "doelwit": "Mercado Bitcoin",
   "land": "Brazilië",
-  "ernst": "Middel",
-  "ernst_score": 2,
-  "schade_usd": 856000,
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": 48600000,
   "records": null,
   "cve": null,
   "cvss": null,
-  "samenvatting": "~$856K gestolen volgens SlowMist; andere bronnen noemen hogere bedragen.",
-  "bron": "SlowMist",
-  "bron_url": "https://hacked.slowmist.io/",
-  "misbruikt": null
+  "samenvatting": "Bitquery telt $48,6 mln weggesluisd over 11 chains (exchange zelf: $36–38 mln, $15 mln geblokkeerd); klanten worden uit eigen middelen vergoed, crypto-opnames blijven dicht.",
+  "bron": "Rekt News",
+  "bron_url": "https://rekt.news/mercado-rekt",
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
+ },
+ {
+  "id": "2026-11-02-trigger-dev",
+  "datum": "2026-11-02",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Omgevingsvariabelen gestolen bij AI-workflowtool Trigger",
+  "doelwit": "Trigger.dev en klanten",
+  "land": "Verenigde Staten",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Aanvallers stalen omgevingsvariabelen met geheimen van klanten van het AI-workflowplatform Trigger, onderdeel van een reeks aanvallen op ontwikkelplatforms.",
+  "bron": "The Register",
+  "bron_url": "https://www.theregister.com/security/2026/11/02/thieves-pilfer-environment-variables-from-trigger-ai-workflow-tool/5306998",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-bitmart",
@@ -2448,7 +4090,9 @@
   "samenvatting": "~$391K weggehaald op Base, Arbitrum en Optimism.",
   "bron": "SlowMist",
   "bron_url": "https://hacked.slowmist.io/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-biccamera",
@@ -2467,7 +4111,9 @@
   "samenvatting": "Mogelijke lekken van klantdata bij elektronicaretailer en financiële dataleverancier.",
   "bron": "KonBriefing",
   "bron_url": "https://konbriefing.com/en-topics/cyber-attacks.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-dekra-onderaannemer",
@@ -2486,7 +4132,9 @@
   "samenvatting": "Na een incident bij een onderaannemer zijn klantgegevens van de keuringsnetwerken DEKRA, Norisko en Autocontrol blootgesteld.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-02-dekra-automotive",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-solana-mev-bot-king",
@@ -2505,7 +4153,9 @@
   "samenvatting": "De hot wallet van een van Solana's oudste arbitragebots werd gecompromitteerd; de schatting van de schade steeg naar ca. $856.000.",
   "bron": "TokenPost",
   "bron_url": "https://www.tokenpost.com/news/technology/52399",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-workos-artex-inbraak",
@@ -2524,7 +4174,9 @@
   "samenvatting": "Via het AI-pentestframework ARTEX werd een interne verkoopapplicatie van WorkOS gekraakt, waarbij CRM-gegevens, accountgeschiedenis en klantcommunicatie werden buitgemaakt.",
   "bron": "BleepingComputer",
   "bron_url": "https://bleepingcomputer.com/news/security/workos-says-attacker-used-artex-ai-to-breach-internal-sales-app",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-02-strasbourg-tourisme",
@@ -2543,7 +4195,9 @@
   "samenvatting": "Gegevens van websitegebruikers van het toeristenbureau van Straatsburg zijn gelekt.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-02-office-de-tourisme-de-strasbourg",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-01-groupe-mpa",
@@ -2562,7 +4216,30 @@
   "samenvatting": "Een aanvaller claimt gegevens van ruim 1,7 miljoen klanten van Groupe MPA buit te hebben gemaakt.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-01-groupe-mpa",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-11-01-rosstat",
+  "datum": "2026-11-01",
+  "categorie": "Aanval/datalek",
+  "status": "Deels bevestigd",
+  "titel": "Rosstat-hack: data 11 miljoen Russische overlijdens",
+  "doelwit": "Rosstat (Russisch statistiekbureau)",
+  "land": "Rusland",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 11000000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Cyberpartisans en Silent Crow buitten ruim 11 miljoen overlijdensrecords uit, waaruit bijna 400.000 Russische oorlogsdoden blijken; Rosstat bevestigt alleen website-aanvallen.",
+  "bron": "NOS",
+  "bron_url": "https://nos.nl/artikel/2638660-bijna-400-000-russische-doden-in-oorlog-met-oekraine-blijkt-uit-gehackte-data",
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
  },
  {
   "id": "2026-11-01-beget",
@@ -2581,26 +4258,9 @@
   "samenvatting": "Aanvallers wisten cloudinfrastructuur; vele gehoste sites verstoord.",
   "bron": "KonBriefing",
   "bron_url": "https://konbriefing.com/en-topics/cyber-attacks.html",
-  "misbruikt": null
- },
- {
-  "id": "2026-11-01-rosstat",
-  "datum": "2026-11-01",
-  "categorie": "Aanval/datalek",
-  "status": "Deels bevestigd",
-  "titel": "Rosstat claimt-gehackt: 10–23 TB data",
-  "doelwit": "Rosstat (Russisch statistiekbureau)",
-  "land": "Rusland",
-  "ernst": "Hoog",
-  "ernst_score": 3,
-  "schade_usd": null,
-  "records": null,
-  "cve": null,
-  "cvss": null,
-  "samenvatting": "CyberPartisans/Silent Crow claimen diefstal incl. oorlogsslachtoffers; Rosstat bevestigt alleen website-aanvallen.",
-  "bron": "eeNews Europe",
-  "bron_url": "https://www.eenewseurope.com/en/rosstat-cyberattack-hackers-claim-23tb-data-theft/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-01-pharmacie-bailly",
@@ -2619,7 +4279,9 @@
   "samenvatting": "Hackers claimen gegevens van 303.000 klanten van de Parijse apotheek.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-11-01-grande-pharmacie-bailly",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-11-01-trezor-cryptobilis-implantaat",
@@ -2638,7 +4300,9 @@
   "samenvatting": "Trezor waarschuwt dat hardwarewallets van reseller CryptoBilis een verborgen printplaat met mobiele module kunnen bevatten die de herstelzin steelt, dezelfde reseller als bij eerdere Ledger-diefstallen.",
   "bron": "Help Net Security",
   "bron_url": "https://www.helpnetsecurity.com/2026/11/02/trezor-hardware-wallet-implant-cryptobilis/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-autosur",
@@ -2657,7 +4321,9 @@
   "samenvatting": "Autosur bevestigde een cyberaanval op circa 50 keuringscentra; hackers claimen gegevens van 615.233 personen.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-31-autosur",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-terre-de-son",
@@ -2676,7 +4342,9 @@
   "samenvatting": "Een aanvaller claimt circa 309.000 regels klantgegevens van Terre de Son.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-31-terre-de-son",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-pharmacie-cigogne",
@@ -2695,7 +4363,9 @@
   "samenvatting": "Een aanvaller claimt gegevens van 110.000 klanten van de apotheek.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-31-pharmacie-de-la-cigogne",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-swarovski",
@@ -2714,7 +4384,9 @@
   "samenvatting": "Via een IDOR-kwetsbaarheid zouden 103.674 klantrecords in acht landen (namen, adressen, geboortedata) toegankelijk zijn geweest; Swarovski bevestigde niets.",
   "bron": "FrenchBreaches",
   "bron_url": "https://frenchbreaches.com/blog/swarovski-les-donnees-de-pres-de-13-000-clients-francais-potentiellement-exposees",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-assoclub",
@@ -2733,7 +4405,9 @@
   "samenvatting": "Een aanvaller claimt gegevens van 37.630 gebruikers van het verenigingsplatform Assoclub.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-31-assoclub",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-pharmacie-congres",
@@ -2752,7 +4426,9 @@
   "samenvatting": "Een aanvaller claimt gegevens van circa 23.000 klanten van de apotheek.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-31-pharmacie-des-congres",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-b14g",
@@ -2771,7 +4447,9 @@
   "samenvatting": "Via opnames van nul tokens haalde een aanvaller ca. 97 mln CORE (ca. $1,47 mln) uit het restakingprotocol b14g.",
   "bron": "CryptoSlate",
   "bron_url": "https://cryptoslate.com/zero-token-withdrawals-let-a-hacker-drain-97-million-core-from-bitcoin-staking-platform-b14g/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-ao3",
@@ -2790,7 +4468,9 @@
   "samenvatting": "Site moet na cyberaanval opnieuw opgebouwd worden.",
   "bron": "CNET",
   "bron_url": "https://www.cnet.com/tech/services-and-software/ao3-suffers-major-outage/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-rassemblement-national",
@@ -2809,7 +4489,9 @@
   "samenvatting": "De Franse partij bevestigde dat gegevens van haar leden zijn gelekt.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-31-rassemblement-national",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-ma-deco-de-fete",
@@ -2828,7 +4510,9 @@
   "samenvatting": "Een aanvaller claimt gegevens van 11.135 klanten van de feestartikelenwebshop.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-31-ma-deco-de-fete",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-premia",
@@ -2847,7 +4531,9 @@
   "samenvatting": "Een aanvaller misbruikte lege optiepools om zes Premia-vaults op Arbitrum leeg te halen voor ca. $437.000–$464.000.",
   "bron": "crypto.news",
   "bron_url": "https://crypto.news/premia-labs-464k-arbitrum-exploit-chainflip-near-intents/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-troves",
@@ -2866,7 +4552,9 @@
   "samenvatting": "Een oude rebalancer werd misbruikt om ca. 8,6 BTC (ca. $667.000) uit Troves-vaults te halen; drie vaults zijn gepauzeerd.",
   "bron": "Troves via X",
   "bron_url": "https://x.com/trovesfi/status/2116541963755475375",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-name-com-dns",
@@ -2885,7 +4573,9 @@
   "samenvatting": "Hackers kaapten de domeinen van een twaalftal bij Name.com geregistreerde DeFi-sites en plaatsten een wallet-drainer die ca. $138.000 buitmaakte.",
   "bron": "The Block",
   "bron_url": "https://www.theblock.co/news/defi/2026-10-31-hackers-hijack-a-dozen-defi-websites-all-registered-with-name-com-and-steal-about-138000-432251",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-31-vergex",
@@ -2904,7 +4594,9 @@
   "samenvatting": "Bij VergeX ging door een nog onbekende oorzaak ca. $3.689 verloren.",
   "bron": "VergeX via X",
   "bron_url": "https://x.com/vergex_ai/status/2116549211110129781",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-ivanti1",
@@ -2923,7 +4615,30 @@
   "samenvatting": "Laatste schakel in zero-day-keten naar root; deadline 3 dagen, forensisch onderzoek vereist.",
   "bron": "Senserva / CISA KEV",
   "bron_url": "https://senserva.com/cve/CVE-2026-111357.html",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-30-revolve-betaalkaarten",
+  "datum": "2026-10-30",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Revolve: datalek treft 1,5 miljoen mensen",
+  "doelwit": "Revolve Group",
+  "land": "Verenigde Staten",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 1500000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Revolve stelt het aantal getroffenen van de septemberaanval, waarbij ook betaalkaartgegevens zijn buitgemaakt, nu op ruim 1,5 miljoen.",
+  "bron": "SecurityWeek",
+  "bron_url": "https://www.securityweek.com/revolve-puts-data-breach-victim-count-at-1-5-million/",
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
  },
  {
   "id": "2026-10-30-ivanti2",
@@ -2942,7 +4657,9 @@
   "samenvatting": "Ketenbaar met CVE-2026-104935 en -111357; KEV-deadline 13 nov.",
   "bron": "Braindetox (CISA KEV)",
   "bron_url": "https://braindetox.kr/en/posts/ivanti_connect_secure_cve_2026_111357_118527_kev.html",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-polymarket",
@@ -2961,7 +4678,9 @@
   "samenvatting": "Handel gepauzeerd na drain van ~$2,5 mln via gecompromitteerde code op de site.",
   "bron": "BleepingComputer",
   "bron_url": "https://www.bleepingcomputer.com/news/security/polymarket-halts-trading-after-crypto-draining-script-breach-25m-traced/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-northflank",
@@ -2980,7 +4699,9 @@
   "samenvatting": "Klanten moeten alle secrets roteren; gestolen AI-API-keys misbruikt. Eén van 9 AI-devplatform-incidenten in oktober.",
   "bron": "Start With Identity",
   "bron_url": "https://startwithidentity.com/blog/2026-10-30-northflank-tells-customers-to-assume-environment-variables-were-decrypted/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-chainalysis",
@@ -2999,26 +4720,9 @@
   "samenvatting": "Klantgegevens en live tokens van alle klanten (o.a. banken, politie) geraakt.",
   "bron": "Security Affairs",
   "bron_url": "https://securityaffairs.com/202241/ai/chainalysis-investigates-security-incident-involving-ai-driven-attack-techniques.html",
-  "misbruikt": null
- },
- {
-  "id": "2026-10-30-revolve-betaalkaarten",
-  "datum": "2026-10-30",
-  "categorie": "Aanval/datalek",
-  "status": "Bevestigd",
-  "titel": "Hackers stelen betaalkaartgegevens bij Revolve",
-  "doelwit": "Revolve Group",
-  "land": "Verenigde Staten",
-  "ernst": "Hoog",
-  "ernst_score": 3,
-  "schade_usd": null,
-  "records": 197072,
-  "cve": null,
-  "cvss": null,
-  "samenvatting": "Modewebwinkel Revolve meldde aan de SEC dat aanvallers namen, contactgegevens en opgeslagen betaalkaartnummers van klanten buitmaakten; meldingen aan staten tellen minstens 197.000 getroffenen.",
-  "bron": "The Record",
-  "bron_url": "https://therecord.media/resolve-fashion-retailer-data-breach-payment-cards",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-bourse-direct",
@@ -3037,7 +4741,9 @@
   "samenvatting": "Bij de online broker zijn klantgegevens inclusief bankrekeningnummers (IBAN) gelekt.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-30-bourse-direct",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-shelly-store-uk",
@@ -3056,7 +4762,9 @@
   "samenvatting": "Op de website van de Britse Shelly-reseller werd malware gevonden die betaalkaartgegevens van klanten kan hebben gestolen.",
   "bron": "The Register",
   "bron_url": "https://www.theregister.com/cyber-crime/2026/10/30/uk-shelly-reseller-warns-payment-data-stolen-after-malware-found-on-website/5306250",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-claude-code-extensie-cursor",
@@ -3075,7 +4783,9 @@
   "samenvatting": "Een aanvaller publiceerde via toegang tot de Cursor Marketplace een getrojaniseerde Claude Code-extensie die een SSH-backdoor, reverse tunnel en persistentie installeerde bij maximaal 5.000 ontwikkelaars.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-apple-spyware-meldingen-99-landen",
@@ -3094,7 +4804,9 @@
   "samenvatting": "Apple stuurde een nieuwe golf dreigingsmeldingen over huurlingenspyware naar doelwitten in 99 landen, onder wie journalisten en filmmakers.",
   "bron": "Cyber Press",
   "bron_url": "https://cyberpress.org/apple-99-countries-mercenary-spyware-attacks/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-applebees",
@@ -3113,7 +4825,9 @@
   "samenvatting": "Hardcoded databasesleutel in de app legde persoonsgegevens bloot.",
   "bron": "TechCrunch",
   "bron_url": "https://techcrunch.com/2026/10/30/applebees-exposed-customers-personal-data-after-leaving-database-password-in-app/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-central-okanagan-scholen",
@@ -3132,7 +4846,9 @@
   "samenvatting": "Na misbruik van vier gecompromitteerde accounts voor phishing schakelde het Canadese schooldistrict tijdelijk Gmail voor leerlingen en personeel uit.",
   "bron": "Vernon Morning Star",
   "bron_url": "https://vernonmorningstar.com/2026/10/30/breach-causes-central-okanagan-public-schools-emails-to-be-shut-down-temporarily/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-ws-audiology",
@@ -3151,7 +4867,9 @@
   "samenvatting": "Na ongeautoriseerde toegang haalde WS Audiology systemen offline, waardoor apps en diensten van Widex en Signia tijdelijk onbereikbaar waren.",
   "bron": "HearingTracker",
   "bron_url": "https://www.hearingtracker.com/news/ws-audiology-investigates-cybersecurity-incident-affecting-it-systems",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-incognito",
@@ -3170,7 +4888,9 @@
   "samenvatting": "Een aanvaller claimt gegevens van 13.474 klanten.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-30-incognito",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-kookabarra",
@@ -3189,7 +4909,9 @@
   "samenvatting": "Een aanvaller claimt gegevens van 9.000 personen.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-29-kookabarra",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-30-ff-echecs",
@@ -3208,7 +4930,9 @@
   "samenvatting": "Een aanvaller claimt gegevens van 7.500 leden van de schaakfederatie.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-30-federation-francaise-des-echecs",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-29-binance",
@@ -3227,7 +4951,9 @@
   "samenvatting": "Grootste crypto-hack ooit; FBI wijst Noord-Korea aan. ~$2,85 mld bevroren; witwassen o.a. via zelfgemaakte memecoins (Elliptic).",
   "bron": "AP",
   "bron_url": "https://apnews.com/article/binance-changpeng-zhao-hack-north-korea-trump-world-liberty-3255f83c8ca64131bd52ca9b4033c17c",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-29-gitlab",
@@ -3246,7 +4972,9 @@
   "samenvatting": "Actief misbruikt; toegevoegd aan CISA KEV.",
   "bron": "CISA",
   "bron_url": "https://www.cisa.gov/news-events/alerts/2026/10/29/cisa-adds-two-known-exploited-vulnerabilities-catalog",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-29-ciscoasa",
@@ -3265,7 +4993,9 @@
   "samenvatting": "Actief misbruikt; toegevoegd aan CISA KEV.",
   "bron": "CISA",
   "bron_url": "https://www.cisa.gov/news-events/alerts/2026/10/29/cisa-adds-two-known-exploited-vulnerabilities-catalog",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-29-synology",
@@ -3284,7 +5014,9 @@
   "samenvatting": "Aanvallers versleutelen NAS'en met DSM-versies zonder de patch van dec 2024.",
   "bron": "Security Affairs",
   "bron_url": "https://securityaffairs.com/202343/security/synology-warns-of-ransomware-attacks-targeting-nas-devices-running-outdated-dsm-versions.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-29-filipijnen-dmw-datadiefstal",
@@ -3303,7 +5035,9 @@
   "samenvatting": "Een aanvaller kopieerde 27 SQL-databaseback-ups (circa 69 GB) van systemen van het Filipijnse ministerie voor migrerende werknemers; de privacytoezichthouder onderzoekt het.",
   "bron": "NewsBytes.PH",
   "bron_url": "https://newsbytes.ph/2026/10/29/npc-probes-alleged-theft-of-68gb-of-dmw-linked-database-backups/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-29-oracle-ebs-exploitatie",
@@ -3322,7 +5056,9 @@
   "samenvatting": "Een week na de Oracle-patch van 20 oktober zag Defused de eerste exploitpogingen op deze ongeauthenticeerde SQL-injectie-naar-RCE in EBS; installeer de Critical Patch Update van oktober 2026.",
   "bron": "Help Net Security",
   "bron_url": "https://www.helpnetsecurity.com/2026/10/29/oracle-e-business-suite-cve-2026-101767-exploitation/",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-29-ws-ftp-cvss10",
@@ -3341,7 +5077,9 @@
   "samenvatting": "Een authenticatiefout die beheerdersgegevens blootgeeft aan ongeauthenticeerde aanvallers plus o.a. command injection (CVSS 9.9) zijn opgelost in WS_FTP Server 2024.0.7 en 2025.0.4; misbruik is nog niet gemeld.",
   "bron": "SecurityOnline.info",
   "bron_url": "https://securityonline.info/ws-ftp-server-vulnerabilities-cve-2026-84295/",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-29-searchjacked-browserextensies",
@@ -3360,7 +5098,9 @@
   "samenvatting": "Socket ontdekte 319 deels verborgen browserextensies met samen circa 13,4 miljoen installaties die standaardzoekmachines kaapten en alle zoekopdrachten via eigen proxyservers leidden.",
   "bron": "Socket",
   "bron_url": "https://socket.dev/blog/searchjacked",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-29-zklink-nova",
@@ -3379,7 +5119,9 @@
   "samenvatting": "Met een vervalste batch-root werd de ETH-escrow van de zkLink Nova-bridge in één transactie voor ca. $786.000 leeggehaald.",
   "bron": "The Crypto Times",
   "bron_url": "https://www.cryptotimes.io/2026/10/29/zklink-nova-bridge-exploited-for-786k-as-forged-batch-root-drains-ethereum-escrow/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-moldavie",
@@ -3398,7 +5140,9 @@
   "samenvatting": "Persoonsgegevens van ~750.000 mensen (ca. een derde van de bevolking) gestolen.",
   "bron": "RFE/RL",
   "bron_url": "https://www.rferl.org/a/moldova-cyberattack-data-breach-750000-sandu/33886733.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-florida",
@@ -3417,7 +5161,9 @@
   "samenvatting": "Bijna 5 miljoen mensen geraakt, ook minderjarigen.",
   "bron": "FLDOE",
   "bron_url": "https://www.fldoe.org/databreach.stml",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-linux-fragnesia-kev",
@@ -3436,7 +5182,9 @@
   "samenvatting": "Aanvallers ketenen deze out-of-bounds write in de IPsec-ESP-verwerking aan PHP2Shell om root te krijgen; CISA gaf federale diensten drie dagen (tot 31 oktober) om te updaten naar o.a. kernel 6.12.91 of 7.1.",
   "bron": "SecurityOnline.info",
   "bron_url": "https://securityonline.info/cisa-kev-linux-kernel-php2shell-vmware-esx/",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-dhs",
@@ -3455,15 +5203,17 @@
   "samenvatting": "Gegevens van 40.000+ medewerkers (o.a. CBP, ICE) via Okta-systeem buitgemaakt en gepubliceerd.",
   "bron": "TechCrunch",
   "bron_url": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-belgie",
   "datum": "2026-10-28",
   "categorie": "Aanval/datalek",
   "status": "Bevestigd",
-  "titel": "Cyberaanval op Belgische FOD Financiën",
-  "doelwit": "Belgische belastingdienst",
+  "titel": "Cyberaanval FOD Financiën: btw-aanvragen nog steeds plat",
+  "doelwit": "Belgische belastingdienst (FOD Financiën)",
   "land": "België",
   "ernst": "Hoog",
   "ernst_score": 3,
@@ -3471,10 +5221,12 @@
   "records": null,
   "cve": null,
   "cvss": null,
-  "samenvatting": "Belastingportaal uit de lucht gehaald na aanval.",
-  "bron": "Euronews",
-  "bron_url": "https://www.euronews.com/2026/10/28/belgiums-finance-and-tax-agency-hit-by-cyberattack",
-  "misbruikt": null
+  "samenvatting": "MyMinfin is weer online, maar het systeem voor btw-nummers werkt anderhalve week na de aanval nog niet; er ligt een achterstand van 5.500 dossiers, volgens de FOD is geen data gestolen.",
+  "bron": "VRT NWS",
+  "bron_url": "https://www.vrt.be/vrtnws/nl/2026/11/07/btw-nummer-cyberaanval-overheid/",
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": "2026-11-11"
  },
  {
   "id": "2026-10-28-cts-strasbourg",
@@ -3493,7 +5245,9 @@
   "samenvatting": "Bij het Straatsburgse openbaar vervoerbedrijf zijn gegevens van 230.000 klantaccounts gelekt.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-28-compagnie-des-transports-strasbourgeois-cts",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-tranchepool",
@@ -3512,7 +5266,9 @@
   "samenvatting": "Een smart-contractlek in TranchePool werd binnen 202 seconden misbruikt voor ca. 1,013 mln USDC.",
   "bron": "TokenPost",
   "bron_url": "https://www.tokenpost.com/news/technology/50313",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-hifi-finance",
@@ -3531,7 +5287,9 @@
   "samenvatting": "Een aanvaller kreeg via een stemming controle over de Hifi DAO en verplaatste ca. $1 mln aan gebruikerscollateral.",
   "bron": "TokenPost",
   "bron_url": "https://www.tokenpost.com/news/technology/43138",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-ledger-singapore",
@@ -3550,7 +5308,51 @@
   "samenvatting": "Singaporese politie koppelt minstens twee diefstallen van in totaal ca. S$3,5 mln aan in winkels verkochte Ledger-wallets met verborgen implantaat dat de herstelzin stal.",
   "bron": "crypto.news",
   "bron_url": "https://crypto.news/singapore-police-report-3-5m-losses-from-tampered-ledger-wallets/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-28-daishin-securities",
+  "datum": "2026-10-28",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Nieuwe aanvalsgolf op Koreaanse financiële sector: Daishin lekt 38.490 klanten",
+  "doelwit": "Daishin Securities, Mirae Asset Global Investments, Bithumb",
+  "land": "Zuid-Korea",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": 38490,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Daishin Securities lekte namen, e-mail en telefoonnummers van 38.490 klanten; ook Mirae Asset Global Investments en Bithumb meldden incidenten.",
+  "bron": "TechCrunch",
+  "bron_url": "https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-28-volt-typhoon-silent-train",
+  "datum": "2026-10-28",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Volt Typhoon gebruikte geheim relaynetwerk 'Silent Train' voor zero-days",
+  "doelwit": "Telecom, overheid, defensie en vitale infrastructuur (vooral VS: Hawaï, Californië, Texas)",
+  "land": "Verenigde Staten",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Black Lotus Labs (Lumen) beschrijft hoe de Chinese staatsgroep via gehackte SOHO-/IoT-apparaten honderden slachtoffers aanviel met zero-days in o.a. Versa Director, N-able N-central, Cisco SD-WAN en Arista VeloCloud; het netwerk is inmiddels verstoord.",
+  "bron": "The Hacker News",
+  "bron_url": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-123reg",
@@ -3569,7 +5371,9 @@
   "samenvatting": "Contactgegevens van klanten buitgemaakt; China-link vermoed.",
   "bron": "The Register",
   "bron_url": "https://www.theregister.com/cyber-crime/2026/10/28/123-reg-discloses-ai-cyberattack-on-customer-data-suspects-china-nexus/5305936",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-colmobil",
@@ -3588,7 +5392,9 @@
   "samenvatting": "Grootste voertuigimporteur van Israël getroffen door ransomware.",
   "bron": "Calcalist",
   "bron_url": "https://www.calcalistech.com/ctechnews/article/1d86y7iev",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-portes-du-berry",
@@ -3607,7 +5413,9 @@
   "samenvatting": "Het Franse gemeentelijk samenwerkingsverband werd getroffen door een cyberaanval met datalek.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-28-communaute-de-communes-des-portes-du-berry",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-cybertek",
@@ -3626,7 +5434,9 @@
   "samenvatting": "Na een cyberaanval op de website van de pc-webwinkel zijn klantgegevens gelekt.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-28-cybertek",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-28-vmware-esx-logging-kev",
@@ -3645,7 +5455,9 @@
   "samenvatting": "De China-gelieerde groep Warp Panda gebruikte een laag-gescoorde ESXi-fout om beheeracties buiten de logs te houden bij o.a. Amerikaanse advocatenkantoren; CISA zette hem in de KEV-lijst en de fix zit in ESXi 9.1.0.0-25370933, 9.0.2.0100-25595025 en 8.0 U3j.",
   "bron": "SecurityWeek",
   "bron_url": "https://www.securityweek.com/chinese-hackers-quietly-used-low-severity-esxi-logging-flaw-as-zero-day/",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-sony-sonet-datalek",
@@ -3664,7 +5476,9 @@
   "samenvatting": "Aanvallers drongen op 19 oktober de ledendatabase van So-net binnen en lekten gegevens van ruim 2,58 miljoen klanten, plus e-mailwachtwoorden van 54.401 adressen.",
   "bron": "CyberInsider",
   "bron_url": "https://cyberinsider.com/sony-data-breach/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-brotli-node2shell-kev",
@@ -3683,7 +5497,9 @@
   "samenvatting": "Een out-of-bounds write in de Brotli-decoder kan via een kwaadaardige gecomprimeerde stream geheugen corrumperen en wordt actief misbruikt; opgelost in Brotli 1.0.10, 1.1.1 en 1.2.1 plus updates van afnemende leveranciers.",
   "bron": "SecurityOnline.info",
   "bron_url": "https://securityonline.info/cisa-kev-magento-brotli-vulnerability/",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-gmo",
@@ -3702,7 +5518,9 @@
   "samenvatting": "Klantdata gepubliceerd; tot ~26.000 klantservers mogelijk geraakt.",
   "bron": "TechCrunch",
   "bron_url": "https://techcrunch.com/2026/10/27/japan-internet-giant-gmo-says-hackers-posted-stolen-customer-data/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-alternita-afd",
@@ -3721,7 +5539,9 @@
   "samenvatting": "Bij een aanval op de AfD-eigen mailhostingprovider zijn honderdduizenden e-mails en bijlagen buitgemaakt; Have I Been Pwned telt 345.000 unieke adressen.",
   "bron": "The Register",
   "bron_url": "https://www.theregister.com/cyber-crime/2026/10/27/attack-on-email-hosting-provider-for-german-far-right-party-afd-exposed-345k-accounts/5305660",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-mutuelle-communale",
@@ -3740,7 +5560,9 @@
   "samenvatting": "Hackers claimen gegevens van circa 50.000 leden van de zorgverzekeraar.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-26-la-mutuelle-communale",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-acf-assurances",
@@ -3759,7 +5581,9 @@
   "samenvatting": "Een aanvaller claimt gegevens van 23.460 verzekerden van ACF Assurances.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-27-acf-assurances",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-fscf",
@@ -3778,7 +5602,9 @@
   "samenvatting": "Een aanvaller claimt gegevens van 23.251 leden van de FSCF.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-26-federation-sportive-et-culturelle-de-france",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-adobe-commerce-polyshell-kev",
@@ -3797,7 +5623,9 @@
   "samenvatting": "CISA voegde de file-uploadfout in Adobe Commerce/Magento toe aan de KEV-lijst wegens actief misbruik; de fix zit in de 2026-jul-patches van bulletin APSB26-73 (deadline 10 november).",
   "bron": "SecurityOnline.info",
   "bron_url": "https://securityonline.info/cisa-kev-magento-brotli-vulnerability/",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-apple-coregraphics-backport",
@@ -3816,7 +5644,9 @@
   "samenvatting": "Apple backportte de fix voor een mogelijk in gerichte aanvallen misbruikte out-of-bounds write in CoreGraphics naar oudere apparaten via iOS/iPadOS 18.7.11.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/10/apple-backports-fix-for-exploited.html",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-veeam-br-authbypass",
@@ -3835,7 +5665,30 @@
   "samenvatting": "Een zonder inloggegevens bereikbare autorisatie-bypass in de CDP Coordinator Service van Veeam B&R (nog niet misbruikt) is opgelost in versie 13.1.2 en 13.0.3.",
   "bron": "Cybersecurity News",
   "bron_url": "https://cybersecuritynews.com/veeam-patches-authorization-bypass-vulnerability/",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-27-rms-cloud",
+  "datum": "2026-10-27",
+  "categorie": "Aanval/datalek",
+  "status": "Deels bevestigd",
+  "titel": "Hack boekingssoftware RMS Cloud leidt tot phishing vakantieparkgasten",
+  "doelwit": "RMS Cloud (o.a. BIG4, Reflections)",
+  "land": "Australië",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Na een inbraak bij boekingsplatform RMS Cloud (6.000+ accommodaties) krijgen gasten phishing met echte boekingsgegevens; RMS zegt dat geen kaartgegevens zijn gelekt.",
+  "bron": "ABC News (Australië)",
+  "bron_url": "https://www.abc.net.au/news/2026-10-27/rms-holiday-booking-software-hacked/107315194",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-elloha",
@@ -3854,7 +5707,9 @@
   "samenvatting": "Na een datalek bij de boekingssoftware ontvingen reizigers valse WhatsApp-berichten met hun reserveringsgegevens.",
   "bron": "Fuites Infos",
   "bron_url": "https://fuitesinfos.fr/article/2026-10-27-elloha",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-predict-fun",
@@ -3873,7 +5728,9 @@
   "samenvatting": "Door een gelekte private key werd ca. $397.708 (USDT) uit de BNB Chain-predictiemarkt Predict.fun gehaald.",
   "bron": "Predict.fun via X",
   "bron_url": "https://x.com/predictdotfun/status/2115089547528950108",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-27-diamante",
@@ -3892,7 +5749,30 @@
   "samenvatting": "Diamante meldde een inbraak door een kwaadwillende partij na lekken van een private key; de schade is niet bekendgemaakt.",
   "bron": "Diamante via X",
   "bron_url": "https://x.com/diamante_io/status/2115183662954356858",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-27-bitonic",
+  "datum": "2026-10-27",
+  "categorie": "Crypto",
+  "status": "Bevestigd",
+  "titel": "Inbraak bij Nederlandse bitcoinhandelaar Bitonic",
+  "doelwit": "Bitonic",
+  "land": "Nederland",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Een aanvaller kreeg op 25 oktober toegang tot systemen met inloggegevens, wijzigde accountdata en stal bitcoin van drie klanten (gecompenseerd); hot wallet tijdelijk offline.",
+  "bron": "Security.nl",
+  "bron_url": "https://www.security.nl/posting/959205/Bitonic+meldt+inbraak+op+systemen%2C+bitcoin+van+drie+klanten+gestolen",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-26-php2shell",
@@ -3911,7 +5791,9 @@
   "samenvatting": "Twee bugs in PHP actief misbruikt; ~25 servers geroot via keten met Palo Alto-lek.",
   "bron": "The Record",
   "bron_url": "https://therecord.media/php2shell-successful-exploitation-reports-emerge",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-26-unmhealth",
@@ -3930,7 +5812,9 @@
   "samenvatting": "Enige level-1 traumacentrum van New Mexico: 30+ klinieken dicht, ambulances omgeleid.",
   "bron": "Security Affairs",
   "bron_url": "https://securityaffairs.com/202495/security/unm-health-shuts-clinics-and-diverts-patients-during-security-incident.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-26-avalanche-safe",
@@ -3949,7 +5833,51 @@
   "samenvatting": "Een 2-van-7 Safe-multisig met onbeperkte, verouderde token-goedkeuringen verloor ca. $7,45 mln, deels onderschept door een MEV-bot.",
   "bron": "The Crypto Times",
   "bron_url": "https://www.cryptotimes.io/2026/10/27/avalanche-safe-loses-7-45m-to-misconfigured-approvals-mev-bot-front-runs-exploit/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-26-denver-health",
+  "datum": "2026-10-26",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Toegangssleutel leverancier legt data 238.000 Denver Health-leden bloot",
+  "doelwit": "Denver Health Medical Plan / SquareML",
+  "land": "Verenigde Staten",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": 238083,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "AI-leverancier SquareML zette ruim een jaar een toegangssleutel online die leesrechten gaf op gezondheidsgegevens van 238.083 leden van Denver Health Medical Plan.",
+  "bron": "HIPAA Journal",
+  "bron_url": "https://www.hipaajournal.com/denver-health-medical-plan-data-breach/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-26-gheist-github-actions",
+  "datum": "2026-10-26",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Gheist plant secret-stelende workflows via 850 gekaapte GitHub-accounts",
+  "doelwit": "GitHub-repositories (ook private en GitHub Enterprise)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Wiz vond ruim 13.500 geplante 'ci-sync'-branches van meer dan 850 gekaapte accounts, waarmee aanvallers met gestolen GitHub-tokens repository-secrets in Actions-logs dumpten en vervolgens de runs wisten.",
+  "bron": "The Hacker News",
+  "bron_url": "https://thehackernews.com/2026/10/gheist-uses-stolen-github-tokens-to.html",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-26-esignflow",
@@ -3968,7 +5896,9 @@
   "samenvatting": "Een inbraak bij de leverancier van de digitale-handtekeningmodule eSignFlow, gebruikt door ruim 100 lokale besturen, legde metadata en e-mailadressen bloot en dwong gemeenten tot phishingwaarschuwingen.",
   "bron": "VRT NWS",
   "bron_url": "https://www.vrt.be/vrtnws/nl/2026/10/26/hack-bij-leverancier-van-lokale-besturen-gemeenten-waarschuwen/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-26-bloom-trading",
@@ -3987,7 +5917,30 @@
   "samenvatting": "Via een gecompromitteerde third-party-module werd ca. $947.000 aan SOL uit wallets van Bloom-gebruikers gehaald; Bloom belooft volledige vergoeding.",
   "bron": "AMBCrypto",
   "bron_url": "https://ambcrypto.com/bloom-trading-hit-by-947k-breach-due-to-third-party-module-promises-100-reimbursement/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-25-foundation-passport",
+  "datum": "2026-10-25",
+  "categorie": "Crypto",
+  "status": "Bevestigd",
+  "titel": "Hardwarewalletmaker Foundation gehackt, phishing vanaf eigen domein",
+  "doelwit": "Foundation (Passport-hardwarewallets)",
+  "land": "Verenigde Staten",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Via een lek in een self-hosted app bereikten aanvallers het supportpostvak en verstuurden vanaf Foundation-domeinen seed-phishingmails met adresgegevens van klanten; geen gestolen tegoeden gemeld.",
+  "bron": "Unchained",
+  "bron_url": "https://unchainedcrypto.com/passport-wallet-maker-foundation-traces-phishing-emails-to-backend-breach-promises-report",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-25-yapeswap",
@@ -4006,7 +5959,9 @@
   "samenvatting": "Via een kwaadaardig governancevoorstel werd ca. $21.900 uit Yapeswap gehaald.",
   "bron": "SlowMist via X",
   "bron_url": "https://x.com/SlowMist_Team/status/2114290073546219799",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-24-x100",
@@ -4025,7 +5980,9 @@
   "samenvatting": "Een aanvaller nam met een flashloan het governance-systeem van X100 over en haalde ca. $4,85 mln USDT uit de treasury; de X-token crashte 96%.",
   "bron": "The Crypto Times",
   "bron_url": "https://www.cryptotimes.io/2026/10/24/x100-hack-attackers-hijack-governance-drain-4-85m-as-x-token-crashes-96/",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-24-polkadot-xcm",
@@ -4044,7 +6001,9 @@
   "samenvatting": "Een al gepatcht maar niet uitgerold XCM-lek op Polkadot Asset Hub kostte de treasury ca. $1,38 mln.",
   "bron": "The Defiant",
   "bron_url": "https://thedefiant.io/news/hacks/polkadot-treasury-lost-1-38-million-after-xcm-patch-missed-production",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-24-electrum",
@@ -4063,7 +6022,9 @@
   "samenvatting": "Kwaadaardige Electrum-servers konden via fee-bumps betalingen omleiden; versie 4.8.3 dicht het lek en minstens één gebruiker verloor geld.",
   "bron": "Decrypt",
   "bron_url": "https://decrypt.co/381844/bitcoin-wallet-flaw-trick-users-paying-attackers",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-24-keystone",
@@ -4082,7 +6043,9 @@
   "samenvatting": "Hackers stalen bij Keystone de sleutel voor echtheidscontrole van wallets plus gegevens van 25.964 kopers, waarna Keystone 18.835 apparaten vernietigt.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/10/keystone-to-destroy-18835-hardware.html",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-23-collabora-code-kev",
@@ -4101,7 +6064,30 @@
   "samenvatting": "Een ongeauthenticeerde OS-command-injection in proxy.php van de ingebouwde CODE-server wordt sinds september misbruikt om PHP-webshells te plaatsen; CISA gaf drie dagen om te updaten naar 26.4.303.",
   "bron": "Security Affairs",
   "bron_url": "https://securityaffairs.com/201652/security/u-s-cisa-adds-collabora-online-flaw-to-its-known-exploited-vulnerabilities-catalog.html",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-23-capcom-id",
+  "datum": "2026-10-23",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Datalek Capcom ID: 11,7 miljoen e-mailadressen",
+  "doelwit": "Capcom",
+  "land": "Japan",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": 11700000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Bij ongeautoriseerde toegang tot de Capcom ID-dienst (ontdekt 19 oktober) zijn ruim 11,7 miljoen e-mailadressen, IP-adressen en logingegevens buitgemaakt; 143 accounts overgenomen.",
+  "bron": "Security.nl",
+  "bron_url": "https://www.security.nl/posting/958713/Datalek+Capcom+ID+raakt+ruim+elf+miljoen+gebruikers+wereldwijd",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-23-initia",
@@ -4120,7 +6106,9 @@
   "samenvatting": "Fout in Move-functie liet ongedekte AUSD minten; >$2,6 mln naar Ethereum gesluisd.",
   "bron": "Cointelegraph",
   "bron_url": "https://cointelegraph.com/news/initia-halts-blockchain-exploit-drained",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-23-arista-velocloud-kev",
@@ -4139,7 +6127,114 @@
   "samenvatting": "Via een actief misbruikte SQL-injectie kan elke ingelogde gebruiker (zelfs read-only) operator-rechten krijgen in de SD-WAN-orchestrator; CISA gaf federale diensten tot 26 oktober om te updaten naar 5.2.3.18, 6.1.3.10 of 6.4.2.12.",
   "bron": "Security Affairs",
   "bron_url": "https://securityaffairs.com/201609/hacking/u-s-cisa-adds-arista-velocloud-orchestrator-flaw-to-its-known-exploited-vulnerabilities-catalog.html",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-23-quest-diagnostics",
+  "datum": "2026-10-23",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Quest Diagnostics: patiëntdata buitgemaakt via Quanum",
+  "doelwit": "Quest Diagnostics",
+  "land": "Verenigde Staten",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Labgigant Quest meldt via een 8-K dat aanvallers het door ~500.000 clinici gebruikte Quanum-platform binnendrongen en patiëntrecords inzagen.",
+  "bron": "TechCrunch",
+  "bron_url": "https://techcrunch.com/2026/10/23/lab-testing-giant-quest-diagnostics-confirms-patients-personal-and-health-data-was-compromised-during-breach/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-23-kimchi",
+  "datum": "2026-10-23",
+  "categorie": "Crypto",
+  "status": "Bevestigd",
+  "titel": "Rug pull Kimchi-token",
+  "doelwit": "Kimchi Token",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": 385000,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "SlowMist registreert een rug pull van ~$385K bij Kimchi Token (gemeld door Lookonchain).",
+  "bron": "SlowMist",
+  "bron_url": "https://hacked.slowmist.io/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-22-university-hospitals",
+  "datum": "2026-10-22",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "University Hospitals Cleveland weken offline na cyberaanval",
+  "doelwit": "University Hospitals (Cleveland, 21 ziekenhuizen)",
+  "land": "Verenigde Staten",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Het 21 ziekenhuizen tellende zorgsysteem haalde na een aanval op 22 okt digitale diensten waaronder MyChart offline; begin november waren systemen nog plat en werden ingrepen verplaatst.",
+  "bron": "HIPAA Journal",
+  "bron_url": "https://www.hipaajournal.com/university-hospitals-eyemed-facial-surgery-group-data-breaches/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-22-connectwise",
+  "datum": "2026-10-22",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Chinese hackers via ConnectWise in duizenden bedrijven",
+  "doelwit": "ConnectWise (cloudback-up) en ~2.250 klantorganisaties",
+  "land": "Verenigde Staten",
+  "ernst": "Kritiek",
+  "ernst_score": 4,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Volgens Microsoft stal een Chinese staatsgroep met AI-framework ARTEX app-credentials uit ConnectWise' cloudback-updienst en viel daarmee ~2.250 klantorganisaties aan (mail en bestanden).",
+  "bron": "TechCrunch",
+  "bron_url": "https://techcrunch.com/2026/10/22/chinese-hackers-spied-on-thousands-of-companies-after-breaching-it-giant-connectwise/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-22-railway",
+  "datum": "2026-10-22",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Railway: gestolen klantsecrets leveren $740.000 aan AI-fraude op",
+  "doelwit": "Railway (cloudplatform, tot ~1,85% van workspaces)",
+  "land": "Verenigde Staten",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": 740000,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Via een containerescape in de buildinfrastructuur ontsleutelden aanvallers omgevingsvariabelen van tot ~100.000 workspaces en tokens van 1.852 gebruikers; met gestolen AI-sleutels werd voor $740.000 aan AI-gebruik gegenereerd.",
+  "bron": "Railway",
+  "bron_url": "https://blog.railway.com/p/incident-report-october-security-incident",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-22-nem-token",
@@ -4158,7 +6253,30 @@
   "samenvatting": "Een smart-contractlek in NemTokenV2 werd misbruikt voor ca. $821.920.",
   "bron": "SlowMist via X",
   "bron_url": "https://x.com/SlowMist_Team/status/2113206749524316486",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-22-oneonta-schools",
+  "datum": "2026-10-22",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Ransomware sluit scholen Oneonta (New York)",
+  "doelwit": "Oneonta City School District",
+  "land": "Verenigde Staten",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Het district bevestigde ransomware en schrapte twee lesdagen; of gegevens zijn gestolen is onbekend.",
+  "bron": "Cybernews",
+  "bron_url": "https://cybernews.com/news/richmond-oneonta-schools-ransomware-attacks/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-22-wax-bridge",
@@ -4177,7 +6295,9 @@
   "samenvatting": "Ontbrekende invoervalidatie in de WAX Multi-Chain Bridge leverde een aanvaller ca. $90.500 op.",
   "bron": "SlowMist via X",
   "bron_url": "https://x.com/SlowMist_Team/status/2113290086808990182",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-21-coindcx",
@@ -4196,7 +6316,9 @@
   "samenvatting": "Uit oude, in juli 2025 gecompromitteerde CoinDCX-adressen verdween ca. $16 mln (vooral USDT); de beurs ontkende eerst een hack maar erkende later operationeel verlies.",
   "bron": "CoinDesk",
   "bron_url": "https://www.coindesk.com/markets/2026/10/23/india-s-largest-exchange-denies-hack-after-blockchain-sleuths-pointed-to-usd16-million-in-suspicious-outflows",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-21-gitlab-rce-cvss10",
@@ -4215,7 +6337,51 @@
   "samenvatting": "GitLab dichtte een kritieke remote-code-executionfout die twaalf jaar aan releases treft (nog geen misbruik bekend); opgelost in 18.11.13, 19.0.10, 19.1.9, 19.2.9, 19.3.6, 19.4.3 en 19.5.1.",
   "bron": "SecurityOnline.info",
   "bron_url": "https://securityonline.info/gitlab-critical-patch-release-cve-2026-110264/",
-  "misbruikt": false
+  "misbruikt": false,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-21-richmond-public-schools",
+  "datum": "2026-10-21",
+  "categorie": "Aanval/datalek",
+  "status": "Deels bevestigd",
+  "titel": "Ransomware legt Richmond Public Schools plat",
+  "doelwit": "Richmond Public Schools (Virginia)",
+  "land": "Verenigde Staten",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Losgeldbriefjes verschenen op lerarenlaptops van het district (22.000 leerlingen); de aanvallers claimen gevoelige data te hebben gestolen en het district biedt kredietmonitoring aan.",
+  "bron": "Cybernews",
+  "bron_url": "https://cybernews.com/news/richmond-oneonta-schools-ransomware-attacks/",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-21-litellm-pypi",
+  "datum": "2026-10-21",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "LiteLLM 1.107.0 op PyPI en Docker voorzien van credential-stealer",
+  "doelwit": "LiteLLM (PyPI-package en Docker-images)",
+  "land": "Wereldwijd",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Met gestolen GitHub CLI-tokens van drie engineers publiceerden aanvallers een LiteLLM-release die cloud-, AI- en browsercredentials steelt en elk uur nieuwe code kan laden; PyPI zette het package in quarantaine.",
+  "bron": "The Hacker News",
+  "bron_url": "https://thehackernews.com/2026/10/litellm-compromised-in-supply-chain.html",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-21-swell",
@@ -4234,7 +6400,30 @@
   "samenvatting": "Een aanvaller kreeg controle over 30 operationele hot keys van Swell, blies swETH/rswETH-koersen op en verplaatste $392.891 uit een HyperEVM-vault; ca. 2.513 ETH stond op het spel.",
   "bron": "DEV Community (Spreek-analyse)",
   "bron_url": "https://dev.to/basisdesk/swell-network-hot-keys-compromised-as-attacker-manipulates-token-exchange-rates-5gml",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-21-state-bank-of-india",
+  "datum": "2026-10-21",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "State Bank of India: klantrecords op dark web",
+  "doelwit": "State Bank of India",
+  "land": "India",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": 3897,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "India's grootste bank bevestigt een cyberaanval waarbij 3.897 klantrecords op het dark web verschenen na een hackersclaim.",
+  "bron": "Bloomberg",
+  "bron_url": "https://www.bloomberg.com/news/articles/2026-10-21/cyberattack-hits-india-s-largest-bank-exposes-customer-records",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-21-fearless-wallet",
@@ -4253,7 +6442,9 @@
   "samenvatting": "Door een gelekte private key werd ca. $20.000 buitgemaakt bij Fearless Wallet (Polkadot-ecosysteem).",
   "bron": "Polkadot via X",
   "bron_url": "https://x.com/Polkadot/status/2112910039207800970",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-21-slice",
@@ -4272,7 +6463,9 @@
   "samenvatting": "Een kwetsbaarheid in een smart contract van Slice werd misbruikt voor ca. $41.000.",
   "bron": "SlowMist via X",
   "bron_url": "https://x.com/SlowMist_Team/status/2112746806585274454",
-  "misbruikt": null
+  "misbruikt": null,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-20-redis-restore",
@@ -4291,7 +6484,93 @@
   "samenvatting": "Geauthenticeerde RCE via RESTORE; gescripte aanvallen gezien die keyspace wissen. Fix: Redis 8.6.3 of ACL op RESTORE.",
   "bron": "SecurityOnline",
   "bron_url": "https://securityonline.info/redis-restore-cve-2026-25243-exploited/",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-20-publica-akira",
+  "datum": "2026-10-20",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Akira perst Zwitserland af met data 100.000 rijksambtenaren",
+  "doelwit": "Publica / PK Softech AG",
+  "land": "Zwitserland",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": 100000,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Akira stal bij IT-dienstverlener PK Softech circa 100 GB pensioendata (AHV-nummers, adressen, rekeningnummers) van 100.000 (oud-)federale medewerkers, onder wie inlichtingenpersoneel, en eist losgeld.",
+  "bron": "blue News",
+  "bron_url": "https://www.bluewin.ch/en/news/switzerland/hackers-steal-data-and-blackmail-switzerland-li.3642633",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-20-tor-exitnodes",
+  "datum": "2026-10-20",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Ruim 300 gehackte Tor-exitnodes onderschepten SSH- en mailverkeer",
+  "doelwit": "Tor-netwerk en -gebruikers",
+  "land": "Internationaal",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Circa 333 gecompromitteerde relays (~10% van de exitnodes) leidden op 2 oktober SSH-verbindingen om naar onderscheppingsservers en verzamelden onversleutelde mail.",
+  "bron": "Security.nl",
+  "bron_url": "https://www.security.nl/posting/958341/Honderden+gehackte+Tor-exitnodes+onderschepten+SSH-+en+mailverkeer",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-20-ovhcloud-cli",
+  "datum": "2026-10-20",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Malware in OVHcloud CLI via gehackt GitHub-account",
+  "doelwit": "OVHcloud CLI-gebruikers",
+  "land": "Frankrijk",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": "GHSA-862f-55f5-vmvw",
+  "cvss": null,
+  "samenvatting": "Via een gekaapt ontwikkelaarsaccount werden bestaande GitHub-releases van de OVHcloud CLI vervangen door versies met secret-stelende malware; klanten moeten alle geheimen roteren.",
+  "bron": "Security.nl",
+  "bron_url": "https://www.security.nl/posting/958318/OVHcloud+waarschuwt+voor+ge%C3%AFnfecteerde+versies+van+CLI-software",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-20-rank-math-pro",
+  "datum": "2026-10-20",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Backdoor in WordPress-plugin Rank Math PRO",
+  "doelwit": "Rank Math PRO-gebruikers",
+  "land": "Internationaal",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Op 15 en 16 oktober verspreidden aanvallers via de officiële site en updates een versie van de betaalde SEO-plugin met backdoor; getroffen sites gelden als gecompromitteerd.",
+  "bron": "Security.nl",
+  "bron_url": "https://www.security.nl/posting/958248/Aanvallers+voorzien+WordPress+plug-in+Rank+Math+PRO+van+backdoor",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-20-siteguard-kev",
@@ -4310,7 +6589,9 @@
   "samenvatting": "CISA zette de actief misbruikte command-injectionfout in de Japanse WAF SiteGuard Server Edition in de KEV-catalogus met een patchdeadline van 23 oktober; beheerders moeten de leveranciersupdate installeren.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/10/cisa-orders-federal-agencies-to-patch.html",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
  },
  {
   "id": "2026-10-20-siemens-software-center-kev",
@@ -4329,6 +6610,92 @@
   "samenvatting": "Een DLL-sideloadingfout in Siemens Software Center werd misbruikt in ClickFix-campagnes via het Romulus-platform en staat sinds 20 oktober in CISA's KEV-lijst; updaten naar de gepatchte Siemens-versie is vereist.",
   "bron": "The Hacker News",
   "bron_url": "https://thehackernews.com/2026/10/cisa-orders-federal-agencies-to-patch.html",
-  "misbruikt": true
+  "misbruikt": true,
+  "toegevoegd": null,
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-20-offidocs-extensies",
+  "datum": "2026-10-20",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "60 Chrome-extensies van OffiDocs sturen surfgedrag van 2,3 miljoen gebruikers door",
+  "doelwit": "Gebruikers van Chrome-, Firefox- en Edge-extensies van OffiDocs (o.a. VPNOnline)",
+  "land": "Wereldwijd",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Onderzoek toont dat 60 Chrome- en 51 Firefox-extensies van het Estse OffiDocs volledige bezochte URL's naar eigen servers sturen en tabbladen kunnen omleiden, terwijl veel ervan een 'Featured'-badge dragen.",
+  "bron": "Am I Being Pwned?",
+  "bron_url": "https://amibeingpwned.com/blog/offidocs-campaign",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-19-aomei-backupper",
+  "datum": "2026-10-19",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Updateservers AOMEI Backupper verspreiden malware",
+  "doelwit": "AOMEI Backupper-gebruikers (11 landen)",
+  "land": "Internationaal",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Aanvallers wijzigden meermaals kort de updateconfiguratie van AOMEI om een backdoor en een NTLM-hash-stelend bestand te verspreiden naar slachtoffers in o.a. Spanje, Portugal en Zwitserland.",
+  "bron": "Security.nl",
+  "bron_url": "https://www.security.nl/posting/957963/Gebruikers+AOMEI+Backupper+via+update-servers+besmet+met+malware",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-19-ets-californie",
+  "datum": "2026-10-19",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Leerlinggegevens Californië gestolen bij toetsbureau ETS",
+  "doelwit": "Educational Testing Service (ETS)",
+  "land": "Verenigde Staten",
+  "ernst": "Hoog",
+  "ernst_score": 3,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Met gestolen inloggegevens kopieerden aanvallers maandenlang via een SFTP-omgeving leerlingdossiers (incl. beperkingen en toetsresultaten) van drie schooljaren.",
+  "bron": "Security.nl",
+  "bron_url": "https://www.security.nl/posting/958170/Gegevens+van+miljoenen+leerlingen+in+Californi%C3%AB+buitgemaakt",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
+ },
+ {
+  "id": "2026-10-19-loxone",
+  "datum": "2026-10-19",
+  "categorie": "Aanval/datalek",
+  "status": "Bevestigd",
+  "titel": "Cyberaanval op domoticabedrijf Loxone",
+  "doelwit": "Loxone",
+  "land": "Oostenrijk",
+  "ernst": "Middel",
+  "ernst_score": 2,
+  "schade_usd": null,
+  "records": null,
+  "cve": null,
+  "cvss": null,
+  "samenvatting": "Interne bedrijfssystemen van Loxone werden op 18 oktober aangevallen en geïsoleerd; klantinstallaties bleven werken, mogelijke datadiefstal wordt onderzocht.",
+  "bron": "Security.nl",
+  "bron_url": "https://www.security.nl/posting/958125/LOXONE+getroffen+door+cyberaanval+maar+klantinstallaties+veilig+en+operationeel",
+  "misbruikt": null,
+  "toegevoegd": "2026-11-11",
+  "bijgewerkt": null
  }
 ]

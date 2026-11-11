@@ -7,7 +7,7 @@ Stopt met exitcode 1 en een duidelijke foutmelding als de data niet klopt.
 import json
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -83,6 +83,18 @@ def main():
                 r["misbruikt"] = True
         else:
             r["misbruikt"] = None
+
+    if vorige_rows and datum:
+        cutoff = (datetime.fromisoformat(datum) - timedelta(days=60)).strftime("%Y-%m-%d")
+        teruggezet = [
+            r for rid, r in vorige_rows.items()
+            if rid not in ids and r.get("datum", "") >= cutoff
+        ]
+        if teruggezet:
+            for r in teruggezet:
+                rows.append(r)
+                ids.add(r["id"])
+            print(f"Teruggezet: {len(teruggezet)} regel(s) die in de nieuwe data ontbraken maar minder dan 60 dagen oud zijn.")
 
     if datum and vorige_rows:
         for r in rows:

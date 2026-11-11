@@ -5,6 +5,11 @@ on:
     - cron: "12 6 * * *"   # elke ochtend 07:12 (wintertijd) / 08:12 (zomertijd) Amsterdam
     - cron: "47 8 * * *"   # reserve: draait alleen als de eerste run vandaag niets heeft bijgewerkt
   workflow_dispatch:        # handmatig starten als de scheduler het laat afweten
+    inputs:
+      force:
+        description: "Forceer update ook als vandaag al bijgewerkt is"
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths-ignore: ["data/**"]
@@ -31,7 +36,7 @@ jobs:
         run: |
           VANDAAG=$(TZ=Europe/Amsterdam date +%Y-%m-%d)
           LAATST=$(python3 -c "import json,datetime,zoneinfo;t=json.load(open('data/meta.json'))['updated_at'];print(datetime.datetime.fromisoformat(t).astimezone(zoneinfo.ZoneInfo('Europe/Amsterdam')).date())")
-          if [ "$LAATST" = "$VANDAAG" ]; then echo "skip=true" >> "$GITHUB_OUTPUT"; echo "Vandaag al bijgewerkt, reserve-run slaat over."; else echo "skip=false" >> "$GITHUB_OUTPUT"; fi
+          if [ "$LAATST" = "$VANDAAG" ] && [ "${{ inputs.force }}" != "true" ]; then echo "skip=true" >> "$GITHUB_OUTPUT"; echo "Vandaag al bijgewerkt, reserve-run slaat over."; else echo "skip=false" >> "$GITHUB_OUTPUT"; fi
 
       - name: Huidige data bewaren
         if: steps.check.outputs.skip != 'true'

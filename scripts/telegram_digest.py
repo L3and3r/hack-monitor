@@ -1,10 +1,19 @@
 #!/usr/bin/env python3
 """Stuur een dagelijkse digest van nieuwe incidenten naar een Telegram-groep.
 
-Gebruik: python3 scripts/telegram_digest.py --vorige /tmp/vorige.json [--dry-run]
-Test:    python3 scripts/telegram_digest.py --sinds 2026-11-09 [--dry-run]
+Gebruik:
+  python3 scripts/telegram_digest.py --datum 2026-11-12 [--dry-run] [--alleen-als-nieuw]
+  python3 scripts/telegram_digest.py --vorige /tmp/vorige.json [--dry-run] [--alleen-als-nieuw]
+  python3 scripts/telegram_digest.py --sinds 2026-11-09 [--dry-run]
+
+--datum          Nieuw = regels met toegevoegd == datum (aanbevolen).
+--vorige         Nieuw = id's die niet in het opgegeven bestand staan (oud gedrag).
+--sinds          Test: doe alsof alles vanaf deze datum nieuw is.
+--dry-run        Print berichten, verstuur niets.
+--alleen-als-nieuw  Stuur niets als er geen nieuwe incidenten zijn.
+
 Omgevingsvariabelen: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID (en optioneel SITE_URL).
-Alleen standaardbibliotheek; geen extra packages nodig.
+Geen externe packages nodig.
 """
 import html
 import json
@@ -17,10 +26,24 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "hacks.json"
 SITE = os.environ.get("SITE_URL", "https://l3and3r.github.io/hack-monitor/")
-MAX_LEN = 4000  # Telegram-limiet is 4096 tekens per bericht
-MAX_KRITIEK = 10  # per categorie maximaal zoveel kritieke regels
-MAX_HOOG = 5  # en maximaal zoveel "hoog"
+MAX_LEN = 4000
+MAX_KRITIEK = 10
+MAX_HOOG = 5
 ICON = {"Kritiek": "🔴", "Hoog": "🟠", "Middel": "⚪", "Laag": "▫️"}
+
+BTC_TREFWOORDEN = {
+    "bitcoin", "btc", "lightning", "lnd", "lnbits", "btcpay", "satoshi",
+    "coldcard", "trezor", "ledger", "electrum", "sparrow", "bitbox",
+    "rust-lightning", "ldk", "rust-bitcoin", "bitcoinjs", "bdk",
+    "bitcoin core", "bitcoin knots", "libsecp256k1", "btcd",
+}
+
+
+def is_bitcoin(r):
+    tekst = " ".join([
+        r.get("titel", ""), r.get("doelwit", ""), r.get("samenvatting", ""),
+    ]).lower()
+    return any(kw in tekst for kw in BTC_TREFWOORDEN)
 
 
 def usd(v):
@@ -63,27 +86,46 @@ def regel(r):
     return f'{ICON.get(r["ernst"], "•")} <a href="{e(r["bron_url"], quote=True)}">{e(r["titel"])}</a>{tail}'
 
 
+def sectie_regels(rows, max_k=MAX_KRITIEK, max_h=MAX_HOOG):
+    toon = [r for r in rows if r["ernst"] == "Kritiek"][:max_k] + \
+           [r for r in rows if r["ernst"] == "Hoog"][:max_h]
+    rest = len(rows) - len(toon)
+    lines = ["".join("\n" + regel(r) for r in toon)]
+    if rest:
+        lines.append(f"\n<i>+ {rest} {'ander incident' if rest == 1 else 'andere incidenten'} in de monitor</i>")
+    return "".join(lines)
+
+
 def bouw(nieuw, totaal):
     if not nieuw:
-        return [f"🛡 <b>Hack Monitor</b>\nGeen nieuwe incidenten sinds gisteren.\n<a href=\"{SITE}\">Open de monitor</a>"]
-    nieuw.sort(key=lambda r: r["datum"], reverse=True)
-    nieuw.sort(key=lambda r: r["ernst_score"], reverse=True)
+        return [f'🛡 <b>Hack Monitor</b>\nGeen nieuwe incidenten vandaag.\n<a href="{SITE}">Open de monitor</a>']
+
+    nieuw.sort(key=lambda r: (r["ernst_score"], r["datum"]), reverse=True)
     tel = {s: sum(r["ernst"] == s for r in nieuw) for s in ICON}
     claims = sum(r.get("status") == "Claim" for r in nieuw)
+
     kop = (f"🛡 <b>Hack Monitor</b>: {len(nieuw)} nieuwe incidenten\n"
-           f"🔴 {tel['Kritiek']} kritiek · 🟠 {tel['Hoog']} hoog · ⚪ {tel['Middel'] + tel['Laag']} overig"
+           f"🔴 {tel['Kritiek']} kritiek · 🟠 {tel['Hoog']} hoog · "
+           f"⚪ {tel['Middel'] + tel['Laag']} overig"
            + (f" · {claims} claims" if claims else "") + "\n")
+
+    btc = [r for r in nieuw if is_bitcoin(r)]
+    btc_ids = {r["id"] for r in btc}
+
     secties = []
-    for cat, naam in [("Aanval/datalek", "Aanvallen en datalekken"), ("Crypto", "Crypto"), ("Kwetsbaarheid", "Kwetsbaarheden")]:
-        rows = [r for r in nieuw if r["categorie"] == cat]
-        toon = [r for r in rows if r["ernst"] == "Kritiek"][:MAX_KRITIEK] + [r for r in rows if r["ernst"] == "Hoog"][:MAX_HOOG]
-        rest = len(rows) - len(toon)
+    for cat, naam in [
+        ("Aanval/datalek", "Aanvallen en datalekken"),
+        ("Crypto", "Crypto/DeFi"),
+        ("Kwetsbaarheid", "Kwetsbaarheden"),
+    ]:
+        rows = [r for r in nieuw if r["categorie"] == cat and r["id"] not in btc_ids]
         if not rows:
             continue
-        s = f"\n<b>{naam}</b>" + "".join("\n" + regel(r) for r in toon)
-        if rest:
-            s += f"\n<i>+ {rest} {'ander incident' if rest == 1 else 'andere incidenten'} in de monitor</i>"
-        secties.append(s)
+        secties.append(f"\n<b>{naam}</b>" + sectie_regels(rows))
+
+    if btc:
+        secties.append(f"\n<b>₿ Bitcoin / Lightning</b>" + sectie_regels(btc))
+
     voet = f'\n\n<a href="{SITE}">Alle {totaal} incidenten in de monitor</a>'
 
     berichten, huidig = [], kop
@@ -101,35 +143,58 @@ def bouw(nieuw, totaal):
 
 
 def stuur(tekst, token, chat):
-    data = urllib.parse.urlencode({"chat_id": chat, "text": tekst, "parse_mode": "HTML",
-                                   "disable_web_page_preview": "true"}).encode()
-    req = urllib.request.Request(f"https://api.telegram.org/bot{token}/sendMessage", data=data)
+    data = urllib.parse.urlencode({
+        "chat_id": chat, "text": tekst, "parse_mode": "HTML",
+        "disable_web_page_preview": "true",
+    }).encode()
+    req = urllib.request.Request(
+        f"https://api.telegram.org/bot{token}/sendMessage", data=data)
     with urllib.request.urlopen(req, timeout=30) as resp:
         out = json.loads(resp.read())
     if not out.get("ok"):
-        raise SystemExit(f"Telegram gaf een fout: {out}")
+        raise SystemExit(f"Telegram-fout: {out}")
     c = out["result"]["chat"]
     naam = c.get("title") or c.get("username") or c.get("first_name") or "?"
-    print(f"Afgeleverd in {c.get('type')} '{naam}' (chat-id {c.get('id')}), bericht-id {out['result']['message_id']}")
+    print(f"Afgeleverd in {c.get('type')} '{naam}' (chat-id {c.get('id')}), "
+          f"bericht-id {out['result']['message_id']}")
 
 
 def main():
-    vorige = set()
-    if "--vorige" in sys.argv:
-        p = Path(sys.argv[sys.argv.index("--vorige") + 1])
-        if p.exists():
-            vorige = {r["id"] for r in json.loads(p.read_text(encoding="utf-8"))}
+    args = sys.argv[1:]
+    dry_run = "--dry-run" in args
+    alleen_als_nieuw = "--alleen-als-nieuw" in args
+
     rows = json.loads(DATA.read_text(encoding="utf-8"))
-    if "--sinds" in sys.argv:  # test: doe alsof alles vanaf deze datum nieuw is
-        sinds = sys.argv[sys.argv.index("--sinds") + 1]
+
+    if "--datum" in args:
+        datum = args[args.index("--datum") + 1]
+        nieuw = [r for r in rows if r.get("toegevoegd") == datum]
+    elif "--vorige" in args:
+        p = Path(args[args.index("--vorige") + 1])
+        vorige = {r["id"] for r in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else set()
+        nieuw = [r for r in rows if r["id"] not in vorige]
+    elif "--sinds" in args:
+        sinds = args[args.index("--sinds") + 1]
         vorige = {r["id"] for r in rows if r["datum"] < sinds}
-    nieuw = [r for r in rows if r["id"] not in vorige]
-    berichten = bouw(nieuw, len(rows))
-    if "--dry-run" in sys.argv:
-        for b in berichten:
-            print(b, f"\n--- ({len(b)} tekens) ---")
+        nieuw = [r for r in rows if r["id"] not in vorige]
+    else:
+        print("Geef --datum, --vorige of --sinds op.", file=sys.stderr)
+        sys.exit(1)
+
+    if alleen_als_nieuw and not nieuw:
+        print("Geen nieuwe incidenten; niets verstuurd (--alleen-als-nieuw).")
         return
-    token, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
+
+    berichten = bouw(nieuw, len(rows))
+
+    if dry_run:
+        for b in berichten:
+            print(b)
+            print(f"--- ({len(b)} tekens) ---")
+        return
+
+    token = os.environ.get("TELEGRAM_BOT_TOKEN")
+    chat = os.environ.get("TELEGRAM_CHAT_ID")
     if not token or not chat:
         print("TELEGRAM_BOT_TOKEN of TELEGRAM_CHAT_ID ontbreekt; digest niet verstuurd.")
         return

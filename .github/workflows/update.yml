@@ -71,12 +71,12 @@ jobs:
           fi
 
       - name: Telegram-digest versturen
-        if: steps.check.outputs.skip != 'true'
+        if: always()
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python3 scripts/telegram_digest.py --vorige /tmp/vorige.json
+        run: python3 scripts/telegram_digest.py --datum "$(date -u +%Y-%m-%d)" --alleen-als-nieuw
 
   deploy:
     needs: [update]

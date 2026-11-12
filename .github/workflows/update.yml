@@ -71,7 +71,7 @@ jobs:
           fi
 
       - name: Telegram-digest versturen
-        if: always()
+        if: always() && steps.check.outputs.skip != 'true'
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

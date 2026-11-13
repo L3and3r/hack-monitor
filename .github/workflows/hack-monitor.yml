@@ -1,0 +1,179 @@
+name: Hack Monitor dagelijks
+
+# Eén workflow doet alles, in vaste volgorde:
+# plan -> onderzoek (Claude Code) -> samenvoegen + valideren -> commit -> Pages deploy
+# -> controleren dat de live site de data van vandaag toont -> Telegram -> vastleggen dat Telegram is verstuurd.
+# Een tweede (vangnet)schema draait later; het plan slaat alles over wat vandaag al gelukt is.
+
+on:
+  schedule:
+    - cron: "17 5 * * *"   # 06:17 NL (winter) / 07:17 (zomer)
+    - cron: "47 6 * * *"   # vangnet als de eerste run is overgeslagen of mislukt
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Opnieuw onderzoeken, ook als dat vandaag al is gebeurd"
+        type: boolean
+        default: false
+      skip_telegram:
+        description: "Geen Telegram-bericht sturen"
+        type: boolean
+        default: false
+
+concurrency:
+  group: hack-monitor
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  SITE_URL: https://l3and3r.github.io/hack-monitor/
+  DATA: data/hacks.json
+  META: data/meta.json
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      research: ${{ steps.p.outputs.research }}
+      telegram: ${{ steps.p.outputs.telegram }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        run: |
+          python3 -I scripts/hack_monitor.py plan --meta "$META" \
+            --force "${{ inputs.force && 'true' || 'false' }}" \
+            --skip-telegram "${{ inputs.skip_telegram && 'true' || 'false' }}" >> "$GITHUB_OUTPUT"
+
+  research:
+    needs: plan
+    if: needs.plan.outputs.research == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    permissions:
+      contents: read          # deze job kan niets in de repo wijzigen
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Claude Code installeren
+        run: npm install -g @anthropic-ai/claude-code && claude --version
+      - name: Werkmap klaarzetten (geïsoleerd van de repo)
+        run: |
+          mkdir -p "$RUNNER_TEMP/work"
+          python3 -I scripts/hack_monitor.py index --data "$DATA" > "$RUNNER_TEMP/work/bestaand.txt"
+          cp prompts/research.md "$RUNNER_TEMP/work/OPDRACHT.md"
+          wc -l "$RUNNER_TEMP/work/bestaand.txt"
+      - name: Onderzoek met Claude Code
+        working-directory: ${{ runner.temp }}/work
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then echo "::error::Secret CLAUDE_CODE_OAUTH_TOKEN ontbreekt"; exit 1; fi
+          set +e
+          timeout 70m claude -p "Lees OPDRACHT.md in de huidige map en voer die volledig uit. Vandaag is $(date -u +%F) (UTC)." \
+            --allowedTools "WebSearch,WebFetch,Read,Write,Edit,Glob,Grep,Task" \
+            --max-turns 250 \
+            --output-format json > claude-run.json
+          rc=$?
+          set -e
+          echo "claude exit code: $rc"
+          python3 -c "import json;r=json.load(open('claude-run.json'));print('resultaat:',r.get('subtype'),'| beurten:',r.get('num_turns'),'| fout:',r.get('is_error'))" || true
+          n=$(ls spoor*.json 2>/dev/null | wc -l)
+          echo "spoorbestanden: $n"
+          if [ "$n" -eq 0 ]; then echo "::error::Claude leverde geen enkel spoorbestand op (exit $rc)"; exit 1; fi
+          if [ "$n" -lt 5 ]; then echo "::warning::Slechts $n van 5 sporen opgeleverd (exit $rc)"; fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: incoming
+          path: |
+            ${{ runner.temp }}/work/spoor*.json
+            ${{ runner.temp }}/work/claude-run.json
+          if-no-files-found: error
+          retention-days: 14
+
+  publish:
+    needs: [plan, research]
+    if: ${{ !cancelled() && needs.plan.result == 'success' && (needs.research.result == 'success' || needs.research.result == 'skipped') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Onderzoeksresultaat ophalen
+        if: needs.research.result == 'success'
+        uses: actions/download-artifact@v4
+        with:
+          name: incoming
+          path: ${{ runner.temp }}/incoming   # buiten de repo, zodat het niet op de site belandt
+      - name: Samenvoegen en valideren
+        if: needs.research.result == 'success'
+        run: python3 -I scripts/hack_monitor.py merge --data "$DATA" --meta "$META" --incoming "$RUNNER_TEMP/incoming" --require-incoming
+      - name: Committen en pushen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$DATA" "$META"
+          if git diff --cached --quiet; then echo "Geen datawijzigingen"; exit 0; fi
+          git commit -m "Hack Monitor: data $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            echo "push mislukt, opnieuw ($i)"; sleep $((i*10))
+          done
+          exit 1
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deploy
+        uses: actions/deploy-pages@v4
+      - name: Live site controleren
+        run: python3 -I scripts/hack_monitor.py verify --url "${SITE_URL}data/meta.json" --tries 15 --wait 20
+      - name: Telegram-digest versturen
+        if: needs.plan.outputs.telegram == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 -I scripts/hack_monitor.py digest --data "$DATA" --meta "$META" --site-url "$SITE_URL"
+      - name: Vastleggen dat Telegram is verstuurd
+        if: needs.plan.outputs.telegram == 'true'
+        run: |
+          python3 -I scripts/hack_monitor.py mark --meta "$META"
+          git add "$META"
+          git commit -m "Hack Monitor: Telegram verstuurd $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((i*10))
+          done
+          exit 1
+
+  alert:
+    needs: [plan, research, publish]
+    if: failure()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Beheerder waarschuwen via Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          ADMIN: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$ADMIN" ] || [ -z "$TELEGRAM_BOT_TOKEN" ]; then
+            echo "::warning::Geen TELEGRAM_ADMIN_CHAT_ID; alleen de standaard GitHub-mail bij mislukte runs."; exit 0; fi
+          curl -sS --fail -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${ADMIN}" \
+            --data-urlencode "text=⚠️ Hack Monitor-run mislukt (plan=${{ needs.plan.result }}, onderzoek=${{ needs.research.result }}, publicatie=${{ needs.publish.result }}). ${RUN_URL}" > /dev/null

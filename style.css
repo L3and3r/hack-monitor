@@ -78,3 +78,4 @@ dialog { border: 1px solid var(--line); border-radius: var(--radius); background
 .badge.nieuw { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 60%, transparent); }
 .badge.upd { color: var(--info); border-color: color-mix(in srgb, var(--info) 60%, transparent); }
 .hm-update-banner { background: color-mix(in srgb, var(--ok) 8%, var(--panel)); border: 1px solid color-mix(in srgb, var(--ok) 25%, transparent); border-radius: var(--radius); padding: 12px 18px; font-size: 14px; }
+.hm-stale { background: color-mix(in srgb, var(--bad) 10%, var(--panel)); border: 1px solid color-mix(in srgb, var(--bad) 45%, transparent); color: var(--bad); border-radius: var(--radius); padding: 12px 18px; font-size: 14px; font-weight: 600; }

@@ -12,22 +12,41 @@
     num: (v) => v == null ? '—' : v >= 1e6 ? (v / 1e6).toLocaleString('nl-NL', { maximumFractionDigits: 1 }) + ' mln' : Math.round(v).toLocaleString('nl-NL'),
     dag: nl.utcFormat('%a %-d %b'),
     dagLang: nl.utcFormat('%A %-d %B'),
-    tijd: nl.format('%-d %b %H:%M'),
+    tijd: nl.format('%a %-d %b %H:%M'),
     parse: d3.utcParse('%Y-%m-%d'),
   };
   const $ = (id) => document.getElementById(id);
   const setText = (id, t) => { const el = $(id); if (el) el.textContent = t; };
-  let DATA = [];
+  let DATA = [], META = null;
+
+  // Datum van de laatste update: uit meta.json, anders afgeleid uit de data
+  function laatsteUpdate() {
+    if (META && META.updated_on) return META.updated_on;
+    const allUD = DATA.flatMap((r) => [r.toegevoegd, r.bijgewerkt]).filter(Boolean);
+    return allUD.length ? allUD.sort().at(-1) : null;
+  }
 
   // ---------- Data ----------
   async function load() {
-    const bust = '?t=' + Date.now();
+    const bust = '?v=' + Date.now();
     const [hacks, meta] = await Promise.all([
       fetch('data/hacks.json' + bust).then((r) => r.json()),
       fetch('data/meta.json' + bust).then((r) => r.ok ? r.json() : null).catch(() => null),
     ]);
-    DATA = hacks;
-    if (meta && meta.updated_at) setText('bijgewerkt', fmt.tijd(new Date(meta.updated_at)) + (meta.nieuw != null ? ` · ${meta.nieuw} nieuw` : ''));
+    DATA = hacks; META = meta;
+    if (meta && meta.updated_at) {
+      const n = meta.new_today != null ? meta.new_today : meta.nieuw;
+      setText('bijgewerkt', fmt.tijd(new Date(meta.updated_at)) + (n != null ? ` · ${n} nieuw` : ''));
+    }
+    const upd = laatsteUpdate(), warn = $('stale-warning');
+    const vandaag = new Date().toLocaleDateString('sv-SE');  // YYYY-MM-DD in lokale tijd
+    const dagenOud = upd ? Math.round((Date.parse(vandaag) - Date.parse(upd)) / 86400000) : null;
+    if (dagenOud == null || dagenOud > 2) {
+      warn.textContent = upd
+        ? `Let op: de gegevens zijn voor het laatst bijgewerkt op ${fmt.dagLang(fmt.parse(upd))} (${dagenOud} dagen geleden). De automatische update loopt mogelijk niet.`
+        : 'Let op: onbekend wanneer de gegevens voor het laatst zijn bijgewerkt.';
+      warn.hidden = false;
+    }
     renderAll();
   }
 
@@ -47,8 +66,7 @@
       SEV.forEach((s) => (o[s] = rows.filter((r) => r.ernst === s).length));
       perDag.push(o);
     }
-    const allUD = DATA.flatMap((r) => [r.toegevoegd, r.bijgewerkt]).filter(Boolean);
-    const updateDatum = allUD.length ? allUD.sort().at(-1) : null;
+    const updateDatum = laatsteUpdate();
     const nieuwRijen = updateDatum ? DATA.filter((r) => r.toegevoegd === updateDatum) : [];
     const bijgewerktRijen = updateDatum ? DATA.filter((r) => r.bijgewerkt === updateDatum) : [];
     return {
@@ -150,9 +168,8 @@
     const tb = $('tabel'); tb.replaceChildren();
     const q = filter.q.trim().toLowerCase();
     const st = (r) => r.status || 'Bevestigd';
-    const allUD = DATA.flatMap((r) => [r.toegevoegd, r.bijgewerkt]).filter(Boolean);
-    const updateDatum = allUD.length ? allUD.sort().at(-1) : null;
-    const rows = DATA.filter((r) => (!filter.cat || r.categorie === filter.cat) && Number(r.ernst_score) >= filter.min
+    const updateDatum = laatsteUpdate();
+    const rows =DATA.filter((r) => (!filter.cat || r.categorie === filter.cat) && Number(r.ernst_score) >= filter.min
       && (!filter.st || (filter.st === 'bevestigd' ? st(r) !== 'Claim' : st(r) === 'Claim'))
       && (!q || [r.titel, r.doelwit, r.samenvatting, r.cve, r.land].join(' ').toLowerCase().includes(q))
       && (!filter.nieuw || (updateDatum && (r.toegevoegd === updateDatum || r.bijgewerkt === updateDatum))))

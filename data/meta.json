@@ -1,12 +1,12 @@
 {
- "updated_at": "2026-11-13T09:35:14Z",
+ "updated_at": "2026-11-14T07:41:40Z",
  "aantal": 333,
  "nieuw": 6,
- "updated_on": "2026-11-13",
+ "updated_on": "2026-11-14",
  "updated_by": "GitHub Actions + Claude Code (webonderzoek)",
- "total": 563,
- "new_today": 100,
- "updated_today": 13,
+ "total": 585,
+ "new_today": 22,
+ "updated_today": 3,
  "rejected_today": 0,
  "telegram_sent_on": "2026-11-13",
  "telegram_sent_at": "2026-11-13T10:42:04Z"

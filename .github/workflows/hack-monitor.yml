@@ -40,7 +40,7 @@ jobs:
       research: ${{ steps.p.outputs.research }}
       telegram: ${{ steps.p.outputs.telegram }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - id: p
         run: |
           python3 -I scripts/hack_monitor.py plan --meta "$META" \
@@ -55,10 +55,10 @@ jobs:
     permissions:
       contents: read          # deze job kan niets in de repo wijzigen
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
       - name: Claude Code installeren
@@ -88,7 +88,7 @@ jobs:
           echo "spoorbestanden: $n"
           if [ "$n" -eq 0 ]; then echo "::error::Claude leverde geen enkel spoorbestand op (exit $rc)"; exit 1; fi
           if [ "$n" -lt 5 ]; then echo "::warning::Slechts $n van 5 sporen opgeleverd (exit $rc)"; fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: incoming
           path: |
@@ -110,12 +110,12 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Onderzoeksresultaat ophalen
         if: needs.research.result == 'success'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: incoming
           path: ${{ runner.temp }}/incoming   # buiten de repo, zodat het niet op de site belandt
@@ -123,25 +123,55 @@ jobs:
         if: needs.research.result == 'success'
         run: python3 -I scripts/hack_monitor.py merge --data "$DATA" --meta "$META" --incoming "$RUNNER_TEMP/incoming" --require-incoming
       - name: Committen en pushen
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "$DATA" "$META"
-          if git diff --cached --quiet; then echo "Geen datawijzigingen"; exit 0; fi
+          if git diff --cached --quiet; then echo "Geen datawijzigingen"; echo "committed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
           git commit -m "Hack Monitor: data $(date -u +%F)"
           for i in 1 2 3 4 5; do
-            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "committed=true" >> "$GITHUB_OUTPUT"; exit 0
+            fi
             echo "push mislukt, opnieuw ($i)"; sleep $((i*10))
           done
           exit 1
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      # Alleen deployen als er iets te publiceren is. Een overbodige deploy registreert de
+      # trigger-commit (GITHUB_SHA) als Pages-buildversie; een latere run op dezelfde commit
+      # met nieuwe data krijgt dan de oude, al geslaagde deployment terug en de site blijft oud
+      # (zo ging het op 2026-11-24).
+      - name: Bepalen of een deploy nodig is
+        id: need
+        run: |
+          if [ "${{ steps.commit.outputs.committed }}" = "true" ]; then
+            echo "deploy=true" >> "$GITHUB_OUTPUT"; echo "nieuwe datacommit -> deploy"
+          else
+            python3 -I scripts/hack_monitor.py needdeploy --url "${SITE_URL}data/meta.json" --meta "$META" >> "$GITHUB_OUTPUT"
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Controleren of deze Pages-buildversie al bestaat
+        if: steps.need.outputs.deploy == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "GITHUB_SHA=${GITHUB_SHA}  HEAD=${{ steps.need.outputs.sha }}"
+          if status=$(gh api "repos/${GITHUB_REPOSITORY}/pages/deployments/${GITHUB_SHA}" --jq .status 2>/dev/null); then
+            echo "::warning::Er bestaat al een Pages-deployment voor ${GITHUB_SHA} (status ${status}); deploy-pages kan die oude deployment als 'succes' melden. De verify-stap vangt dat af."
+          else
+            echo "Nog geen Pages-deployment voor ${GITHUB_SHA}."
+          fi
+      - if: steps.need.outputs.deploy == 'true'
+        uses: actions/configure-pages@v6
+      - if: steps.need.outputs.deploy == 'true'
+        uses: actions/upload-pages-artifact@v5
         with:
           path: .
       - id: deploy
-        uses: actions/deploy-pages@v4
+        if: steps.need.outputs.deploy == 'true'
+        uses: actions/deploy-pages@v5
       - name: Live site controleren
-        run: python3 -I scripts/hack_monitor.py verify --url "${SITE_URL}data/meta.json" --tries 15 --wait 20
+        run: python3 -I scripts/hack_monitor.py verify --url "${SITE_URL}data/meta.json" --tries 30 --wait 20
       - name: Telegram-digest versturen
         if: needs.plan.outputs.telegram == 'true'
         env:

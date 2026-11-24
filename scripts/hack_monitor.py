@@ -341,22 +341,41 @@ def cmd_mark(a):
     schrijf_json(a.meta, meta)
 
 
+def live_meta(url: str) -> tuple[int | str, dict | None]:
+    """Haalt de live meta.json op, langs caches heen. Geeft (HTTP-status of fout, meta of None)."""
+    req = urllib.request.Request(f"{url}?v={time.time_ns()}",
+                                 headers={"Cache-Control": "no-cache", "Pragma": "no-cache"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return r.status, json.load(r)
+    except urllib.error.HTTPError as err:
+        return err.code, None
+    except Exception as err:  # netwerk, timeout, ongeldige JSON
+        return f"{type(err).__name__}: {err}", None
+
+
 def cmd_verify(a):
-    t = vandaag()
+    t = a.expect or vandaag()
     for poging in range(1, a.tries + 1):
-        try:
-            url = f"{a.url}?v={int(time.time())}"
-            req = urllib.request.Request(url, headers={"Cache-Control": "no-cache"})
-            with urllib.request.urlopen(req, timeout=30) as r:
-                meta = json.load(r)
-            if meta.get("updated_on") == t:
-                log(f"verify: live site serveert data van {t} ({meta.get('total')} regels)")
-                return
-            log(f"verify poging {poging}: live updated_on={meta.get('updated_on')}, verwacht {t}")
-        except Exception as err:
-            log(f"verify poging {poging}: {err}")
-        time.sleep(a.wait)
-    raise SystemExit("verify: live site toont niet de data van vandaag")
+        status, meta = live_meta(a.url)
+        live = meta.get("updated_on") if meta else None
+        log(f"verify poging {poging}/{a.tries}: HTTP {status}, live updated_on={live}, verwacht {t}")
+        if live == t:
+            log(f"verify: live site serveert data van {t} ({meta.get('total')} regels)")
+            return
+        if poging < a.tries:
+            time.sleep(a.wait)
+    raise SystemExit(f"verify: live site toont na {a.tries} pogingen niet de data van {t}")
+
+
+def cmd_needdeploy(a):
+    """deploy=true als de live site niet de updated_on van de lokale meta.json toont."""
+    lokaal = (lees_json(a.meta, {}) or {}).get("updated_on")
+    status, meta = live_meta(a.url)
+    live = meta.get("updated_on") if meta else None
+    nodig = live != lokaal
+    print(f"deploy={'true' if nodig else 'false'}")
+    log(f"needdeploy: HTTP {status}, live updated_on={live}, lokaal updated_on={lokaal} -> deploy={nodig}")
 
 
 def main():
@@ -373,10 +392,13 @@ def main():
     s.add_argument("--date"); s.add_argument("--dry-run", action="store_true")
     s = sub.add_parser("mark"); s.add_argument("--meta", default="data/meta.json")
     s = sub.add_parser("verify"); s.add_argument("--url", required=True)
-    s.add_argument("--tries", type=int, default=12); s.add_argument("--wait", type=int, default=20)
+    s.add_argument("--tries", type=int, default=30); s.add_argument("--wait", type=int, default=20)
+    s.add_argument("--expect", default="", help="verwachte updated_on (standaard: vandaag, UTC)")
+    s = sub.add_parser("needdeploy"); s.add_argument("--url", required=True)
+    s.add_argument("--meta", default="data/meta.json")
     a = p.parse_args()
     {"plan": cmd_plan, "index": cmd_index, "merge": cmd_merge, "digest": cmd_digest,
-     "mark": cmd_mark, "verify": cmd_verify}[a.cmd](a)
+     "mark": cmd_mark, "verify": cmd_verify, "needdeploy": cmd_needdeploy}[a.cmd](a)
 
 
 if __name__ == "__main__":

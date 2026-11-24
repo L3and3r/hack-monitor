@@ -108,7 +108,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url || steps.deploy2.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -149,26 +149,23 @@ jobs:
           else
             python3 -I scripts/hack_monitor.py needdeploy --url "${SITE_URL}data/meta.json" --meta "$META" >> "$GITHUB_OUTPUT"
           fi
-          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-      - name: Controleren of deze Pages-buildversie al bestaat
-        if: steps.need.outputs.deploy == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          echo "GITHUB_SHA=${GITHUB_SHA}  HEAD=${{ steps.need.outputs.sha }}"
-          if status=$(gh api "repos/${GITHUB_REPOSITORY}/pages/deployments/${GITHUB_SHA}" --jq .status 2>/dev/null); then
-            echo "::warning::Er bestaat al een Pages-deployment voor ${GITHUB_SHA} (status ${status}); deploy-pages kan die oude deployment als 'succes' melden. De verify-stap vangt dat af."
-          else
-            echo "Nog geen Pages-deployment voor ${GITHUB_SHA}."
-          fi
       - if: steps.need.outputs.deploy == 'true'
         uses: actions/configure-pages@v6
       - if: steps.need.outputs.deploy == 'true'
         uses: actions/upload-pages-artifact@v5
         with:
           path: .
+      # deploy-pages ziet een net geüpload artifact soms nog niet ("No artifacts named
+      # github-pages", actions/deploy-pages#451); daarom één herkansing na 30 s.
       - id: deploy
         if: steps.need.outputs.deploy == 'true'
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+      - name: Wachten voor tweede deploy-poging
+        if: steps.deploy.outcome == 'failure'
+        run: sleep 30
+      - id: deploy2
+        if: steps.deploy.outcome == 'failure'
         uses: actions/deploy-pages@v5
       - name: Live site controleren
         run: python3 -I scripts/hack_monitor.py verify --url "${SITE_URL}data/meta.json" --tries 30 --wait 20
